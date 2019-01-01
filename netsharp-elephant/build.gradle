@@ -1,0 +1,84 @@
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+
+    compile project(':netsharp-core')
+    compile project(':weixin-sdk-mp')
+	compile project(':weixin-sdk-ep')
+	compile project(':netsharp-cache-service')
+    compile project(':netsharp-persistence')
+    compile project(':netsharp-communication')
+    compile project(':netsharp-basebiz')
+    compile project(':netsharp-panda')
+    compile project(':netsharp-basebiz-web')
+    compile project(':netsharp-weixin')
+    compile project(':netsharp-scrum')
+    compile project(':netsharp-cache-plugin')
+    
+    compile group:	'javax.servlet',name:'javax.servlet-api',version:'3.0.1'
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+group = 'test.multiwindow'
+ext {
+    projTitle = 'Test MultiWindow'
+    projVersion = '1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+//---------------------------------
+// gradle命令生成jar包
+//---------------------------------
+
+task copyJar(type:Copy){
+    from configurations.runtime
+    into ('build/libs/lib')
+}
+
+
+def libPath = "lib"
+task release(type: Copy,dependsOn: [build,copyJar]) {
+}
+
+jar {
+    manifest {
+        attributes(
+            "Main-Class": "org.netsharp.elephant.ElephantServer",
+            "Implementation-Title": "Gradle",
+            "Class-Path": configurations.compile.collect { "$libPath/"+it.getName() }.join(' ')
+        )
+    }
+}
+
+
+//---------------------------------
+// 在gradle运行时环境下执行main函数
+//---------------------------------
+task runElephant(type: JavaExec, dependsOn: 'jar') {
+     description '启动服务器监听'
+     classpath = sourceSets.main.runtimeClasspath
+     main = 'org.netsharp.elephant.ElephantServer'
+ }
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+    test {
+        java {
+            srcDirs = ['src/test/java']
+        }
+        resources {
+            srcDirs = ["src/test/resources"]
+        }
+    }
+}
+

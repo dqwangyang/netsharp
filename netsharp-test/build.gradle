@@ -1,0 +1,28 @@
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+
+    compile project(':netsharp-core')
+    compile project(':weixin-sdk-mp')
+	compile project(':weixin-sdk-ep')
+	compile project(':netsharp-cache-service')
+    compile project(':netsharp-persistence')
+    compile project(':netsharp-communication')
+    compile project(':netsharp-basebiz')
+    compile project(':netsharp-panda')
+    compile project(':netsharp-basebiz-web')
+    compile project(':netsharp-weixin')
+    compile project(':netsharp-scrum')
+    compile project(':netsharp-cache-plugin')
+    
+    compile group:	'javax.servlet',name:'javax.servlet-api',version:'3.0.1'
+    compile group:	'org.elasticsearch.client',name:'elasticsearch-rest-high-level-client',version:'6.3.2'
+}
+
+//同步数据库元数据
+task metadata(type: Test) {
+
+    include '**/AllTests.class'
+    reports.junitXml.destination = "$buildDir/test-results/SuiteTwo"
+    //reports.html.destination = test_reports_base_location
+    //reports.html.destination = "$buildDir/test-results/SuiteTwo"
+}

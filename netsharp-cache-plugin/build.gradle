@@ -1,0 +1,28 @@
+
+dependencies {
+	
+    compile project(':netsharp-core')
+    compile project(':netsharp-cache-base')
+    compile project(':netsharp-persistence')
+    compile project(':netsharp-communication')
+    compile project(':netsharp-panda')
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java','src/test/java']
+        }
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+    test {
+        java {
+            srcDirs = ['src/test/java']
+        }
+        resources {
+            srcDirs = ['src/test/resources']
+        }
+    }
+}

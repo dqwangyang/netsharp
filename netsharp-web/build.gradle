@@ -1,0 +1,101 @@
+apply plugin: 'com.bmuschko.tomcat'
+//apply plugin: 'com.bmuschko.tomcat-base'
+apply plugin: 'java'
+apply plugin: 'war'
+
+def projectName = "$name"
+
+dependencies {
+
+    compile project(':netsharp-core')
+    compile project(':netsharp-cache-service')
+    compile project(':weixin-sdk-mp')
+	compile project(':weixin-sdk-ep')
+    compile project(':netsharp-persistence')
+    compile project(':netsharp-communication')
+    compile project(':netsharp-basebiz')
+    compile project(':netsharp-panda')
+    compile project(':netsharp-basebiz-web')
+    compile project(':netsharp-scrum')
+    compile project(':netsharp-weixin')
+    compile project(':netsharp-cache-plugin')
+    compile project(':netsharp-weixin-ui')
+    
+    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: "1.6.1"
+    
+    providedCompile group: 'org.apache.tomcat', name: 'tomcat-websocket', version: '8.5.32'
+    providedCompile group: 'org.apache.tomcat', name: 'tomcat-coyote', version: '8.5.32'
+    providedCompile group: 'org.apache.tomcat', name: 'tomcat-catalina', version: '8.5.32'    
+    
+}
+
+
+task deployPanda(dependsOn: war) << {
+  
+    def source = "build/libs/$projectName-${project_version}.war"
+    def dest = "$tomcat_home/webapps/"
+    
+    println "copy $source to $dest"
+    
+    copy {
+        from "$source"
+        into "$dest"
+        include "*.war"
+        rename("$projectName-${project_version}.war", "ROOT.war")
+    }
+}
+
+task runPanda(dependsOn: tomcatRun){
+	println "begin run pada"
+}
+
+tomcat {
+//    httpPort = 8090
+//    httpsPort = 8091
+//    enableSSL = true
+    contextPath = '/'
+//
+//    users {
+//        user {
+//            username = 'user1'
+//            password = '123456'
+//            roles = ['developers', 'admin']
+//        }
+//
+//        user {
+//            username = 'user2'
+//            password = 'abcdef'
+//            roles = ['manager']
+//        }
+//    }
+}
+
+//https://www.cnblogs.com/zhao1949/p/6224628.html
+buildscript {
+    repositories {
+        mavenLocal()
+         maven {  
+             name "aliyunmaven"  
+             url "http://maven.aliyun.com/nexus/content/groups/public/"  
+         } 
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.bmuschko:gradle-tomcat-plugin:2.2.2'
+    }
+}
+
+repositories {
+     maven {  
+         name "aliyunmaven"  
+         url "http://maven.aliyun.com/nexus/content/groups/public/"  
+     } 
+}
+
+dependencies {
+    def tomcatVersion = '8.5.2'
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"    
+}

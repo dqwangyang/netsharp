@@ -1,0 +1,160 @@
+#header {
+
+	background-color: #1E7CB5;
+}
+
+#logo{
+	width: 179px;
+	background-color: #333;
+}
+
+.left-nav li:hover,
+.left-nav .selected,
+.okayNav__nav--invisible li:hover, 
+.okayNav__nav--invisible selected{
+	background: #186797;
+	color:#fff;
+}
+
+.accordion_item_nav li a span i.fa{
+	
+	margin: 0 5px;
+	font-size: 8px;
+}
+
+.accordion .accordion-header .fa{
+	
+	display: none;
+}
+
+.left-nav li{
+	color:#fff;
+	padding: 0px 15px;
+}
+
+.nav-right .user-info span {
+	color: #fff;
+	font-size: 14px;
+}
+.nav-right .icon-option .fa:hover{
+	color:#b2b8c1;
+}
+
+.nav-right {
+	width:250px;
+}
+
+.nav-right .switch {
+	float: left;
+	color:#555555;
+	height: 48px;
+	line-height: 48px;
+	width:100px;
+}
+
+.nav-right .icon-option i {
+
+	background: url(/panda-res/images/skin_icons.png) -199px -301px no-repeat;
+	color: #fff;
+}
+.switchbutton {
+    background: #fff;
+    border: 1px solid #fff;
+}
+
+.panel-header{
+	background-color: #f7f7f7 !important;
+	border-width:0px;
+}
+
+.panel-title{
+	height: 24px;
+    line-height: 24px;
+    font-weight: normal;
+    padding-left:10px;
+    color:#1E7CB5;
+}
+
+
+/*右边导航菜单项*/
+.nav-right .icon-option {
+	position: relative;
+	display: block;
+	cursor: pointer;
+	float: right;
+	padding: 0 14px;
+	height: 50px;
+	background: #1E7CB5;
+}
+
+.nav-right .icon-option i {
+	display: block;
+	width: 20px;
+	height: 50px;
+}
+
+.nav-right .icon-option:hover {
+	background: #186797;
+}
+
+.nav-right .icon-option:hover .drop-box {
+	display: block;
+}
+.nav-right .icon-option i {
+	display: block;
+	width: 20px;
+	height: 50px;
+	color: #ffffff;
+	line-height: 50px;
+	text-align: center;
+}
+
+.nav-right .icon-option:hover .drop-box {
+	display: block;
+}
+.drop-box {
+	display: none;
+	position: fixed;
+	top: 50px;
+	right: 1px;
+}
+
+.drop-box .arrow {
+	position: absolute;
+	display: block;
+	top: 0;
+	right: 15px;
+	width: 21px;
+	height: 11px;
+	text-indent: -999999px;
+	background: url(/panda-res/images/skin_icons.png) no-repeat 0 -356px;
+}
+
+.drop-box .drop-item {
+	margin-top: 10px;
+	padding: 10px;
+	border: 1px solid #b1b1b1;
+	background: #fff;
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.drop-box .drop-item li {
+	list-style: none;
+}
+
+.drop-box .drop-item li a {
+	display: block;
+	padding: 8px 15px;
+	color: #222;
+	font-size: 12px;
+	line-height: 1em;
+	text-align: center;
+	white-space: nowrap;
+	text-decoration: none;
+}
+
+.drop-box .drop-item li a:hover {
+	text-decoration: none;
+	background: #186797;
+	color: #ffffff;
+}

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Basic Combo - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+    <script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.radiogroupbox.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.checkboxgroup.js"></script>
+	<style>
+
+		.radiogroupbox,.checkboxgroup{
+
+			padding:10px;
+		}
+		.radiogroupbox .radio-item,.checkboxgroup .check-item{
+
+			
+		}
+
+		.radiogroupbox .radio-item input[type=radio],.checkboxgroup .check-item input[type=checkbox]{
+
+			vertical-align:middle;
+			margin:0;
+		}
+	</style>
+</head>
+<body>
+	<h2>Basic Combo</h2>
+	<p>Click the right arrow button to show drop down panel that can be filled with any content.</p>
+	<div style="margin:20px 0"></div>
+	<!-- <div class="easyui-panel" style="width:100%;max-width:400px;padding:30px 60px;">
+		<div style="margin-bottom:20px">
+			<input id="cc" style="width:100%;">
+		</div>
+	</div> -->
+	
+	<!-- <div id="sp">
+		<div style="line-height:22px;background:#fafafa;padding:5px;">Select a language</div>
+		<div style="padding:10px">
+			<input type="radio" name="lang" value="01"><span>Java</span><br/>
+			<input type="radio" name="lang" value="02"><span>C#</span><br/>
+			<input type="radio" name="lang" value="03"><span>Ruby</span><br/>
+			<input type="radio" name="lang" value="04"><span>Basic</span><br/>
+			<input type="radio" name="lang" value="05"><span>Fortran</span>
+		</div>
+	</div> -->
+
+	
+	<select id="language_radio" class="easyui-radiogroupbox" data-options="value:'4',required:true,onChange:function(newValue,oldValue){alert('新值：'+newValue+'，旧值：'+oldValue);}">
+
+		<option value="1">Basic</option>
+		<option value="2">Java</option>
+		<option value="3">C#</option>
+		<option value="4">Ruby</option>
+		<option value="5">Fortran</option>
+	</select>
+
+
+	<br><br><br>
+	<button id="btn_radio_setValue">SetValue</button>
+	<button id="btn_radio_getValue">GetValue</button>
+	<button id="btn_radio_select">Select</button>
+	<button id="btn_radio_initValue">InitValue</button>
+	<button id="btn_radio_loadData">loadData</button>
+	<button id="btn_radio_validate">验证</button>
+	<br><br><br>
+
+	<select id="language_checkbox" class="easyui-checkboxgroup" 
+		data-options="value:'4',required:true,minLenth:2,maxLength:4">
+		<!-- ,onChange:function(newValue,oldValue){alert('新值：'+newValue+'，旧值：'+oldValue);},onSelect(record){alert(record.text);} -->
+		<option value="1">Basic</option>
+		<option value="2">Java</option>
+		<option value="3">C#</option>
+		<option value="4">Ruby</option>
+		<option value="5">Fortran</option>
+	</select>
+
+	<br><br><br>
+	<button id="btn_checkbox_setValue">SetValue</button>
+	<button id="btn_checkbox_setValues">SetValues</button><br><br>
+	<button id="btn_checkbox_getValue">GetValue</button>
+	<button id="btn_checkbox_getValues">GetValues</button><br><br>
+	<button id="btn_checkbox_select">Select</button>
+	<button id="btn_checkbox_selects">Selects</button><br><br>
+	<button id="btn_checkbox_initValue">InitValue</button>
+	<button id="btn_checkbox_unSelects">UnSelects</button>
+	<button id="btn_checkbox_validate">验证</button>
+	<form onsubmit="return check(this)" id="frm" name="frm">
+		
+			<div>
+					<input type="radio" name="radio1" class="easyui-validatebox" value="1" validType="radio['frm','radio1']"/>radio1
+					<input type="radio" name="radio1" class="easyui-validatebox" value="2"/>radio2
+					<input type="radio" name="radio1" class="easyui-validatebox" value="3" />radio3</div>
+					<div><input type="checkbox" name="cb1" class="easyui-validatebox" value="1" validType="checkbox['frm','cb1']"/>checkbox1
+					<input type="checkbox" name="cb1" class="easyui-validatebox" value="2"/>checkbox2
+					<input type="checkbox" name="cb1" class="easyui-validatebox" value="3" />checkbox3
+					<input type="checkbox" name="cb1" class="easyui-validatebox" value="4" />checkbox4</div>
+		<input type="submit" value="提交"/>
+	</form>
+	
+	<style>
+		.validatebox-invalid{border:solid 1px red;}
+		</style>
+		<script>
+			$.extend($.fn.validatebox.defaults.rules, {
+				radio: {
+					validator: function (value, param) {
+						var frm = param[0], groupname = param[1], ok = false;
+						$('input[name="' + groupname + '"]', document[frm]).each(function () { //查找表单中所有此名称的radio
+							if (this.checked) { ok = true; return false; }
+						});
+	
+						return ok
+					},
+					message: '需要选择一项！'
+				},
+				checkbox: {
+					validator: function (value, param) {
+						var frm = param[0], groupname = param[1], checkNum = 0;
+						$('input[name="' + groupname + '"]', document[frm]).each(function () { //查找表单中所有此名称的checkbox
+							if (this.checked) checkNum++;
+						});
+	
+						return checkNum > 0 && checkNum < 4;
+					},
+					message: '选择1~3项！'
+				}
+			});
+			function check(f) {
+
+				var o = $(f.radio1[0]);
+				if (!o.validatebox('isValid')) o.parent().addClass('validatebox-invalid');
+				else o.parent().removeClass('validatebox-invalid');
+	
+				o = $(f.cb1[0]);
+				if (!o.validatebox('isValid')) o.parent().addClass('validatebox-invalid');
+				else o.parent().removeClass('validatebox-invalid');
+				return false
+			}
+		</script>
+
+	<script type="text/javascript">
+		$(function(){
+
+			// $('#cc').combo({
+			// 	required:true,
+			// 	editable:false,
+			// 	label:'Language:',
+			// 	labelPosition:'top'
+			// });
+			// $('#sp').appendTo($('#cc').combo('panel'));
+			// $('#sp input').click(function(){
+			// 	var v = $(this).val();
+			// 	var s = $(this).next('span').text();
+			// 	$('#cc').combo('setValue', v).combo('setText', s).combo('hidePanel');
+			// });
+
+			$('#btn_radio_setValue').click(function(){
+				$('#language_radio').radiogroupbox('setValue','2');
+			});
+
+			$('#btn_radio_getValue').click(function(){
+				var value = $('#language_radio').radiogroupbox('getValue');
+				alert(value);
+			});
+
+			$('#btn_radio_select').click(function(){
+				$('#language_radio').radiogroupbox('select','5');
+			});
+
+			$('#btn_radio_initValue').click(function(){
+				$('#language_radio').radiogroupbox('initValue','5');
+			});
+
+			$('#btn_radio_loadData').click(function(){
+
+				var data = [{value:'6',text:'NodeJs'}];
+				data = [];
+				$('#language_radio').radiogroupbox('loadData',data);
+			});
+
+			$('#btn_radio_validate').click(function(){
+				$('#language_radio').radiogroupbox('validate');
+			});
+			
+			
+			/*************************************************************************/
+			
+			// $('#btn_checkbox_setValue').click(function(){
+			// 	$('#language_checkbox').checkboxgroup('setValue','2');
+			// });
+
+			// $('#btn_checkbox_setValues').click(function(){
+			// 	$('#language_checkbox').checkboxgroup('setValues',['2','3']);
+			// });
+
+			// $('#btn_checkbox_getValue').click(function(){
+			// 	var value = $('#language_checkbox').checkboxgroup('getValue');
+			// 	alert(value);
+			// });
+
+			// $('#btn_checkbox_getValues').click(function(){
+			// 	var values = $('#language_checkbox').checkboxgroup('getValues');
+			// 	alert(values);
+			// });
+
+			// $('#btn_checkbox_select').click(function(){
+			// 	$('#language_checkbox').checkboxgroup('select','5');
+			// });
+
+			// $('#btn_checkbox_selects').click(function(){
+			// 	$('#language_checkbox').checkboxgroup('selects',['1','4']);
+			// });
+
+			// $('#btn_checkbox_initValue').click(function(){
+			// 	$('#language_checkbox').checkboxgroup('initValue',['5','3']);
+			// });
+
+			// $('#btn_checkbox_unSelects').click(function(){
+			// 	$('#language_checkbox').checkboxgroup('unSelects',['5','3']);
+			// });
+
+			$('#btn_checkbox_validate').click(function(){
+				$('#language_checkbox').checkboxgroup('validate');
+			});
+		});
+	</script>
+</body>
+</html>

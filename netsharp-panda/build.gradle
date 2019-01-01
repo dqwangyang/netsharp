@@ -1,0 +1,47 @@
+
+dependencies {
+
+    compile project(':netsharp-core')
+    compile project(':netsharp-cache-service')
+    compile project(':netsharp-persistence')
+    compile project(':netsharp-communication')
+    compile project(':netsharp-basebiz')
+    
+    compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
+    
+    //kind- editor
+    compile group: 'commons-fileupload', name: 'commons-fileupload', version: '1.2.2'
+    //org.netsharp.xport
+    compile group: 'org.apache.commons', name: 'commons-csv', version: '1.0'
+    compile group: 'dom4j', name: 'dom4j', version: '1.6.1'
+    compile group: 'net.sf.ehcache', name: 'ehcache', version: '1.5.0'
+    compile group: 'net.sourceforge.jexcelapi', name: 'jxl', version: '2.6.10'
+    
+	 //-------------------------------------
+	// 第三方插件 caojianming 2016/3/26
+	//-------------------------------------
+	compile group: 'org.jodd', name: 'jodd-core', version: '3.5.2'
+	compile group: 'org.jodd', name: 'jodd-bean', version: '3.5.2'
+	compile group: 'org.apache.poi', name: 'poi', version: '3.10-FINAL'
+	compile group: 'org.apache.poi',name:'poi-ooxml',version:'3.10-FINAL'
+	
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java','src/test/java']
+        }
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+    test {
+        java {
+            srcDirs = ['src/test/java']
+        }
+        resources {
+            srcDirs = ['src/test/resources']
+        }
+    }
+}

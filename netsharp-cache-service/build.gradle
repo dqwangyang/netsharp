@@ -1,0 +1,11 @@
+
+dependencies {
+	
+    compile project(':netsharp-core')
+    compile project(':netsharp-cache-base')
+    compile project(':netsharp-persistence')
+    compile project(':netsharp-communication')
+    compile project(':netsharp-basebiz')
+    
+    compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
+}

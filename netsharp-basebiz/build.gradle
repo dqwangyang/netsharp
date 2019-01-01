@@ -1,0 +1,9 @@
+dependencies {
+    compile project(':netsharp-core')
+    compile project(':netsharp-cache-base')
+    compile project(':netsharp-persistence')
+    compile project(':netsharp-communication')
+    compile project(':weixin-sdk-ep')
+    
+    compile group: 'org.quartz-scheduler', name: 'quartz', version: '2.2.1'
+}

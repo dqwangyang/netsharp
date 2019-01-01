@@ -1,0 +1,61 @@
+.man{
+		    padding-top: 40px;
+		    margin-top:37px;
+		    margin-bottom:15px;
+		    -webkit-border-top:1px solid #918C89;
+		    -moz-border-top:1px solid #918C89;
+		    -ms-border-top:1px solid #918C89;
+		    -o-border-top:1px solid #918C89;
+		    border-top:1px solid #918C89;
+		}
+		.name{
+		    font-family:SimHei;
+		    color:black;
+		    font-weight:bold;
+		}
+		.t1{
+		    font-size:32px !important;
+		}
+		.t2{
+		    font-size:24px;
+		}
+		.t3{
+		    font-size:18px;
+		}
+		.phase{
+		    margin-bottom:20px;
+		}
+		.txt{
+		    font-family:Microsoft YaHei;
+		    line-height:200%;
+		    color:#333;
+		    text-align:justify;
+		}
+		.history{
+		    position: relative;
+		    padding-bottom: 20px;
+		    padding-left:70px;
+		    padding-top: 38px;
+		    border-left: 1px solid #CCC;
+		}
+		.history span:first-child{
+		    color: #888;
+		}
+		.dot{
+		    position: absolute;
+		    left: -25px;
+		    top: 29px;
+		    width: 50px;
+		    height: 50px;
+		    border-radius: 25px;
+		    background: green;
+		}
+		.date{
+		    position: absolute;
+		    left: -125px;
+		    top: 35px;
+		    width: 150px;
+		    height: 50px;
+		}
+		.roadmap{
+			background:white;padding:145px;margin: 0px auto;width: 1000px;

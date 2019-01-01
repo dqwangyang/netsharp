@@ -1,0 +1,11 @@
+- type: log
+  enabled: true
+  paths:
+    - /opt/docker/ns9101/logs/*.txt
+  fields:
+    log_type: "netsharp-log"
+    log_project: "netsharp"
+  multiline:
+    pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+    negate: true
+    match: after

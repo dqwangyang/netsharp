@@ -1,0 +1,30 @@
+
+dependencies {
+
+    compile project(':netsharp-core')
+    compile project(':weixin-sdk-mp')
+	compile project(':weixin-sdk-ep')
+    compile project(':netsharp-persistence')
+    compile project(':netsharp-communication')
+    compile project(':netsharp-basebiz')
+    compile project(':netsharp-panda')
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java','src/test/java']
+        }
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+    test {
+        java {
+            srcDirs = ['src/test/java']
+        }
+        resources {
+            srcDirs = ['src/test/resources']
+        }
+    }
+}

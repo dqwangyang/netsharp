@@ -1,0 +1,29 @@
+version: "3"
+services:
+  es:
+    image: dockerhub-public.gongsibao.com/elasticsearch/elasticsearch-oss:6.3.2
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - /etc/localtime:/etc/localtime
+  logstash:
+    depends_on:
+      - es
+    image: dockerhub-public.gongsibao.com/logstash/logstash-oss:6.3.2
+    ports:
+      - "5044:5044"
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - /Users/cxq/docker/data/elk/logstash/pipeline/:/usr/share/logstash/pipeline/
+      - /Users/cxq/docker/data/elk/logstash/patterns/:/usr/share/logstash/patterns/
+  kibana:
+    depends_on:
+      - es
+    image: dockerhub-public.gongsibao.com/kibana/kibana-oss:6.3.2
+    ports:
+      - "5601:5601"
+    volumes:
+      - /etc/localtime:/etc/localtime
+    environment:
+      ELASTICSEARCH_URL: http://es:9200
