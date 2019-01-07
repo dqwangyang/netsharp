@@ -33,7 +33,8 @@ public class CacheableFilter implements IClientFilter {
 		Cacheable cacheable = method.getAnnotation(Cacheable.class);
 
 		Parameter[] pars = method.getParameters();
-		List<String> ss = new ArrayList<String>();{
+		List<String> ss = new ArrayList<String>();
+		{
 			ss.add(cacheable.prefix());
 		}
 
@@ -47,15 +48,15 @@ public class CacheableFilter implements IClientFilter {
 			Object value = ctx.getRequest().getPars()[i];
 			if (value == null) {
 				logger.trace("缓存方法的参数实例值为空" + ctx.getName() + "(" + par.getName() + ")");
-				return ;
+				return;
 			}
-			
-			if(!StringManager.isNullOrEmpty(cachekey.property())) { 
+
+			if (!StringManager.isNullOrEmpty(cachekey.property())) {
 				Field field = ReflectManager.getField(value.getClass(), cachekey.property());
 				field.setAccessible(true);
 				value = ReflectManager.get(field, value);
 			}
-			
+
 			if (value == null) {
 				logger.trace("缓存方法的参数实例值为空" + ctx.getName() + "([" + par.getName() + "])");
 				return;
@@ -69,8 +70,8 @@ public class CacheableFilter implements IClientFilter {
 		}
 
 		this.key = StringManager.join("----", ss);
-		this.cmd = CacheCommandFactory.create( CommunicationConfiguration.get().getCache(), "communication");
-		
+		this.cmd = CacheCommandFactory.create(CommunicationConfiguration.get().getCache(), "communication");
+
 		Object returnObject = this.cmd.get(this.key);
 		ctx.setIsCacheHint(returnObject != null);
 

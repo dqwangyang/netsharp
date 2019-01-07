@@ -35,6 +35,8 @@ public class EmployeeDataTest {
 		    e.setPwd("123456");
 		}
 		
+		//update sys_permission_employee set pwd='06ec3f7deedd0187' where name='xufangbo'
+		
 		e = service.save(e);
 		
 		

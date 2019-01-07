@@ -64,7 +64,7 @@
                 </div>
             </div>
             <footer class="page-copyright">
-                <p>公司宝 &copy; <a href="http://www.gongsibao.com" target="_blank">gongsibao.com</a></p>
+                <p>Netsharp &copy; <a href="http://www.netsharp.org" target="_blank">www.netsharp.org</a></p>
             </footer>
         </div>
     </div>
