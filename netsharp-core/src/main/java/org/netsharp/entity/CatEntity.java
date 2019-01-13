@@ -23,7 +23,7 @@ public abstract class CatEntity extends ArchiveEntity  implements Serializable {
 
 	@Category(leafName="isLeaf",leafValue="1",pathCode="pathCode",pathName="pathName")
 	@Column(name="parent_id",header="父节ID")
-	private Integer parentId;
+	private Long parentId;
 
 	@Column(size = 300,name="path_code",header="路径编码")
 	private String pathCode;
@@ -42,11 +42,11 @@ public abstract class CatEntity extends ArchiveEntity  implements Serializable {
 	@JsonIgnore
 	private CatEntity parent = null;
 
-	public Integer getParentId() {
+	public Long getParentId() {
 		return parentId;
 	}
 
-	public void setParentId(Integer parentId) {
+	public void setParentId(Long parentId) {
 		this.parentId = parentId;
 	}
 

@@ -27,9 +27,9 @@ public class Deploy extends BizEntity{
 	private Employee testor;   //测试负责人
 	
 	@Column(name="deployer_id")
-	private Integer deployerId;
+	private Long deployerId;
 	@Column(name="testor_id")
-	private Integer testorId;
+	private Long testorId;
 	
 	private String director;//部门经理签字
 	@Column(name="department_director")
@@ -78,19 +78,19 @@ public class Deploy extends BizEntity{
 		}
 	}
 
-	public Integer getDeployerId() {
+	public Long getDeployerId() {
 		return deployerId;
 	}
 
-	public void setDeployerId(Integer deployerId) {
+	public void setDeployerId(Long deployerId) {
 		this.deployerId = deployerId;
 	}
 
-	public Integer getTestorId() {
+	public Long getTestorId() {
 		return testorId;
 	}
 
-	public void setTestorId(Integer testorId) {
+	public void setTestorId(Long testorId) {
 		this.testorId = testorId;
 	}
 

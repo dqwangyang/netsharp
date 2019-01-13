@@ -35,7 +35,7 @@ public class DepartmentHelper {
 	 *
 	 * @param parentId
 	 */
-	public static void update(Integer parentId) {
+	public static void update(Long parentId) {
 
 		initWxpaConfiguration();
 		String filter = " disabled=0 and parentId=" + parentId;
@@ -57,7 +57,7 @@ public class DepartmentHelper {
 	 * 同步所有部门
 	 */
 	public static void update() {
-		update(1);
+		update(1L);
 	}
 
 	public static void runDelete() {
@@ -73,10 +73,10 @@ public class DepartmentHelper {
 	 * @param wxDepId
 	 * @return
 	 */
-	private static boolean hasDepartment(Integer wxDepId) {
+	private static boolean hasDepartment(Long wxDepId) {
 		DepartmentListRequest listRequest = new DepartmentListRequest();
 		{
-			listRequest.setId(Integer.valueOf(wxDepId.toString()));
+			listRequest.setId(Long.valueOf(wxDepId.toString()));
 			AccessToken token = AccessTokenManage.get(wxpa.getCorpid(), wxpa.getCorpsecret());
 			listRequest.setToken(token);
 
@@ -95,7 +95,7 @@ public class DepartmentHelper {
 	}
 
 	private static void update(Organization organization) {
-		Integer parentId = 1;
+		Long parentId = 1L;
 		Organization parentOrganization = service.byId(organization.getParentId());
 		if (parentOrganization.getQyWeiXinId() != 1) {
 			parentId = parentOrganization.getQyWeiXinId() * 10;
@@ -104,16 +104,16 @@ public class DepartmentHelper {
 		}
 
 		try {
-			Integer organizationIdInWeixin = organization.getQyWeiXinId() * 10;
+			Long organizationIdInWeixin = organization.getQyWeiXinId() * 10;
 			AccessToken token = AccessTokenManage.get(wxpa.getCorpid(), wxpa.getCorpsecret());
 
 			if (!hasDepartment(organizationIdInWeixin)) {
 				// update organization
 				Department department = new Department();
 				{
-					department.setId(Integer.parseInt(organizationIdInWeixin.toString()));
+					department.setId(Long.parseLong(organizationIdInWeixin.toString()));
 					department.setName(organization.getName());
-					department.setParentid(Integer.parseInt(parentId.toString()));
+					department.setParentid(Long.parseLong(parentId.toString()));
 				}
 				DepartmentCreateRequest createRequest = new DepartmentCreateRequest();
 				{
@@ -150,7 +150,7 @@ public class DepartmentHelper {
 		for (Row row : table) {
 			DepartmentDeleteRequest deleteRequest = new DepartmentDeleteRequest();
 			{
-				deleteRequest.setId(Integer.valueOf(row.get("id").toString()) * 10);
+				deleteRequest.setId(Long.valueOf(row.get("id").toString()) * 10);
 				AccessToken token = AccessTokenManage.get(wxpa.getCorpid(), wxpa.getCorpsecret());
 				deleteRequest.setToken(token);
 			}

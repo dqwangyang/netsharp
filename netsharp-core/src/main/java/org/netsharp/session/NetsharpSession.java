@@ -8,21 +8,21 @@ public class NetsharpSession implements Serializable {
 	private static final long serialVersionUID = -8476075357474433333L;
 	
 	private String sessionId;           //sessionId
-	private Integer userId;             // 
+	private Long userId;             // 
 	private String userName;
 	private String mobiles;
 	private String userImg;
 	private Date loginTime;                          // 登录时间
 	private Date lastedTime;
-	private Integer postId;                          // 主岗位，多个主岗位，或者无主岗位时取第一个岗位
+	private Long postId;                          // 主岗位，多个主岗位，或者无主岗位时取第一个岗位
 	private String postName;                        // 岗位名称
 	private String postIds;                          // 当前员工的岗位，多个值时以","分割
-	private Integer departmentId;                    //岗位所属部门
+	private Long departmentId;                    //岗位所属部门
 	private String departmentIds;
 	private String departmentName;
 	private String departmentPathCode;
 	private String[] departmentPathCodes;
-	private Integer tenancyId;                       // saas租户id
+	private Long tenancyId;                       // saas租户id
 	private String tenancyName;
 	
 	public String getSessionId() {
@@ -31,10 +31,10 @@ public class NetsharpSession implements Serializable {
 	public void setSessionId(String sessionId) {
 		this.sessionId = sessionId;
 	}
-	public Integer getUserId() {
+	public Long getUserId() {
 		return userId;
 	}
-	public void setUserId(Integer userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 	public String getUserName() {
@@ -43,10 +43,10 @@ public class NetsharpSession implements Serializable {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	public Integer getDepartmentId() {
+	public Long getDepartmentId() {
 		return departmentId;
 	}
-	public void setDepartmentId(Integer departmentId) {
+	public void setDepartmentId(Long departmentId) {
 		this.departmentId = departmentId;
 	}
 	public String getDepartmentName() {
@@ -61,10 +61,10 @@ public class NetsharpSession implements Serializable {
 	public void setDepartmentPathCode(String departmentPathCode) {
 		this.departmentPathCode = departmentPathCode;
 	}
-	public Integer getTenancyId() {
+	public Long getTenancyId() {
 		return tenancyId;
 	}
-	public void setTenancyId(Integer tenancyId) {
+	public void setTenancyId(Long tenancyId) {
 		this.tenancyId = tenancyId;
 	}
 	public String getTenancyName() {
@@ -103,10 +103,10 @@ public class NetsharpSession implements Serializable {
 	public void setLoginTime(Date loginTime) {
 		this.loginTime = loginTime;
 	}
-	public Integer getPostId() {
+	public Long getPostId() {
 		return postId;
 	}
-	public void setPostId(Integer postId) {
+	public void setPostId(Long postId) {
 		this.postId = postId;
 	}
 	public String getPostName() {

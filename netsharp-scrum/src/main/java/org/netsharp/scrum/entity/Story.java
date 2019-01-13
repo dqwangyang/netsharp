@@ -18,7 +18,7 @@ public class Story extends TaskBase {
 	private static final long serialVersionUID = 4596426814557432542L;
 
 	@Column(name="project_id")
-	private Integer projectId;
+	private Long projectId;
 	
 	@Reference(foreignKey="projectId")
 	private Project project;
@@ -26,13 +26,13 @@ public class Story extends TaskBase {
 	private StoryStatus status = StoryStatus.hibernate;
 	
 	@Column(name="iteration_id")
-	private Integer iterationId;
+	private Long iterationId;
 	
 	@Reference(foreignKey="iterationId")
 	private Iteration iteration;//迭代
 	
 	@Column(name="organization_id")
-	private Integer organizationId;
+	private Long organizationId;
 	
 	@Reference(foreignKey="organizationId",header="部门")
 	private Organization organization;
@@ -61,11 +61,11 @@ public class Story extends TaskBase {
 		this.participants = participants;
 	}
 
-	public Integer getIterationId() {
+	public Long getIterationId() {
 		return iterationId;
 	}
 
-	public void setIterationId(Integer iterationId) {
+	public void setIterationId(Long iterationId) {
 		this.iterationId = iterationId;
 	}
 
@@ -85,11 +85,11 @@ public class Story extends TaskBase {
 	}
 
 
-	public Integer getProjectId() {
+	public Long getProjectId() {
 		return projectId;
 	}
 
-	public void setProjectId(Integer projectId) {
+	public void setProjectId(Long projectId) {
 		this.projectId = projectId;
 	}
 
@@ -107,11 +107,11 @@ public class Story extends TaskBase {
 		}
 	}
 
-	public Integer getOrganizationId() {
+	public Long getOrganizationId() {
 		return organizationId;
 	}
 
-	public void setOrganizationId(Integer organizationId) {
+	public void setOrganizationId(Long organizationId) {
 		this.organizationId = organizationId;
 	}
 

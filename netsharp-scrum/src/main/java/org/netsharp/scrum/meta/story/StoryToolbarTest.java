@@ -36,7 +36,7 @@ public class StoryToolbarTest {
 			item.setCode("traces");
 			item.setName("跟进列表");
 			item.setCommand("{controller}.traces();");
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			toolbar.getItems().add(item);
 		}
 		
@@ -46,7 +46,7 @@ public class StoryToolbarTest {
 			item.setCode("addtrace");
 			item.setName("添加跟进");
 			item.setCommand("{controller}.addtrace();");
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			toolbar.getItems().add(item);
 		}
 

@@ -16,7 +16,7 @@ public class LogFilter implements IClientFilter {
 	protected final static Log logger = LogFactory.getLog(LogFilter.class);
 
 	private Date startTime;
-	private Integer userId=null;
+	private Long userId=null;
 	private String userName = "";
 	private String sessionId = "";
 

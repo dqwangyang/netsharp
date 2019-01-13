@@ -83,7 +83,7 @@ public class OrganizationWorkspaceTest extends WorkspaceCreationBase {
 			item.setCode("pathCode");
 			item.setName("路径");
 			item.setCommand("{controller}.pathCode();");
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setSeq(9998);
 			item.setIcon("fa fa-recycle");
 			//item.setDisabled(true);
@@ -95,7 +95,7 @@ public class OrganizationWorkspaceTest extends WorkspaceCreationBase {
 			item.setCode("doCreateWeiXin");
 			item.setName("微信");
 			item.setCommand("{controller}.doCreateWeiXin();");
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setSeq(9999);
 			item.setIcon("fa fa-weixin");
 			//item.setDisabled(true);
@@ -125,7 +125,7 @@ public class OrganizationWorkspaceTest extends WorkspaceCreationBase {
 			item.setCode("disabled");
 			item.setName("停用");
 			item.setCommand("{controller}.disabled();");
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setSeq(3);
 			item.setIcon("fa fa-close");
 			toolbar.getItems().add(item);

@@ -10,5 +10,5 @@ public interface IPublicAccountService extends IPersistableService<PublicAccount
 	
     PublicAccount byOriginalId(String oid) ;
     PublicAccount byAppId(String appId) ;
-    List<NWeixinSubscriber> querySubscribers(Integer publicAccountId);
+    List<NWeixinSubscriber> querySubscribers(Long publicAccountId);
 }

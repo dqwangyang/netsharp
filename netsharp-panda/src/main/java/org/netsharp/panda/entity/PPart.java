@@ -86,17 +86,17 @@ public class PPart extends ResourceBizEntity{
 	private PPartType partType;
 	
 	@Column(name="part_type_id",header="部件类型")
-	private Integer partTypeId;
+	private Long partTypeId;
 	
 //	@JsonIgnore
 	@CompositeOne(foreignKey="datagridId",header="列表")
 	private PDatagrid datagrid;
 	
 	@Column(name="datagrid_id",header="表格方案Id")
-	private Integer datagridId;
+	private Long datagridId;
 	
 	@Column(name="workspace_id",header="工作区ID")
-	private Integer workspaceId;
+	private Long workspaceId;
 	
 	@JsonBackReference
 	@Reference(foreignKey="workspaceId")
@@ -247,19 +247,19 @@ public class PPart extends ResourceBizEntity{
 		}
 	}
 
-	public Integer getPartTypeId() {
+	public Long getPartTypeId() {
 		return partTypeId;
 	}
 
-	public void setPartTypeId(Integer idPartType) {
+	public void setPartTypeId(Long idPartType) {
 		this.partTypeId = idPartType;
 	}
 
-	public Integer getWorkspaceId() {
+	public Long getWorkspaceId() {
 		return workspaceId;
 	}
 
-	public void setWorkspaceId(Integer workspaceId) {
+	public void setWorkspaceId(Long workspaceId) {
 		this.workspaceId = workspaceId;
 	}
 
@@ -278,11 +278,11 @@ public class PPart extends ResourceBizEntity{
 		}
 	}
 
-	public Integer getDatagridId() {
+	public Long getDatagridId() {
 		return datagridId;
 	}
 
-	public void setDatagridId(Integer datagridId) {
+	public void setDatagridId(Long datagridId) {
 		this.datagridId = datagridId;
 	}
 

@@ -55,8 +55,8 @@ public class OrganizationEmployeeListPart extends ListPart {
 		if (StringManager.isNullOrEmpty(id)) {
 			throw new BusinessException("部门ID为空！");
 		}
-		Integer parentId = Integer.parseInt(id.replace("'", "").replace("'", ""));
-		List<Integer> ids = organizationService.getChildDepartment(parentId);
+		Long parentId = Long.parseLong(id.replace("'", "").replace("'", ""));
+		List<Long> ids = organizationService.getChildDepartment(parentId);
 		ids.add(parentId);
 		return StringManager.join(",", ids);
 	}

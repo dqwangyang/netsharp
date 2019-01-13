@@ -37,7 +37,7 @@ public abstract class UiField extends PropertableField {
 	private PReference reference;
     
     @Column(name="reference_id",header="参照")
-    private Integer referenceId;
+    private Long referenceId;
     
     @Column(name="reference_code",header="参照编码")
     private String referenceCode;
@@ -98,10 +98,10 @@ public abstract class UiField extends PropertableField {
 			this.referenceId=null;
 		}
 	}
-	public Integer getReferenceId() {
+	public Long getReferenceId() {
 		return referenceId;
 	}
-	public void setReferenceId(Integer referenceId) {
+	public void setReferenceId(Long referenceId) {
 		this.referenceId = referenceId;
 	}
 

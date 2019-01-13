@@ -17,21 +17,21 @@ public class TaskBase extends WorkEntity {
 	private static final long serialVersionUID = 4017916060746615223L;
 	
 	@Column(name="owner_id")
-	private Integer ownerId;
+	private Long ownerId;
 	@Reference(foreignKey="ownerId")
 	private Employee owner;//项目负责人
 	@Column(name="develop_time")
 	private Date developTime;//开发提测时间
 	
 	@Column(name="testor_id")
-	private Integer testorId;
+	private Long testorId;
 	@Reference(foreignKey="testorId")
 	private Employee testor;//测试负责人
 	@Column(name="test_time")
 	private Date testTime;//测试完成日期
 	
 	@Column(name="productor_id")
-	private Integer productorId;
+	private Long productorId;
 	@Reference(foreignKey="productorId")
 	private Employee productor;//产品负责人
 	@Column(name="productor_time")
@@ -58,11 +58,11 @@ public class TaskBase extends WorkEntity {
 	private CapacityIndex capacityIndex=CapacityIndex.Two;      //能力指数
 	private CSR csr;//=CSR.Three;                                //客户满意度
 	
-	public Integer getOwnerId() {
+	public Long getOwnerId() {
 		return ownerId;
 	}
 
-	public void setOwnerId(Integer ownerId) {
+	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
 	}
 
@@ -155,11 +155,11 @@ public class TaskBase extends WorkEntity {
 		this.csr = csr;
 	}
 
-	public Integer getTestorId() {
+	public Long getTestorId() {
 		return testorId;
 	}
 
-	public void setTestorId(Integer testorId) {
+	public void setTestorId(Long testorId) {
 		this.testorId = testorId;
 	}
 
@@ -171,11 +171,11 @@ public class TaskBase extends WorkEntity {
 		this.testor = testor;
 	}
 
-	public Integer getProductorId() {
+	public Long getProductorId() {
 		return productorId;
 	}
 
-	public void setProductorId(Integer productorId) {
+	public void setProductorId(Long productorId) {
 		this.productorId = productorId;
 	}
 

@@ -45,14 +45,14 @@ public class AuthorizationPrincipalService extends PersistableService<Authorizat
 		super.save(principal);
 	}
 
-	public void deleteByPostId(Integer organizationId) {
+	public void deleteByPostId(Long organizationId) {
 
 		Oql oql = new Oql();
 		{
 			oql.setType(this.type);
 			oql.setSelects("*");
 			oql.setFilter("principalId = ? and principalType = ?");
-			oql.getParameters().add("@principalId", organizationId, Types.INTEGER);
+			oql.getParameters().add("@principalId", organizationId, Types.BIGINT);
 			oql.getParameters().add("@principalType", PrincipalType.POST.getValue(), Types.TINYINT);
 		}
 
@@ -84,7 +84,7 @@ public class AuthorizationPrincipalService extends PersistableService<Authorizat
 			oql.setSelects("*");
 			oql.setFilter("principalId = ? and principalType = ?");
 
-			oql.getParameters().add("@principalId", position.getId(), Types.INTEGER);
+			oql.getParameters().add("@principalId", position.getId(), Types.BIGINT);
 			oql.getParameters().add("@principalType", PrincipalType.STATION.getValue(), Types.TINYINT);
 		}
 

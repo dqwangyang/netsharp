@@ -11,7 +11,7 @@ public class PandaSession implements Serializable {
 	
 	public PandaSession() {}
 	
-	public PandaSession(String sessionId,Integer userId,String userName,String mobiles,String userImg) {
+	public PandaSession(String sessionId,Long userId,String userName,String mobiles,String userImg) {
 		
 		this.setSession(new NetsharpSession());
 		

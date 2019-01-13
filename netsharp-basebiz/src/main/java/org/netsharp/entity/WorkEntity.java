@@ -25,19 +25,19 @@ public class WorkEntity extends BizEntity {
 	protected Employee bizUser;
 	
 	@org.netsharp.core.annotations.Column(name="bizuser_id",header="业务员")
-	protected Integer bizUserId;
+	protected Long bizUserId;
 	
 	@Reference(foreignKey = "auditorId", header = "审核人")
 	protected Employee auditor;
 	
 	@org.netsharp.core.annotations.Column(name="auditor_id",header="审核人")
-	protected Integer auditorId;
+	protected Long auditorId;
 	
 	@Reference(foreignKey = "organizationId", header = "部门")
 	protected Organization organization;
 	
 	@org.netsharp.core.annotations.Column(name="organization_id",header="部门")
-	protected Integer organizationId;
+	protected Long organizationId;
 	
 	
 	public VoucherState getVoucherState() {
@@ -64,10 +64,10 @@ public class WorkEntity extends BizEntity {
 			this.bizUserId=this.bizUser.getId();
 		}
 	}
-	public Integer getBizUserId() {
+	public Long getBizUserId() {
 		return bizUserId;
 	}
-	public void setBizUserId(Integer idBizUser) {
+	public void setBizUserId(Long idBizUser) {
 		this.bizUserId = idBizUser;
 	}
 	public Employee getAuditor() {
@@ -81,10 +81,10 @@ public class WorkEntity extends BizEntity {
 			this.auditorId=this.auditor.getId();
 		}
 	}
-	public Integer getAuditorId() {
+	public Long getAuditorId() {
 		return auditorId;
 	}
-	public void setAuditorId(Integer idAuditor) {
+	public void setAuditorId(Long idAuditor) {
 		this.auditorId = idAuditor;
 	}
 	public Organization getOrganization() {
@@ -99,10 +99,10 @@ public class WorkEntity extends BizEntity {
 			this.organizationId = this.organization.getId();
 		}
 	}
-	public Integer getOrganizationId() {
+	public Long getOrganizationId() {
 		return organizationId;
 	}
-	public void setOrganizationId(Integer organizationId) {
+	public void setOrganizationId(Long organizationId) {
 		this.organizationId = organizationId;
 	}
 }

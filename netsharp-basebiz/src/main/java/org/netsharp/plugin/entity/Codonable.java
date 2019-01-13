@@ -26,16 +26,16 @@ public abstract class Codonable extends ResourceBizEntity{
     private String parent;                 // 显示上级的code
     
     @Column(name="operation_id")
-    private Integer operationId;           // 功能权限
+    private Long operationId;           // 功能权限
     
     @Column(name="path_id")
-    private Integer pathId;
+    private Long pathId;
     
     @Column(name="operation_type_id")
-    private Integer operationTypeId;
+    private Long operationTypeId;
     
     @Column(name="operation_type_id2")
-    private Integer operationTypeId2;
+    private Long operationTypeId2;
     
     private Integer seq = 0;//排序
     
@@ -58,27 +58,27 @@ public abstract class Codonable extends ResourceBizEntity{
 		this.disabled = disabled;
 	}
 
-	public Integer getIdPath() {
+	public Long getIdPath() {
 		return getPathId();
 	}
 
-	public void setIdPath(Integer idPath) {
+	public void setIdPath(Long idPath) {
 		this.setPathId(idPath);
 	}
 
-	public Integer getOperationTypeId() {
+	public Long getOperationTypeId() {
 		return operationTypeId;
 	}
 
-	public void setOperationTypeId(Integer idOperationType) {
+	public void setOperationTypeId(Long idOperationType) {
 		this.operationTypeId = idOperationType;
 	}
 
-	public Integer getOperationTypeId2() {
+	public Long getOperationTypeId2() {
 		return operationTypeId2;
 	}
 
-	public void setOperationTypeId2(Integer idOperationType2) {
+	public void setOperationTypeId2(Long idOperationType2) {
 		this.operationTypeId2 = idOperationType2;
 	}
 
@@ -135,11 +135,11 @@ public abstract class Codonable extends ResourceBizEntity{
 		this.parent = parent;
 	}
 
-	public Integer getOperationId() {
+	public Long getOperationId() {
 		return operationId;
 	}
 
-	public void setOperationId(Integer operationId) {
+	public void setOperationId(Long operationId) {
 		this.operationId = operationId;
 	}
 
@@ -154,11 +154,11 @@ public abstract class Codonable extends ResourceBizEntity{
 		this.childrens = childrens;
 	}
 
-	public Integer getPathId() {
+	public Long getPathId() {
 		return pathId;
 	}
 
-	public void setPathId(Integer pathId) {
+	public void setPathId(Long pathId) {
 		this.pathId = pathId;
 	}
 }

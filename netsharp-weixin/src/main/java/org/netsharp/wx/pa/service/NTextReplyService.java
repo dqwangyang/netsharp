@@ -25,7 +25,7 @@ public class NTextReplyService extends PersistableService<NTextReply> implements
     }
 
     @Override
-    public List<NTextReply> getTextReplies(Integer publicAccountId) {
+    public List<NTextReply> getTextReplies(Long publicAccountId) {
         Oql oql = new Oql();
         oql.setType(NTextReply.class);
         oql.setSelects("NTextReply.*");

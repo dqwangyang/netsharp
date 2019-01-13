@@ -1,0 +1,37 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compile project(':netsharp-core')
+    compile project(':netsharp-communication')
+    compile project(':netsharp-persistence')
+    compile project(':netsharp-panda')
+    compile project(':netsharp-basebiz')
+    compile project(':netsharp-basebiz-web')
+    compile project(':weixin-sdk-ep')
+    compile project(':netsharp-weixin')
+}
+
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java','src/test/java']
+        }
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+    test {
+        java {
+            srcDirs = ['src/test/java']
+        }
+        resources {
+            srcDirs = ['src/test/resources']
+        }
+    }
+}

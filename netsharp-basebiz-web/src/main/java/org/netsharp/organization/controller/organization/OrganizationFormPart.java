@@ -11,7 +11,7 @@ public class OrganizationFormPart extends FormPart{
 	 * 停用
 	 * @return
 	 */
-	public Boolean disabled(Integer id){
+	public Boolean disabled(Long id){
 		
 		IOrganizationService service = ServiceFactory.create(IOrganizationService.class);
 		return service.disabled(id);

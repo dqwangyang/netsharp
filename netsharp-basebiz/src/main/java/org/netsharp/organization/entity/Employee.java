@@ -39,7 +39,7 @@ public class Employee extends ArchiveEntity {
     private String weixin;
     
     @Column(name="fans_id",header="fansId")
-    private Integer fansId;
+    private Long fansId;
     
     @Column(name="birthday",header="出生日期")
     private Date birthday;
@@ -72,13 +72,13 @@ public class Employee extends ArchiveEntity {
     private String photo;
     
     @Column(name="post_id",header="主岗位")
-    private Integer postId;
+    private Long postId;
     
     @Reference(foreignKey="postId",header="主岗位")
     private Organization post;
     
     @Column(name="department_id",header="主部门")
-    private Integer departmentId;
+    private Long departmentId;
     
     @Reference(foreignKey="departmentId",header="主部门")
     private Organization department;
@@ -90,7 +90,7 @@ public class Employee extends ArchiveEntity {
     private String pwd;
     
     @Column(name="authorization_principal_id",header="授权主体Id")
-    private Integer authorizationPrincipalId;
+    private Long authorizationPrincipalId;
     
     @Column(name="last_login_time",header="最后登录时间")
     private Date lastLoginTime;
@@ -221,10 +221,10 @@ public class Employee extends ArchiveEntity {
 	public void setDepartment(Organization department) {
 		this.department = department;
 	}
-	public Integer getDepartmentId() {
+	public Long getDepartmentId() {
 		return departmentId;
 	}
-	public void setDepartmentId(Integer departmentId) {
+	public void setDepartmentId(Long departmentId) {
 		this.departmentId = departmentId;
 	}
 	public Organization getPost() {
@@ -233,10 +233,10 @@ public class Employee extends ArchiveEntity {
 	public void setPost(Organization post) {
 		this.post = post;
 	}
-	public Integer getPostId() {
+	public Long getPostId() {
 		return postId;
 	}
-	public void setPostId(Integer postId) {
+	public void setPostId(Long postId) {
 		this.postId = postId;
 	}
 	public Date getQuitDate() {
@@ -257,10 +257,10 @@ public class Employee extends ArchiveEntity {
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
-	public Integer getAuthorizationPrincipalId() {
+	public Long getAuthorizationPrincipalId() {
 		return authorizationPrincipalId;
 	}
-	public void setAuthorizationPrincipalId(Integer authorizationPrincipalId) {
+	public void setAuthorizationPrincipalId(Long authorizationPrincipalId) {
 		this.authorizationPrincipalId = authorizationPrincipalId;
 	}
 	public void setOrganizations(List<OrganizationEmployee> organizations) {
@@ -296,10 +296,10 @@ public class Employee extends ArchiveEntity {
 	public void setRoles(List<RoleEmployee> roles) {
 		this.roles = roles;
 	}
-	public Integer getFansId() {
+	public Long getFansId() {
 		return fansId;
 	}
-	public void setFansId(Integer fansId) {
+	public void setFansId(Long fansId) {
 		this.fansId = fansId;
 	}
 }

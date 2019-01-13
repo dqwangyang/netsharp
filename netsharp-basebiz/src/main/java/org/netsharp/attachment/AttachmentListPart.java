@@ -37,7 +37,7 @@ public class AttachmentListPart{
 			Attachment entity = new Attachment();
 			{
 				entity.toDeleted();
-				entity.setId(Integer.valueOf(id));
+				entity.setId(Long.valueOf(id));
 			}
 		
 			this.AttachmentService.save(entity);
@@ -48,11 +48,11 @@ public class AttachmentListPart{
 		return true;
 	}
 	
-	public Boolean updateDownLoadCount(Integer id){
+	public Boolean updateDownLoadCount(Long id){
 		
     	String cmdText = "UPDATE sys_attachment SET downLoad_count=downLoad_count+1 WHERE id=?";
     	QueryParameters qps = new QueryParameters();
-    	qps.add("@id", id, Types.INTEGER);
+    	qps.add("@id", id, Types.BIGINT);
         return this.pm.executeNonQuery(cmdText, qps)>0;
 		
 	}

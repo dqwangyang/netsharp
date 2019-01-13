@@ -76,7 +76,7 @@ public class OrganizationService extends PersistableService<Organization> implem
 		return entity;
 	}
 
-	public Map<Integer, String> getPosts() {
+	public Map<Long, String> getPosts() {
 
 		Oql oql = new Oql();
 		{
@@ -87,7 +87,7 @@ public class OrganizationService extends PersistableService<Organization> implem
 		}
 
 		List<Organization> list = this.pm.queryList(oql);
-		Map<Integer, String> map = new OrdinalMap<Integer, String>();
+		Map<Long, String> map = new OrdinalMap<Long, String>();
 		for (Organization org : list) {
 			map.put(org.getId(), org.getPathName());
 		}
@@ -108,7 +108,7 @@ public class OrganizationService extends PersistableService<Organization> implem
 	}
 
 	@Override
-	public List<Organization> getDirectDepartmentByEmployeeId(Integer employeeId) {
+	public List<Organization> getDirectDepartmentByEmployeeId(Long employeeId) {
 
 		Employee e = eS.byId(employeeId);
 		List<OrganizationEmployee> oes = e.getOrganizations();
@@ -200,7 +200,7 @@ public class OrganizationService extends PersistableService<Organization> implem
 	}
 
 	@Override
-	public Employee getDirectLeader(Integer deptId) {
+	public Employee getDirectLeader(Long deptId) {
 
 		// 获取员工的部门
 		Oql oql = new Oql();
@@ -253,11 +253,11 @@ public class OrganizationService extends PersistableService<Organization> implem
 	}
 
 	/* 找到当前部门的所有岗位的所有员工，不递归查询，disabled表示是否查询离职员工 */
-	public List<Employee> getEmployeesByCurrentDepartment(Integer departmentId, boolean disabled) {
+	public List<Employee> getEmployeesByCurrentDepartment(Long departmentId, boolean disabled) {
 
 		QueryParameters qps = new QueryParameters();
 		{
-			qps.add("@departmentId", departmentId, Types.INTEGER);
+			qps.add("@departmentId", departmentId, Types.BIGINT);
 
 		}
 
@@ -284,7 +284,7 @@ public class OrganizationService extends PersistableService<Organization> implem
 	}
 
 	@Override
-	public Organization getMainDepartment(Integer employeeId) {
+	public Organization getMainDepartment(Long employeeId) {
 
 		Employee e = eS.byId(employeeId);
 		List<OrganizationEmployee> oes = e.getOrganizations();
@@ -338,27 +338,27 @@ public class OrganizationService extends PersistableService<Organization> implem
 	}
 
 	@Override
-	public void changeParent(Integer nodeId, Integer newParentId) {
+	public void changeParent(Long nodeId, Long newParentId) {
 
 		String cmdText = "UPDATE sys_permission_organization SET parent_id=? WHERE id=?";
 		QueryParameters qps = new QueryParameters();
 		{
-			qps.add("@parent_id", newParentId, Types.INTEGER);
-			qps.add("@id", nodeId, Types.INTEGER);
+			qps.add("@parent_id", newParentId, Types.BIGINT);
+			qps.add("@id", nodeId, Types.BIGINT);
 		}
 		this.pm.executeNonQuery(cmdText, qps);
 	}
 
 	@Override
-	public List<Integer> getChildDepartment(Integer id) {
+	public List<Long> getChildDepartment(Long id) {
 
-		List<Integer> ids = new ArrayList<Integer>();
+		List<Long> ids = new ArrayList<Long>();
 		getOrganizations(id, ids);
 
 		return ids;
 	}
 
-	private void getOrganizations(Integer id, List<Integer> ids) {
+	private void getOrganizations(Long id, List<Long> ids) {
 
 		Oql oql = new Oql();
 		{
@@ -367,7 +367,7 @@ public class OrganizationService extends PersistableService<Organization> implem
 			oql.setFilter("parentId=? and organizationType=" + OrganizationType.DEPARTMENT.getValue());
 			oql.setParameters(new QueryParameters());
 			{
-				oql.getParameters().add("@parentId", id, Types.INTEGER);
+				oql.getParameters().add("@parentId", id, Types.BIGINT);
 			}
 		}
 		List<Organization> childs = this.queryList(oql);
@@ -381,7 +381,7 @@ public class OrganizationService extends PersistableService<Organization> implem
 	}
 
 	@Override
-	public Boolean disabled(Integer id) {
+	public Boolean disabled(Long id) {
 
 		Organization entity = this.byId(id);
 		if (entity == null) {
@@ -392,25 +392,25 @@ public class OrganizationService extends PersistableService<Organization> implem
 	}
 
 	@Override
-	public List<Integer> getChildPostIds(Integer id) {
+	public List<Long> getChildPostIds(Long id) {
 
 		return null;
 	}
 
 	@Override
-	public List<Integer> getEmployeeIds(Integer departmentId) {
+	public List<Long> getEmployeeIds(Long departmentId) {
 
 		return getEmployeeIds(departmentId, false);
 	}
 
 	@Override
-	public List<Integer> getEmployeeIds(Integer departmentId, Boolean isDirectlyPost) {
+	public List<Long> getEmployeeIds(Long departmentId, Boolean isDirectlyPost) {
 
 		return null;
 	}
 
 	@Override
-	public Boolean hasChild(Integer id) {
+	public Boolean hasChild(Long id) {
 
 		Oql oql = new Oql();
 		{
@@ -418,7 +418,7 @@ public class OrganizationService extends PersistableService<Organization> implem
 			oql.setFilter("parentId = ?");
 			oql.setParameters(new QueryParameters());
 			{
-				oql.getParameters().add("@parentId", id, Types.INTEGER);
+				oql.getParameters().add("@parentId", id, Types.BIGINT);
 			}
 		}
 		return this.queryCount(oql) > 0;

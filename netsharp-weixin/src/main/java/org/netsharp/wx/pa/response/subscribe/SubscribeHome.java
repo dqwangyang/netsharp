@@ -40,7 +40,7 @@ public class SubscribeHome implements IWeixinSubscriber {
     }
 
     @Override
-    public ResponseMessage reply(EventRequest request, Fans fans, PublicAccount publicAccount,int sceneId) {
+    public ResponseMessage reply(EventRequest request, Fans fans, PublicAccount publicAccount,Long sceneId) {
 
         WeixinReplyResponse response = new WeixinReplyResponse();
         return response.response(reply, request);

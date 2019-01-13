@@ -14,7 +14,7 @@ public abstract class ResourceBizEntity extends BizEntity implements IResourceab
 	private ResourceNode resourceNode;
 	
 	@Column(name="resource_node_id",header="资源节点")
-	private Integer resourceNodeId;
+	private Long resourceNodeId;
 	
 	public ResourceNode getResourceNode() {
 		return resourceNode;
@@ -28,10 +28,10 @@ public abstract class ResourceBizEntity extends BizEntity implements IResourceab
 			this.resourceNodeId=this.resourceNode.getId();
 		}
 	}
-	public Integer getResourceNodeId() {
+	public Long getResourceNodeId() {
 		return resourceNodeId;
 	}
-	public void setResourceNodeId(Integer resourceNodeId) {
+	public void setResourceNodeId(Long resourceNodeId) {
 		this.resourceNodeId = resourceNodeId;
 	}
 	

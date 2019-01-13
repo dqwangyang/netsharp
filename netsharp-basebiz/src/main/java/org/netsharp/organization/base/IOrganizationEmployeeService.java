@@ -14,7 +14,7 @@ public interface IOrganizationEmployeeService extends IPersistableService<Organi
 	 * @return: Employee      
 	 * @throws   
 	 */
-	Employee getEmpByPostOrgId(Integer orgid);
+	Employee getEmpByPostOrgId(Long orgid);
 	
 	/**   
 	 * @Title: deleteByOrganizationId   
@@ -24,7 +24,7 @@ public interface IOrganizationEmployeeService extends IPersistableService<Organi
 	 * @return: Boolean      
 	 * @throws   
 	 */
-	Boolean deleteByOrganizationId(Integer orgId);
+	Boolean deleteByOrganizationId(Long orgId);
 	
 	/**   
 	 * @Title: deleteByEmploeeyId   
@@ -34,5 +34,5 @@ public interface IOrganizationEmployeeService extends IPersistableService<Organi
 	 * @return: Boolean      
 	 * @throws   
 	 */
-	Boolean deleteByEmploeeyId(Integer orgId);
+	Boolean deleteByEmploeeyId(Long orgId);
 }

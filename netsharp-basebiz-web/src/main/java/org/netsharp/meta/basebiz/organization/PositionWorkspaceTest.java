@@ -67,7 +67,7 @@ public class PositionWorkspaceTest extends WorkspaceCreationBase {
 			item.setCode("doAuthorization");
 			item.setName("授权");
 			item.setCommand("{controller}.doAuthorization();");
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setSeq(9999);
 			item.setIcon("fa fa-user-o");
 			toolbar.getItems().add(item);

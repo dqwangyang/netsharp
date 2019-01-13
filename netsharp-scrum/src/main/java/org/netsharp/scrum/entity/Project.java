@@ -15,23 +15,23 @@ public class Project extends TaskBase {
 	 */   
 	private static final long serialVersionUID = -6895550606402283471L;
 	@Column(name="product_id")
-	private Integer productId;
+	private Long productId;
 	@Reference(foreignKey="productId")
 	private Product product;
 		
 	@Column(name="deploy_id")
-	private Integer deployId;
+	private Long deployId;
 	@Reference(foreignKey="deployId")
 	private Deploy deploy;
 	
 	private ProjectStatus status = ProjectStatus.hibernate;
 	
 
-	public Integer getProductId() {
+	public Long getProductId() {
 		return productId;
 	}
 
-	public void setProductId(Integer productId) {
+	public void setProductId(Long productId) {
 		this.productId = productId;
 	}
 
@@ -57,11 +57,11 @@ public class Project extends TaskBase {
 		this.status = status;
 	}
 
-	public Integer getDeployId() {
+	public Long getDeployId() {
 		return deployId;
 	}
 
-	public void setDeployId(Integer deployId) {
+	public void setDeployId(Long deployId) {
 		this.deployId = deployId;
 	}
 

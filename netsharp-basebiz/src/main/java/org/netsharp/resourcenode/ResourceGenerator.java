@@ -22,7 +22,7 @@ public class ResourceGenerator {
 	private ScriptGenerator generator = new ScriptGenerator();
 	private IPersister<IPersistable> pm = PersisterFactory.create();
 
-	public List<String> generate(Integer resourceNodeId) {
+	public List<String> generate(Long resourceNodeId) {
 		
 		List<String> sqls = new ArrayList<String>();
 		
@@ -56,7 +56,7 @@ public class ResourceGenerator {
 		return sqls;
 	}
 
-	private List<String> generate(Class<?> cls, Integer resourceNodeId) {
+	private List<String> generate(Class<?> cls, Long resourceNodeId) {
 
 		Oql oql = new Oql();
 		{

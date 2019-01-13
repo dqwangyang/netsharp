@@ -74,19 +74,19 @@ public class Fans extends WeixinEntity {
     private String  idCard;
     
     @Column(name = "user_id", header = "用户Id")
-    private Integer userId;
+    private Long userId;
     
     @Column(name = "sub_member", header = "是否会员")
     private Boolean subMember;
     
     @Column(name = "scene_id", header = "个性二维码")
-    private Integer sceneId;
+    private Long sceneId;
     
     @Column(name = "parent_scene_id", header = "上次场景Id")
-    private Integer parentSceneId;
+    private Long parentSceneId;
     
     @Column(name = "parent_id", header = "parentId")
-    private Integer parentId = null;
+    private Long parentId = null;
     
     @Column(name = "member", header = "是否是会员")
     private Boolean member = false; 
@@ -114,14 +114,14 @@ public class Fans extends WeixinEntity {
 
     // 用户最后一次扫码的场景值
     @Column(name = "last_scan_sceneid", defaultValue = "0")
-    private int  lastScanSceneId;
+    private Long  lastScanSceneId;
     
     @Column(name = "last_scan_date", defaultValue = "0000-00-00 00:00:00")
     private Date lastScanDate;
     
     // 用户最近一次扫码关注时的场景值，如果不存在则记录0
     @Column(name = "last_subscribe_sceneid", defaultValue = "0")
-    private int  lastSubscribeSceneId;
+    private Long  lastSubscribeSceneId;
 
     // 邀请码，如果不存在为空
     @Column(name = "invite_code", defaultValue = "")
@@ -216,35 +216,35 @@ public class Fans extends WeixinEntity {
         this.idCard = idCard;
     }
 
-    public Integer getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
-    public Integer getSceneId() {
+    public Long getSceneId() {
         return sceneId;
     }
 
-    public void setSceneId(Integer sceneId) {
+    public void setSceneId(Long sceneId) {
         this.sceneId = sceneId;
     }
 
-    public Integer getParentSceneId() {
+    public Long getParentSceneId() {
         return parentSceneId;
     }
 
-    public void setParentSceneId(Integer parentSceneId) {
+    public void setParentSceneId(Long parentSceneId) {
         this.parentSceneId = parentSceneId;
     }
 
-    public Integer getParentId() {
+    public Long getParentId() {
         return parentId;
     }
 
-    public void setParentId(Integer parentId) {
+    public void setParentId(Long parentId) {
         this.parentId = parentId;
     }
 
@@ -256,11 +256,11 @@ public class Fans extends WeixinEntity {
         this.lastSubscribeDate = lastSubscribeDate;
     }
 
-    public int getLastSubscribeSceneId() {
+    public Long getLastSubscribeSceneId() {
         return lastSubscribeSceneId;
     }
 
-    public void setLastSubscribeSceneId(int lastSubscribeSceneId) {
+    public void setLastSubscribeSceneId(Long lastSubscribeSceneId) {
         this.lastSubscribeSceneId = lastSubscribeSceneId;
     }
 
@@ -384,11 +384,11 @@ public class Fans extends WeixinEntity {
         this.lastScanDate = lastScanDate;
     }
 
-    public int getLastScanSceneId() {
+    public Long getLastScanSceneId() {
         return lastScanSceneId;
     }
 
-    public void setLastScanSceneId(int lastScanSceneId) {
+    public void setLastScanSceneId(Long lastScanSceneId) {
         this.lastScanSceneId = lastScanSceneId;
     }
 

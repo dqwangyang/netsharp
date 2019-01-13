@@ -13,10 +13,10 @@ public interface IOrganizationService extends IPersistableService<Organization> 
 	 * @Title: getPosts   
 	 * @Description: TODO(得到所有的岗位，好像是在员工注册时候使用 )   
 	 * @param: @return      
-	 * @return: Map<Integer,String>      
+	 * @return: Map<Long,String>      
 	 * @throws   
 	 */
-	Map<Integer, String> getPosts();
+	Map<Long, String> getPosts();
 
 	/**   
 	 * @Title: getByFunction   
@@ -36,7 +36,7 @@ public interface IOrganizationService extends IPersistableService<Organization> 
 	 * @return: List<Organization>      
 	 * @throws   
 	 */
-	List<Organization> getDirectDepartmentByEmployeeId(Integer employeeId);
+	List<Organization> getDirectDepartmentByEmployeeId(Long employeeId);
 
 
 	/**   
@@ -47,7 +47,7 @@ public interface IOrganizationService extends IPersistableService<Organization> 
 	 * @return: Employee      
 	 * @throws   
 	 */
-	Employee getDirectLeader(Integer departmentId);
+	Employee getDirectLeader(Long departmentId);
 
 	/**   
 	 * @Title: getFitableEmployeeByPositonAndOrgNodeName   
@@ -80,7 +80,7 @@ public interface IOrganizationService extends IPersistableService<Organization> 
 	 * @return: List<Employee>      
 	 * @throws   
 	 */
-	List<Employee> getEmployeesByCurrentDepartment(Integer departmentId, boolean disabled);
+	List<Employee> getEmployeesByCurrentDepartment(Long departmentId, boolean disabled);
 
 	/**   
 	 * @Title: getMainDepartment   
@@ -90,7 +90,7 @@ public interface IOrganizationService extends IPersistableService<Organization> 
 	 * @return: Organization      
 	 * @throws   
 	 */
-	Organization getMainDepartment(Integer employeeId);
+	Organization getMainDepartment(Long employeeId);
 
 	/**   
 	 * @Title: getParentDepartment   
@@ -107,20 +107,20 @@ public interface IOrganizationService extends IPersistableService<Organization> 
 	 * @Description: TODO(获取部门下的所有子部门Id,不包含岗位(递归))   
 	 * @param: @param id
 	 * @param: @return      
-	 * @return: List<Integer>      
+	 * @return: List<Long>      
 	 * @throws   
 	 */
-	List<Integer> getChildDepartment(Integer id);
+	List<Long> getChildDepartment(Long id);
 	
 	/**   
 	 * @Title: getChildPost   
 	 * @Description: TODO(获取部门下所有岗位Id)   
 	 * @param: @param id
 	 * @param: @return      
-	 * @return: List<Integer>      
+	 * @return: List<Long>      
 	 * @throws   
 	 */
-	List<Integer> getChildPostIds(Integer departmentId);
+	List<Long> getChildPostIds(Long departmentId);
 	
 	
 	/**   
@@ -128,10 +128,10 @@ public interface IOrganizationService extends IPersistableService<Organization> 
 	 * @Description: TODO(获取部门下所有员工Id，不包含直属岗位)   
 	 * @param: @param departmentId
 	 * @param: @return      
-	 * @return: List<Integer>      
+	 * @return: List<Long>      
 	 * @throws   
 	 */
-	List<Integer> getEmployeeIds(Integer departmentId);
+	List<Long> getEmployeeIds(Long departmentId);
 
 	/**   
 	 * @Title: getEmployeeIds   
@@ -139,10 +139,10 @@ public interface IOrganizationService extends IPersistableService<Organization> 
 	 * @param: @param departmentId
 	 * @param: @param isDirectlyPost 是否包含直属岗位
 	 * @param: @return      
-	 * @return: List<Integer>      
+	 * @return: List<Long>      
 	 * @throws   
 	 */
-	List<Integer> getEmployeeIds(Integer departmentId,Boolean isDirectlyPost);
+	List<Long> getEmployeeIds(Long departmentId,Boolean isDirectlyPost);
 
 	/**   
 	 * @Title: changeParent   
@@ -152,7 +152,7 @@ public interface IOrganizationService extends IPersistableService<Organization> 
 	 * @return: void      
 	 * @throws   
 	 */
-	void changeParent(Integer nodeId, Integer newParentId);
+	void changeParent(Long nodeId, Long newParentId);
 
 	/**   
 	 * @Title: disabled   
@@ -162,7 +162,7 @@ public interface IOrganizationService extends IPersistableService<Organization> 
 	 * @return: Boolean      
 	 * @throws   
 	 */
-	Boolean disabled(Integer id);
+	Boolean disabled(Long id);
 
 	/**   
 	 * @Title: hasChild   
@@ -172,5 +172,5 @@ public interface IOrganizationService extends IPersistableService<Organization> 
 	 * @return: Boolean      
 	 * @throws   
 	 */
-	Boolean hasChild(Integer id);
+	Boolean hasChild(Long id);
 }

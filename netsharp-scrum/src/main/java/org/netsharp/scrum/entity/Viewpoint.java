@@ -17,7 +17,7 @@ public class Viewpoint extends BizEntity {
 	private static final long serialVersionUID = 6488250423675953253L;
 	
 	@Column(name="owner_id")
-    private Integer ownerId;
+    private Long ownerId;
     @Reference(foreignKey="ownerId",header="作者")
     private Employee owner;
 
@@ -33,11 +33,11 @@ public class Viewpoint extends BizEntity {
     @Subs(foreignKey="viewpointId",subType=ViewpointFans.class,header="粉丝")
     private List<ViewpointFans> fans;
 
-	public Integer getOwnerId() {
+	public Long getOwnerId() {
 		return ownerId;
 	}
 
-	public void setOwnerId(Integer ownerId) {
+	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
 	}
 

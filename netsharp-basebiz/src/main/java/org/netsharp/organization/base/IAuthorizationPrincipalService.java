@@ -24,7 +24,7 @@ public interface IAuthorizationPrincipalService  extends IPersistableService<Aut
 	 * @return: void      
 	 * @throws   
 	 */
-	void deleteByPostId(Integer organizationId);
+	void deleteByPostId(Long organizationId);
 
 	/**
 	 * <p>方法名称：addByPosition</p>

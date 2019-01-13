@@ -18,10 +18,10 @@ public abstract class Entity extends Persistable implements IEntity {
 	@Id
 	@Auto
 	@Column(name = "id", header = "主键")
-	private Integer id;
+	private Long id;
 
 	@Column(name = "creator_id", header = "创建人ID")
-	private Integer creatorId;
+	private Long creatorId;
 
 	@Column(name = "creator", header = "创建人名称")
 	private String creator;
@@ -30,7 +30,7 @@ public abstract class Entity extends Persistable implements IEntity {
 	private Date createTime;
 
 	@Column(name = "updator_id", header = "更新人ID")
-	private Integer updatorId;
+	private Long updatorId;
 
 	@Column(name = "updator", header = "更新人名称")
 	private String updator;
@@ -38,11 +38,11 @@ public abstract class Entity extends Persistable implements IEntity {
 	@Column(name = "update_time", header = "更新时间")
 	private Date updateTime;
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -78,19 +78,19 @@ public abstract class Entity extends Persistable implements IEntity {
 		this.updateTime = updateTime;
 	}
 
-	public Integer getCreatorId() {
+	public Long getCreatorId() {
 		return creatorId;
 	}
 
-	public void setCreatorId(Integer creatorId) {
+	public void setCreatorId(Long creatorId) {
 		this.creatorId = creatorId;
 	}
 
-	public Integer getUpdatorId() {
+	public Long getUpdatorId() {
 		return updatorId;
 	}
 
-	public void setUpdatorId(Integer updatorId) {
+	public void setUpdatorId(Long updatorId) {
 		this.updatorId = updatorId;
 	}
 

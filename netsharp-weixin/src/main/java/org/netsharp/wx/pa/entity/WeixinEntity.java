@@ -9,7 +9,7 @@ public class WeixinEntity extends BizEntity  {
 	private static final long serialVersionUID = 8982755935754160272L;
 
 	@Column(name="public_account_id",header="公众号")
-	private Integer publicAccountId;
+	private Long publicAccountId;
     
     @Reference(foreignKey="publicAccountId")
     private PublicAccount publicAccount;
@@ -28,11 +28,11 @@ public class WeixinEntity extends BizEntity  {
 		}
 	}
 
-	public Integer getPublicAccountId() {
+	public Long getPublicAccountId() {
 		return publicAccountId;
 	}
 
-	public void setPublicAccountId(Integer publicAccountId) {
+	public void setPublicAccountId(Long publicAccountId) {
 		this.publicAccountId = publicAccountId;
 	}
 }

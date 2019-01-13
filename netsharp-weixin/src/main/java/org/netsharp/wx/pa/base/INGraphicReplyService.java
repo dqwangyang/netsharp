@@ -11,7 +11,7 @@ public interface INGraphicReplyService extends IPersistableService<NGraphicReply
      * @param publicAccountId
      * @return
      */
-    List<NGraphicReply> getReplies(Integer publicAccountId);
+    List<NGraphicReply> getReplies(Long publicAccountId);
 
     /**
      * @param publicAccount

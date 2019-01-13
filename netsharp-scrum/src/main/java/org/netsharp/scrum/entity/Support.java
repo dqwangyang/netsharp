@@ -24,22 +24,22 @@ public class Support extends BizEntity {
 	private static final long serialVersionUID = -8413780480237473194L;
 	
 	@Column(name = "project_id")
-	private Integer projectId;
+	private Long projectId;
 	@Reference(foreignKey = "projectId")
 	private Story project;
 
 	@Column(name = "owner_id")
-	private Integer ownerId;
+	private Long ownerId;
 	@Reference(foreignKey = "ownerId")
 	private Employee owner;// 处理人
 
 	@Column(name = "sender_id")
-	private Integer senderId;
+	private Long senderId;
 	@Reference(foreignKey = "senderId")
 	private Employee sender;// 抄送人
 
 	@Column(name = "putor_id")
-	private Integer putorId;
+	private Long putorId;
 
 	@Reference(foreignKey = "putorId")
 	private Employee putor;// 提出人
@@ -66,7 +66,7 @@ public class Support extends BizEntity {
 	private SupportType type;
 
 	@Column(name = "organization_id")
-	private Integer organizationId;
+	private Long organizationId;
 
 	@Reference(foreignKey = "organizationId")
 	private Organization organization;
@@ -104,11 +104,11 @@ public class Support extends BizEntity {
 		this.filePath = filePath;
 	}
 
-	public Integer getProjectId() {
+	public Long getProjectId() {
 		return projectId;
 	}
 
-	public void setProjectId(Integer projectId) {
+	public void setProjectId(Long projectId) {
 		this.projectId = projectId;
 	}
 
@@ -125,11 +125,11 @@ public class Support extends BizEntity {
 		}
 	}
 
-	public Integer getOwnerId() {
+	public Long getOwnerId() {
 		return ownerId;
 	}
 
-	public void setOwnerId(Integer ownerId) {
+	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
 	}
 
@@ -163,11 +163,11 @@ public class Support extends BizEntity {
 		this.content = content;
 	}
 
-	public Integer getPutorId() {
+	public Long getPutorId() {
 		return putorId;
 	}
 
-	public void setPutorId(Integer putorId) {
+	public void setPutorId(Long putorId) {
 		this.putorId = putorId;
 	}
 
@@ -233,11 +233,11 @@ public class Support extends BizEntity {
 		this.type = type;
 	}
 
-	public Integer getSenderId() {
+	public Long getSenderId() {
 		return senderId;
 	}
 
-	public void setSenderId(Integer senderId) {
+	public void setSenderId(Long senderId) {
 		this.senderId = senderId;
 	}
 
@@ -249,11 +249,11 @@ public class Support extends BizEntity {
 		this.sender = sender;
 	}
 
-	public Integer getOrganizationId() {
+	public Long getOrganizationId() {
 		return organizationId;
 	}
 
-	public void setOrganizationId(Integer organizationId) {
+	public void setOrganizationId(Long organizationId) {
 		this.organizationId = organizationId;
 	}
 

@@ -57,7 +57,7 @@ public class PlatformToolbarTest {
 			item.setIcon("fa fa-table");
 			item.setName("表单设置");
 			item.setCommand(null);
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setParent("platform");
 			item.setSeq(4);
 			item.setCommand("{controller}.Sd.setFields();");
@@ -70,7 +70,7 @@ public class PlatformToolbarTest {
 			item.setIcon("fa fa-file-o");
 			item.setName("导出实体脚本");
 			item.setCommand(null);
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setParent("platform");
 			item.setSeq(98);
 			item.setCommand("{controller}.Sd.exportEntitySql();");
@@ -105,7 +105,7 @@ public class PlatformToolbarTest {
 			item.setIcon("fa fa-table");
 			item.setName("栏目设置");
 			item.setCommand(null);
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setParent("platform");
 			item.setSeq(4);
 			item.setCommand("{controller}.Sd.setFields();");
@@ -142,7 +142,7 @@ public class PlatformToolbarTest {
 			item.setIcon("fa fa-table");
 			item.setName("栏目设置");
 			item.setCommand(null);
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setParent("platform");
 			item.setSeq(4);
 			item.setCommand("{controller}.Sd.setFields();");
@@ -157,7 +157,7 @@ public class PlatformToolbarTest {
 			item.setIcon("fa fa-search");
 			item.setName("查询设置");
 			item.setCommand(null);
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setParent("platform");
 			item.setSeq(5);
 			item.setCommand("{controller}.Sd.setQuery();");
@@ -208,7 +208,7 @@ public class PlatformToolbarTest {
 			item.setIcon("fa fa-columns");
 			item.setName("工作区设置");
 			item.setCommand(null);
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setParent("platform");
 			item.setSeq(1);
 			item.setCommand("{controller}.Sd.setPart();");
@@ -223,7 +223,7 @@ public class PlatformToolbarTest {
 			item.setIcon("fa fa-window-maximize");
 			item.setName("工具栏设置");
 			item.setCommand(null);
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setParent("platform");
 			item.setSeq(2);
 			item.setCommand("{controller}.Sd.setToolbar();");
@@ -237,7 +237,7 @@ public class PlatformToolbarTest {
 			item.setIcon("fa fa-file-o");
 			item.setName("导出部件脚本");
 			item.setCommand(null);
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setParent("platform");
 			item.setSeq(99);
 			item.setCommand("{controller}.Sd.exportSql();");
@@ -251,7 +251,7 @@ public class PlatformToolbarTest {
 			item.setIcon("fa fa-close");
 			item.setName("清除缓存");
 			item.setCommand(null);
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setParent("platform");
 			item.setSeq(100);
 			item.setCommand("{controller}.Sd.cleanCache();");

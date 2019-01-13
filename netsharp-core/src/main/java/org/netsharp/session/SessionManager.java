@@ -29,7 +29,7 @@ public class SessionManager{
 		manager = sm;
 	}
 
-	public static Integer getUserId() {
+	public static Long getUserId() {
 		if(manager == null){
 			return  null;
 		}
@@ -56,7 +56,7 @@ public class SessionManager{
 		}
 	}
 	
-	public static Integer getPostId()
+	public static Long getPostId()
 	{
 		if(manager == null){
 			return  null;
@@ -75,7 +75,7 @@ public class SessionManager{
 		}
 	}
 	
-	public static Integer getDepartmentId()
+	public static Long getDepartmentId()
 	{
 		if(manager == null){
 			return  null;
@@ -123,7 +123,7 @@ public class SessionManager{
 		}
 	}
 	
-	public static Integer getTenancyId()
+	public static Long getTenancyId()
 	{
 		if(manager == null){
 			return  null;

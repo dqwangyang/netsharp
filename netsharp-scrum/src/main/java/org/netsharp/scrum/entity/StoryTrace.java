@@ -13,14 +13,14 @@ public class StoryTrace extends Entity {
 	private static final long serialVersionUID = -3593232205242204113L;
 	
 	@Column( name = "story_id")
-	private Integer storyId;
+	private Long storyId;
 	@Reference(foreignKey="storyId")
     private Story story;
 	
 	private Importance importance = Importance.general; 
 	
 	@Column(name="organization_id")
-	private Integer organizationId;
+	private Long organizationId;
 	
 	@Reference(foreignKey="organizationId",header="部门")
 	private Organization organization;
@@ -29,11 +29,11 @@ public class StoryTrace extends Entity {
 	@Column(size=1000)
 	private String content;
 
-	public Integer getStoryId() {
+	public Long getStoryId() {
 		return storyId;
 	}
 
-	public void setStoryId(Integer storyId) {
+	public void setStoryId(Long storyId) {
 		this.storyId = storyId;
 	}
 
@@ -67,11 +67,11 @@ public class StoryTrace extends Entity {
 		this.importance = importance;
 	}
 
-	public Integer getOrganizationId() {
+	public Long getOrganizationId() {
 		return organizationId;
 	}
 
-	public void setOrganizationId(Integer organizationId) {
+	public void setOrganizationId(Long organizationId) {
 		this.organizationId = organizationId;
 	}
 

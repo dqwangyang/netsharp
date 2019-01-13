@@ -4,7 +4,7 @@ import org.netsharp.wx.sdk.ep.Request;
 
 public class DepartmentDeleteRequest extends Request<DepartmentDeleteResponse> {
 	
-	private Integer id;
+	private Long id;
 
 	public DepartmentDeleteRequest() {
 		super();
@@ -24,11 +24,11 @@ public class DepartmentDeleteRequest extends Request<DepartmentDeleteResponse> {
 		return "https://qyapi.weixin.qq.com/cgi-bin/department/delete?access_token="+this.getAccessToken()+"&id="+this.getId();
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 }

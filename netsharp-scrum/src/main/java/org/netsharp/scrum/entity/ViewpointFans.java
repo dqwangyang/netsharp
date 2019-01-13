@@ -12,7 +12,7 @@ public class ViewpointFans extends Entity {
 	private static final long serialVersionUID = -2515135818723981325L;
 
 	@Column(name="fans_id")
-	private Integer fansId;
+	private Long fansId;
 	
 	@Reference(foreignKey="fansId")
 	private Employee fans;
@@ -27,13 +27,13 @@ public class ViewpointFans extends Entity {
 	private Integer readTimes=0;
 	
 	@Column(name="viewpoint_id",header="观点")
-	private Integer viewpointId;
+	private Long viewpointId;
 	
-	public Integer getFansId() {
+	public Long getFansId() {
 		return fansId;
 	}
 
-	public void setFansId(Integer fansId) {
+	public void setFansId(Long fansId) {
 		this.fansId = fansId;
 	}
 
@@ -69,11 +69,11 @@ public class ViewpointFans extends Entity {
 		this.readTimes = readTimes;
 	}
 
-	public Integer getViewpointId() {
+	public Long getViewpointId() {
 		return viewpointId;
 	}
 
-	public void setViewpointId(Integer viewpointId) {
+	public void setViewpointId(Long viewpointId) {
 		this.viewpointId = viewpointId;
 	}
 }

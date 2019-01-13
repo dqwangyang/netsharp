@@ -27,7 +27,7 @@ public class PRowStyler extends Entity {
 	private static final long serialVersionUID = -7444853018311770675L;
 
 	@Column(name="datagrid_id")
-	private Integer datagridId;
+	private Long datagridId;
 	
 	@Column(name="row_condition",size=500,header="条件表达式")
 	private String rowCondition;
@@ -39,11 +39,11 @@ public class PRowStyler extends Entity {
 		return rowCondition;
 	}
 
-	public Integer getDatagridId() {
+	public Long getDatagridId() {
 		return datagridId;
 	}
 
-	public void setDatagridId(Integer datagridId) {
+	public void setDatagridId(Long datagridId) {
 		this.datagridId = datagridId;
 	}
 

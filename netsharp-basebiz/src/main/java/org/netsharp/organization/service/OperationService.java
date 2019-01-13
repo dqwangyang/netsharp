@@ -159,7 +159,7 @@ public class OperationService extends PersistableService<Operation> implements I
 			oql.setType(Operation.class);
 			oql.setSelects("DISTINCT Operation.resourceNodeId");
 			oql.setFilter(StringManager.join(" AND ", filters));
-			oql.getParameters().add("employeeId", this.getUserId(), Types.INTEGER);
+			oql.getParameters().add("employeeId", this.getUserId(), Types.BIGINT);
 		}
 
 		// 设置ResourceNode是否为携带操作的节点
@@ -240,7 +240,7 @@ public class OperationService extends PersistableService<Operation> implements I
 			oql.setSelects("Id,Code,Name,Seq,ResourceNode.Id,OperationType.{Id,Seq}");
 			oql.setFilter(StringManager.join(" AND ", filters));
 
-			oql.getParameters().add("@employeeId", this.getUserId(), Types.INTEGER);
+			oql.getParameters().add("@employeeId", this.getUserId(), Types.BIGINT);
 		}
 
 		List<Operation> operations = this.pm.queryList(oql);
@@ -331,8 +331,8 @@ public class OperationService extends PersistableService<Operation> implements I
 		+ " WHERE EXISTS (SELECT 1 FROM sys_Permission_Organization org WHERE ap.principal_id=org.position_id "
 		+ " AND EXISTS (SELECT 1 FROM sys_Permission_organization_employee oe WHERE org.id=oe.organization_id AND employee_id=?)) AND principal_type="+PrincipalType.STATION.getValue();
 		QueryParameters qps = new QueryParameters();
-		qps.add("@oe.employeeId", userId, Types.INTEGER);
-		qps.add("@oe.employeeId", userId, Types.INTEGER);
+		qps.add("@oe.employeeId", userId, Types.BIGINT);
+		qps.add("@oe.employeeId", userId, Types.BIGINT);
 		IDataAccess dao = DataAccessFactory.create();
 		DataTable table = dao.executeTable(cmdText, qps);
 		List<Long> pricipalIds = new ArrayList<Long>();
@@ -345,7 +345,7 @@ public class OperationService extends PersistableService<Operation> implements I
 
 	// #endregion 查询一个授权主体的所有功能权限
 
-	private Integer getUserId() {
+	private Long getUserId() {
 		return SessionManager.getUserId();
 	}
 }

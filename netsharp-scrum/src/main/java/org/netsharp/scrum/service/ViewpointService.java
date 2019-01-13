@@ -40,7 +40,7 @@ public class ViewpointService extends BizService<Viewpoint> implements IViewpoin
 	
 	public Viewpoint attachFans(Viewpoint entity) {
 		
-		Integer userId = SessionManager.getUserId();
+		Long userId = SessionManager.getUserId();
 		for(ViewpointFans fans : entity.getFans()) {
 			if(userId.equals( fans.getFansId())) {
 				fans.setReadTimes(fans.getReadTimes().intValue()+1);

@@ -145,7 +145,7 @@ public class RightNavigation extends Div {
 	 * @return: String
 	 * @throws
 	 */
-	public List<WorkbenchDTO> getWorkbenchDTOList(Integer employeeId) {
+	public List<WorkbenchDTO> getWorkbenchDTOList(Long employeeId) {
 
 		IRoleEmployeeService srvice = ServiceFactory.create(IRoleEmployeeService.class);
 		Oql oql = new Oql();
@@ -153,7 +153,7 @@ public class RightNavigation extends Div {
 			oql.setType(RoleEmployee.class);
 			oql.setSelects("RoleEmployee.*,RoleEmployee.role.*,RoleEmployee.role.workbench.{id,name,path}");
 			oql.setFilter(" employeeId=?");
-			oql.getParameters().add("employeeId", employeeId, Types.INTEGER);
+			oql.getParameters().add("employeeId", employeeId, Types.BIGINT);
 		}
 		List<RoleEmployee> reList = srvice.queryList(oql);
 

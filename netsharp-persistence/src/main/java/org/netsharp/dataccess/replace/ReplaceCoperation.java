@@ -12,7 +12,7 @@ public class ReplaceCoperation  extends ReplaceBase {
 	
 	public String doExecute(String cmdText) {
 	
-		Integer cid = SessionManager.getTenancyId();
+		Long cid = SessionManager.getTenancyId();
 		if (StringManager.isNullOrEmpty(cid.toString())) {
 			return cmdText;
 		} else {

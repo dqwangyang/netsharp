@@ -26,14 +26,14 @@ public class OrganizationEmployee extends Entity  implements Serializable {
     private Organization organization;
     
     @Column(name="organization_id",header="组织机构")
-    private Integer organizationId;
+    private Long organizationId;
 
     @JsonIgnore
     @Reference(foreignKey="employeeId")
     private Employee employee;
     
     @Column(name="employee_id",header="员工Id")
-    private Integer employeeId;
+    private Long employeeId;
     
     @Column(name="post_type",header="岗位任职类型")
     private PostType postType = PostType.MAINTIME;
@@ -44,17 +44,17 @@ public class OrganizationEmployee extends Entity  implements Serializable {
 //	public void setMained(boolean mained) {
 //		this.mained = mained;
 //	}
-	public Integer getOrganizationId(){
+	public Long getOrganizationId(){
         return this.organizationId;
     }
-    public OrganizationEmployee setOrganizationId(Integer organizationId){
+    public OrganizationEmployee setOrganizationId(Long organizationId){
         this.organizationId=organizationId;
         return this;
     }
-    public Integer getEmployeeId(){
+    public Long getEmployeeId(){
         return this.employeeId;
     }
-    public OrganizationEmployee setEmployeeId(Integer employeeId){
+    public OrganizationEmployee setEmployeeId(Long employeeId){
         this.employeeId=employeeId;
         return this;
     }

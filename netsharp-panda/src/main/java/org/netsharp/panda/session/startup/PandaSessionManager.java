@@ -7,7 +7,7 @@ import org.netsharp.session.NetsharpSession;
 
 public class PandaSessionManager implements ISessionManager{
 	
-	public Integer getUserId(){
+	public Long getUserId(){
 		PandaSession ps = PandaSessionPersister.get();
 		if(ps==null){
 			return null;
@@ -31,7 +31,7 @@ public class PandaSessionManager implements ISessionManager{
 		return ps.getSession().getMobiles();
 	}
 
-	public Integer getDepartmentId() {
+	public Long getDepartmentId() {
 		PandaSession ps = PandaSessionPersister.get();
 		if(ps==null){
 			return null;
@@ -47,7 +47,7 @@ public class PandaSessionManager implements ISessionManager{
 		return ps.getSession().getDepartmentIds();
 	}
 
-	public Integer getTenancyId() {
+	public Long getTenancyId() {
 		PandaSession ps = PandaSessionPersister.get();
 		if(ps==null){
 			return null;
@@ -88,7 +88,7 @@ public class PandaSessionManager implements ISessionManager{
 		return ps.getSession().getDepartmentName();
 	}
 	
-	public Integer getPostId() {
+	public Long getPostId() {
 		PandaSession ps = PandaSessionPersister.get();
 		if(ps==null){
 			return null;

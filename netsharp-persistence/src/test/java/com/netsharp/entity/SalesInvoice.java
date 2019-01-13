@@ -19,7 +19,7 @@ public class SalesInvoice extends BizEntity {
     
     @Column(name="saved_amount")
     private BigDecimal savedAmount;
-    private Integer customerId;
+    private Long customerId;
     
 	public BigDecimal getQuantity() {
 		return quantity;
@@ -45,10 +45,10 @@ public class SalesInvoice extends BizEntity {
 	public void setSavedAmount(BigDecimal savedAmount) {
 		this.savedAmount = savedAmount;
 	}
-	public Integer getCustomerId() {
+	public Long getCustomerId() {
 		return customerId;
 	}
-	public void setCustomerId(Integer customerId) {
+	public void setCustomerId(Long customerId) {
 		this.customerId = customerId;
 	}
     

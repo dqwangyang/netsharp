@@ -76,7 +76,7 @@ public class ResponserManager {
         }
 
         String    originalId = request.getToUserName();
-        Integer       pid        = PublicAccountManager.getInstance().get(originalId).getAccount().getId();
+        Long       pid        = PublicAccountManager.getInstance().get(originalId).getAccount().getId();
         WeixinLog log        = new WeixinLog();
         {
             log.setMsgId(request.getMsgId());

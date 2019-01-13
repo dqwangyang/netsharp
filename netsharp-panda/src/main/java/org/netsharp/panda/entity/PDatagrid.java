@@ -62,13 +62,13 @@ public class PDatagrid extends UiDescription {
 	private boolean detailed = true;
 
 	@Column(name = "query_project_id", header = "查询方案")
-	private Integer queryProjectId;
+	private Long queryProjectId;
 
 	@CompositeOne(foreignKey = "queryProjectId", header = "查询项目")
 	private PQueryProject queryProject;
 
 	@Column(name = "advanced_query_project_id", header = "高级查询方案")
-	private Integer advancedQueryProjectId;
+	private Long advancedQueryProjectId;
 
 	@CompositeOne(foreignKey = "advancedQueryProjectId", header = "查询项目")
 	private PQueryProject advancedQueryProject;
@@ -196,11 +196,11 @@ public class PDatagrid extends UiDescription {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getQueryProjectId() {
+	public Long getQueryProjectId() {
 		return this.queryProjectId;
 	}
 
-	public void setQueryProjectId(Integer queryProjectId) {
+	public void setQueryProjectId(Long queryProjectId) {
 		this.queryProjectId = queryProjectId;
 	}
 
@@ -361,11 +361,11 @@ public class PDatagrid extends UiDescription {
 		this.autoQuery = autoQuery;
 	}
 
-	public Integer getAdvancedQueryProjectId() {
+	public Long getAdvancedQueryProjectId() {
 		return advancedQueryProjectId;
 	}
 
-	public void setAdvancedQueryProjectId(Integer advancedQueryProjectId) {
+	public void setAdvancedQueryProjectId(Long advancedQueryProjectId) {
 		this.advancedQueryProjectId = advancedQueryProjectId;
 	}
 

@@ -6,7 +6,7 @@ import java.util.Date;
 public class AccessToken implements Serializable {
     private static final long serialVersionUID = 7277592294763881064L;
 
-    private Integer id;
+    private Long id;
     private String  appId;
     private String  appSecret;
     private Date    createTime;
@@ -19,11 +19,11 @@ public class AccessToken implements Serializable {
         setCreateTime(null);
     }
 
-    public final Integer getId() {
+    public final Long getId() {
         return id;
     }
 
-    public final void setId(Integer value) {
+    public final void setId(Long value) {
         id = value;
     }
 

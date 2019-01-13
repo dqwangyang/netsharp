@@ -9,6 +9,6 @@ public interface IWeixinSubscriber {
 
     boolean validate(EventRequest request,Fans fans,PublicAccount publicAccount);
 
-    ResponseMessage reply(EventRequest request,Fans fans,PublicAccount publicAccount,int sceneId);
+    ResponseMessage reply(EventRequest request,Fans fans,PublicAccount publicAccount,Long sceneId);
 
 }

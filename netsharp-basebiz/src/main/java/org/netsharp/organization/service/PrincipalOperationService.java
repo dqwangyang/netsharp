@@ -152,8 +152,8 @@ public class PrincipalOperationService extends PersistableService<PrincipalOpera
 			PrincipalOperation po = new PrincipalOperation();
 			{
 				po.toNew();
-				po.setPrincipalId((Integer) principalId);
-				po.setOperationId(Integer.valueOf(id));
+				po.setPrincipalId((Long) principalId);
+				po.setOperationId(Long.valueOf(id));
 			}
 			if (operation != null) {
 				po.setOperationCode(operation.getCode());

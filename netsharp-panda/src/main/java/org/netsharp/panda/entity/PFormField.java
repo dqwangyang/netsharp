@@ -31,7 +31,7 @@ public class PFormField extends PInputField{
     protected boolean fullColumn;
 
     @Column(name="form_id",header="表单Id")
-    private Integer formId;
+    private Long formId;
     
     @JsonBackReference
     @Reference(foreignKey="formId")
@@ -78,11 +78,11 @@ public class PFormField extends PInputField{
 	public void setFullColumn(boolean fullColumn) {
 		this.fullColumn = fullColumn;
 	}
-	public Integer getFormId() {
+	public Long getFormId() {
 		return formId;
 	}
 
-	public void setFormId(Integer idForm) {
+	public void setFormId(Long idForm) {
 		this.formId = idForm;
 	}
 	public PForm getForm() {

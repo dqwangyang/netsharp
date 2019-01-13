@@ -4,7 +4,7 @@ import org.netsharp.wx.sdk.ep.Request;
 
 public class DepartmentListRequest extends Request<DepartmentListResponse> {
 
-	private Integer id;//部门id。获取指定部门及其下的子部门
+	private Long id;//部门id。获取指定部门及其下的子部门
 	
 	public DepartmentListRequest() {
 		super();
@@ -25,11 +25,11 @@ public class DepartmentListRequest extends Request<DepartmentListResponse> {
 		return "https://qyapi.weixin.qq.com/cgi-bin/department/list?access_token="+this.getAccessToken()+"&id="+this.getId();
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 }

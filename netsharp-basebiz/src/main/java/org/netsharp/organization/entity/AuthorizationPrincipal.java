@@ -22,7 +22,7 @@ public class AuthorizationPrincipal extends Entity {
 	private PrincipalType principalType;
 	
 	@Column(name="principal_id",header="主体Id")
-	private Integer principalId;
+	private Long principalId;
 	
 	@Column(name="principal_name",header="主体名称")
 	private String principalName;
@@ -38,7 +38,7 @@ public class AuthorizationPrincipal extends Entity {
 	// @Subs(subType=RowGateway.class,foreignKey="principalId",referenceName="授权主体",subName="数据权限")
 	// private List<RowGateway> rowGateways;
 	
-	public Integer getPrincipalId() {
+	public Long getPrincipalId() {
 		return this.principalId;
 	}
 
@@ -50,7 +50,7 @@ public class AuthorizationPrincipal extends Entity {
 		this.disabled = disabled;
 	}
 
-	public AuthorizationPrincipal setPrincipalId(Integer principalId) {
+	public AuthorizationPrincipal setPrincipalId(Long principalId) {
 		this.principalId = principalId;
 		return this;
 	}

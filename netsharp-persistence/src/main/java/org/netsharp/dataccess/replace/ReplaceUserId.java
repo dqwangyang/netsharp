@@ -11,7 +11,7 @@ public class ReplaceUserId extends ReplaceBase {
 
 	public String doExecute(String cmdText) {
 		
-		Integer userId = SessionManager.getUserId();
+		Long userId = SessionManager.getUserId();
 		
 		if (userId == null) {
 			return cmdText;

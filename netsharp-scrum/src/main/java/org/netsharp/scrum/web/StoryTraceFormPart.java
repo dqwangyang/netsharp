@@ -19,7 +19,7 @@ public class StoryTraceFormPart extends FormPart {
 		
 		if(par!=null){
 			
-			int storyId = Integer.valueOf(par.toString());
+			Long storyId = Long.valueOf(par.toString());
 			IStoryService prjService = ServiceFactory.create(IStoryService.class);
 			Story project = prjService.byId(storyId);
 			trace.setStoryId(storyId);

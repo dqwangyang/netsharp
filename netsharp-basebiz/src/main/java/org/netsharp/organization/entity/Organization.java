@@ -20,7 +20,7 @@ public class Organization extends CatEntity {
 	private OrganizationType organizationType;
 
 	@Column(name = "organization_function_id", header = "部门职能，业务属性")
-	private Integer organizationFunctionId;
+	private Long organizationFunctionId;
 
 	@Reference(foreignKey = "organizationFunctionId")
 	private OrganizationFunction organizationFunction;
@@ -33,17 +33,17 @@ public class Organization extends CatEntity {
 	private Position position;
 
 	@Column(name = "position_id", header = "职务")
-	private Integer positionId;
+	private Long positionId;
 
 //	@Auto
 	@Column(name = "qy_weixin_id", header = "企业号部门ID")
-	private Integer qyWeiXinId;
+	private Long qyWeiXinId;
 
-	public Integer getQyWeiXinId() {
+	public Long getQyWeiXinId() {
 		return qyWeiXinId;
 	}
 
-	public void setQyWeiXinId(Integer qyWeiXinId) {
+	public void setQyWeiXinId(Long qyWeiXinId) {
 		this.qyWeiXinId = qyWeiXinId;
 	}
 
@@ -54,11 +54,11 @@ public class Organization extends CatEntity {
 		return this.employees;
 	}
 
-	public Integer getPositionId() {
+	public Long getPositionId() {
 		return this.positionId;
 	}
 
-	public Organization setPositionId(Integer positionId) {
+	public Organization setPositionId(Long positionId) {
 		this.positionId = positionId;
 		return this;
 	}
@@ -91,11 +91,11 @@ public class Organization extends CatEntity {
 		this.organizationFunction = organizationFunction;
 	}
 
-	public Integer getOrganizationFunctionId() {
+	public Long getOrganizationFunctionId() {
 		return organizationFunctionId;
 	}
 
-	public void setOrganizationFunctionId(Integer organizationFunctionId) {
+	public void setOrganizationFunctionId(Long organizationFunctionId) {
 		this.organizationFunctionId = organizationFunctionId;
 	}
 }

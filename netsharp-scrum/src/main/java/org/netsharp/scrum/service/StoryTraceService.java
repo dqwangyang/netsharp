@@ -30,7 +30,7 @@ public class StoryTraceService extends PersistableService<StoryTrace> implements
 		if(state != EntityState.Deleted){
 			
 			// 带入处理人部门
-			Integer departmentId = SessionManager.getDepartmentId();
+			Long departmentId = SessionManager.getDepartmentId();
 			entity.setOrganizationId(departmentId);
 
 			List<String> ss = new ArrayList<String>();

@@ -15,13 +15,13 @@ public class PrincipalOperation extends Entity{
 	private static final long serialVersionUID = -6228872005877869129L;
 
 	@Column(name="principal_id",header="")
-    private Integer principalId;
+    private Long principalId;
 
     @Reference(foreignKey="operationId")
     private Operation operation;
     
     @Column(name="operation_id",header="操作Id")
-    private Integer operationId;
+    private Long operationId;
     
     @Column(name = "operation_code",header="操作编码")
     private String operationCode;
@@ -29,17 +29,17 @@ public class PrincipalOperation extends Entity{
     @Column(name = "resourcenode_code",header="资源节点编码")
     private String resourcenodeCode;
 
-    public Integer getPrincipalId(){
+    public Long getPrincipalId(){
         return this.principalId;
     }
-    public PrincipalOperation setPrincipalId(Integer principalId){
+    public PrincipalOperation setPrincipalId(Long principalId){
         this.principalId=principalId;
         return this;
     }
-    public Integer getOperationId(){
+    public Long getOperationId(){
         return this.operationId;
     }
-    public PrincipalOperation setOperationId(Integer operationId){
+    public PrincipalOperation setOperationId(Long operationId){
         this.operationId=operationId;
         return this;
     }

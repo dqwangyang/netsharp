@@ -131,7 +131,7 @@ public class LoginController {
 	 * @return: String
 	 * @throws
 	 */
-	public List<Workbench> getWorkbenches(Integer employeeId) {
+	public List<Workbench> getWorkbenches(Long employeeId) {
 
 		IRoleEmployeeService srvice = ServiceFactory.create(IRoleEmployeeService.class);
 		Oql oql = new Oql();
@@ -139,7 +139,7 @@ public class LoginController {
 			oql.setType(RoleEmployee.class);
 			oql.setSelects("RoleEmployee.*,RoleEmployee.role.*,RoleEmployee.role.workbench.{id,name,path}");
 			oql.setFilter(" employeeId=?");
-			oql.getParameters().add("employeeId", employeeId, Types.INTEGER);
+			oql.getParameters().add("employeeId", employeeId, Types.BIGINT);
 		}
 		List<RoleEmployee> reList = srvice.queryList(oql);
 

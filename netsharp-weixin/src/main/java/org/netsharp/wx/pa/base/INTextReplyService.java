@@ -17,5 +17,5 @@ public interface INTextReplyService extends IPersistableService<NTextReply> {
      * @param publicAccountId
      * @return
      */
-    List<NTextReply> getTextReplies(Integer publicAccountId);
+    List<NTextReply> getTextReplies(Long publicAccountId);
 }

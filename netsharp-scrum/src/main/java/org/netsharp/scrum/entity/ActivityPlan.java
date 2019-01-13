@@ -34,13 +34,13 @@ public class ActivityPlan extends BizEntity{
 	private Employee bizman;   //业务负责人
 	
 	@Column(name="deployer_id")
-	private Integer deployerId;
+	private Long deployerId;
 	@Column(name="testor_id")
-	private Integer testorId;
+	private Long testorId;
 	@Column(name="productor_id")
-	private Integer productorId;
+	private Long productorId;
 	@Column(name="bizman_id")
-	private Integer bizmanId;
+	private Long bizmanId;
 	
 	@Column(size=5000)
 	private String content;//
@@ -121,35 +121,35 @@ public class ActivityPlan extends BizEntity{
 		}
 	}
 
-	public Integer getDeployerId() {
+	public Long getDeployerId() {
 		return deployerId;
 	}
 
-	public void setDeployerId(Integer deployerId) {
+	public void setDeployerId(Long deployerId) {
 		this.deployerId = deployerId;
 	}
 
-	public Integer getTestorId() {
+	public Long getTestorId() {
 		return testorId;
 	}
 
-	public void setTestorId(Integer testorId) {
+	public void setTestorId(Long testorId) {
 		this.testorId = testorId;
 	}
 
-	public Integer getProductorId() {
+	public Long getProductorId() {
 		return productorId;
 	}
 
-	public void setProductorId(Integer productorId) {
+	public void setProductorId(Long productorId) {
 		this.productorId = productorId;
 	}
 
-	public Integer getBizmanId() {
+	public Long getBizmanId() {
 		return bizmanId;
 	}
 
-	public void setBizmanId(Integer bizmanId) {
+	public void setBizmanId(Long bizmanId) {
 		this.bizmanId = bizmanId;
 	}
 

@@ -15,12 +15,12 @@ public class StoryParticipant extends Entity {
 	 */   
 	private static final long serialVersionUID = 4813868132855507622L;
 	@Column(name="story_id")
-	private Integer storyId;
+	private Long storyId;
 	@Reference(foreignKey="storyId")
 	private Story story;
 
 	@Column(name="participant_id")
-	private Integer participantId;
+	private Long participantId;
 	@Reference(foreignKey="participantId")
 	private Employee participant;
 	
@@ -30,10 +30,10 @@ public class StoryParticipant extends Entity {
     @Column(name = "memoto",header="备注", size = 1000)
     private String memoto;
     
-	public Integer storyId() {
+	public Long storyId() {
 		return storyId;
 	}
-	public void seStoryId(Integer storyId) {
+	public void seStoryId(Long storyId) {
 		this.storyId = storyId;
 	}
 	public Story getStory() {
@@ -50,10 +50,10 @@ public class StoryParticipant extends Entity {
 			this.storyId=this.story.getId();
 		}
 	}
-	public Integer getParticipantId() {
+	public Long getParticipantId() {
 		return participantId;
 	}
-	public void setParticipantId(Integer participantId) {
+	public void setParticipantId(Long participantId) {
 		this.participantId = participantId;
 	}
 	public Employee getParticipant() {
@@ -74,10 +74,10 @@ public class StoryParticipant extends Entity {
 	public void setEstimateHours(Double estimateHours) {
 		this.estimateHours = estimateHours;
 	}
-	public Integer getStoryId() {
+	public Long getStoryId() {
 		return storyId;
 	}
-	public void setStoryId(Integer storyId) {
+	public void setStoryId(Long storyId) {
 		this.storyId = storyId;
 	}
 	public String getMemoto() {

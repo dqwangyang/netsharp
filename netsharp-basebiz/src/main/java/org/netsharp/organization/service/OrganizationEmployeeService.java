@@ -21,7 +21,7 @@ public class OrganizationEmployeeService extends PersistableService<Organization
 	}
 
 	@Override
-	public Employee getEmpByPostOrgId(Integer orgid) {
+	public Employee getEmpByPostOrgId(Long orgid) {
 
 		Oql oql = new Oql();
 		{
@@ -38,7 +38,7 @@ public class OrganizationEmployeeService extends PersistableService<Organization
 	}
 
 	@Override
-	public Boolean deleteByOrganizationId(Integer organizationId) {
+	public Boolean deleteByOrganizationId(Long organizationId) {
 
 		Mtable meta = MtableManager.getMtable(type);
 		DeleteBuilder builder = DeleteBuilder.getInstance();
@@ -47,12 +47,12 @@ public class OrganizationEmployeeService extends PersistableService<Organization
 			builder.where("organization_id=?");
 		}
 		QueryParameters qps = new QueryParameters();
-		qps.add("@organizationId", organizationId, Types.INTEGER);
+		qps.add("@organizationId", organizationId, Types.BIGINT);
 		return this.pm.executeNonQuery(builder.toSQL(), qps) > 0;
 	}
 
 	@Override
-	public Boolean deleteByEmploeeyId(Integer emploeeyId) {
+	public Boolean deleteByEmploeeyId(Long emploeeyId) {
 
 		Mtable meta = MtableManager.getMtable(type);
 		DeleteBuilder builder = DeleteBuilder.getInstance();
@@ -61,7 +61,7 @@ public class OrganizationEmployeeService extends PersistableService<Organization
 			builder.where("employee_id=?");
 		}
 		QueryParameters qps = new QueryParameters();
-		qps.add("@emploeeyId", emploeeyId, Types.INTEGER);
+		qps.add("@emploeeyId", emploeeyId, Types.BIGINT);
 		return this.pm.executeNonQuery(builder.toSQL(), qps) > 0;
 	}
 }

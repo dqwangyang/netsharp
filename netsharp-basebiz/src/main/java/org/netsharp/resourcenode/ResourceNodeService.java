@@ -71,7 +71,7 @@ public class ResourceNodeService extends PersistableService<ResourceNode> implem
 	}
 
 	/* 导出资源相关的元数据脚本 */
-	public List<String> export(Integer resourceNodeId) {
+	public List<String> export(Long resourceNodeId) {
 		List<String> sqls = new ArrayList<>();
 
 		export(resourceNodeId, sqls);
@@ -80,7 +80,7 @@ public class ResourceNodeService extends PersistableService<ResourceNode> implem
 
 	}
 
-	private void export(Integer resourceNodeId, List<String> allSqls) {
+	private void export(Long resourceNodeId, List<String> allSqls) {
 		ResourceGenerator generator = new ResourceGenerator();
 
 		List<String> ls = generator.generate(resourceNodeId);
@@ -95,7 +95,7 @@ public class ResourceNodeService extends PersistableService<ResourceNode> implem
 
 	}
 
-	private List<ResourceNode> getChildNodes(Integer parentId) {
+	private List<ResourceNode> getChildNodes(Long parentId) {
 		Oql oql = new Oql();
 		{
 			oql.setSelects("id");

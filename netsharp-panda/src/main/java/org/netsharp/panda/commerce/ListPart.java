@@ -317,7 +317,7 @@ public class ListPart extends DatagridPartBase {
 			Entity entity = (Entity) ReflectManager.newInstance(entityId);
 			{
 				entity.toDeleted();
-				entity.setId(Integer.valueOf(id));
+				entity.setId(Long.valueOf(id));
 			}
 			this.service.save(entity);
 		}

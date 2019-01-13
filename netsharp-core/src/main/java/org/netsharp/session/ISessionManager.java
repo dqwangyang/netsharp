@@ -2,17 +2,17 @@ package org.netsharp.session;
 
 public interface ISessionManager {
 	
-	Integer getUserId();
+	Long getUserId();
 	String getUserName();
 	String getMobiles();
-	Integer getPostId();
+	Long getPostId();
 	String getPostName();
-	Integer getDepartmentId();
+	Long getDepartmentId();
 	String getDepartmentPathCode();
 	String getDepartmentName();	
 	String getDepartmentIds();
 	String[] getDepartmentPathCodes();
-	Integer getTenancyId();
+	Long getTenancyId();
 	String getTenancyName();
 	
 	NetsharpSession getSession();

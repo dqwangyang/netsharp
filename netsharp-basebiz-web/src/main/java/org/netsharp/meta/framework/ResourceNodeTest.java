@@ -70,7 +70,7 @@ public class ResourceNodeTest {
 	public void framework() {
 
 		ResourceNode parentNode = service.byCode("panda");
-		Integer parentId = parentNode.getId();
+		Long parentId = parentNode.getId();
 		
 		ResourceNode node = null;
 

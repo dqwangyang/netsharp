@@ -19,7 +19,7 @@ public class LogFilter implements IServiceFilter {
 	protected final Log logger = LogFactory.getLog(this.getClass());
 
 	private Date startTime;
-	private Integer userId=null;
+	private Long userId=null;
 	private String userName = "";
 	private String sessionId = "";
 

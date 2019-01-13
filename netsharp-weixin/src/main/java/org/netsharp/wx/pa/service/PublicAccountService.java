@@ -50,7 +50,7 @@ public class PublicAccountService extends PersistableService<PublicAccount> impl
         return wcp;
     }
 
-    public List<NWeixinSubscriber> querySubscribers(Integer publicAccountId) {
+    public List<NWeixinSubscriber> querySubscribers(Long publicAccountId) {
 
         IPersister<NWeixinSubscriber> pst = PersisterFactory.create();
         Oql oql = new Oql();

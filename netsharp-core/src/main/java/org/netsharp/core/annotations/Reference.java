@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Reference {
 
-	String primaryKey() default "Id";
+	String primaryKey() default "id";
 
 	String foreignKey();
 	String groupName() default "";

@@ -21,7 +21,7 @@ public class QueryTest {
 
 		for (int i = 0; i < 10; i++) {
 			Customer c = new Customer();
-			c.setId(-1);
+			c.setId(-1L);
 			c.setCode("00" + (i + 10));
 			c.toNew();
 

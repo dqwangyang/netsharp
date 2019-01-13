@@ -16,7 +16,7 @@ public interface IFansService extends IPersistableService<Fans> {
      * @param userId
      * @return
      */
-    Fans getInviterByUser(Integer userId);
+    Fans getInviterByUser(Long userId);
 
     /**
      * 根据粉丝ID查找他的邀请人
@@ -24,7 +24,7 @@ public interface IFansService extends IPersistableService<Fans> {
      * @param fansId
      * @return
      */
-    Fans getInviter(Integer fansId);
+    Fans getInviter(Long fansId);
 
     /**
      * 粉丝关注公众号
@@ -35,7 +35,7 @@ public interface IFansService extends IPersistableService<Fans> {
      * @return
      */
     @Transaction
-    Fans subscribe(String openid, PublicAccount wcp, int senceId, boolean isSubscribeEvent);
+    Fans subscribe(String openid, PublicAccount wcp, Long senceId, boolean isSubscribeEvent);
 
     /*粉丝取消关注公众号*/
     @Transaction
@@ -56,7 +56,7 @@ public interface IFansService extends IPersistableService<Fans> {
     @Transaction
     Fans attachByOpenId(String code, String originalId);
 
-    Integer getUserIdByFansId(Integer fansId);
+    Long getUserIdByFansId(Long fansId);
 
     /**
      * 获取今天新fans
@@ -64,7 +64,7 @@ public interface IFansService extends IPersistableService<Fans> {
      * @param fromFansId 如果为0，表示查找今天的所有fans,否则查找大于指定的fansId的所有fans
      * @return
      */
-    List<Fans> getFansOfToday(Integer fromFansId);
+    List<Fans> getFansOfToday(Long fromFansId);
 
     /**
      * 获取某段时间的新fans
@@ -74,7 +74,7 @@ public interface IFansService extends IPersistableService<Fans> {
      * @param fromFansId 如果为0，表示查找今天的所有fans,否则查找大于指定的fansId的所有fans
      * @return
      */
-    List<Fans> getFansByDate(String fromDate, String toDate, Integer fromFansId);
+    List<Fans> getFansByDate(String fromDate, String toDate, Long fromFansId);
 
     /**
      * 获取今天的新关注者
@@ -82,7 +82,7 @@ public interface IFansService extends IPersistableService<Fans> {
      * @param fromFansId 如果为0，表示查找今天的所有fans,否则查找大于指定的fansId的所有fans
      * @return
      */
-    List<Fans> getSubscriberOfToday(Integer fromFansId);
+    List<Fans> getSubscriberOfToday(Long fromFansId);
 
     /**
      * 获取某段时间的新关注者
@@ -92,7 +92,7 @@ public interface IFansService extends IPersistableService<Fans> {
      * @param fromFansId 如果为0，表示查找今天的所有fans,否则查找大于指定的fansId的所有fans
      * @return
      */
-    List<Fans> getSubscriberOfToday(String fromDate, String toDate, Integer fromFansId);
+    List<Fans> getSubscriberOfToday(String fromDate, String toDate, Long fromFansId);
 
     /**
      * 更新粉丝信息
@@ -100,7 +100,7 @@ public interface IFansService extends IPersistableService<Fans> {
      * @param fans
      * @return
      */
-    Integer updateFans(Fans fans);
+    Long updateFans(Fans fans);
 
     /**
      * 根据用户查询fans,如果有多个，只返回最近的一个
@@ -108,7 +108,7 @@ public interface IFansService extends IPersistableService<Fans> {
      * @param userId
      * @return
      */
-    Fans getFansByUserId(Integer userId);
+    Fans getFansByUserId(Long userId);
 
     /**
      * 将fans 和 user 进行绑定
@@ -116,5 +116,5 @@ public interface IFansService extends IPersistableService<Fans> {
      * @param userId
      * @param fansId
      */
-    void bindUserToFans(Integer userId, Integer fansId);
+    void bindUserToFans(Long userId, Long fansId);
 }

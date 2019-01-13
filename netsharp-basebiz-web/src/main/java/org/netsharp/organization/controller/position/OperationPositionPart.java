@@ -227,7 +227,7 @@ public class OperationPositionPart extends ListPart {
 			oql.setSelects("principalOperations.{Id,operationId},AuthorizationPrincipal.Id");
 			oql.setFilter("AuthorizationPrincipal.principalType= ? AND AuthorizationPrincipal.principalId= ? ");
 			oql.getParameters().add("@principalType", principalType.getValue(), Types.TINYINT);
-			oql.getParameters().add("@principalId", principalId, Types.INTEGER);
+			oql.getParameters().add("@principalId", principalId, Types.BIGINT);
 		}
 
 		AuthorizationPrincipal ap = organizationOperationService.queryFirst(oql);
@@ -235,7 +235,7 @@ public class OperationPositionPart extends ListPart {
 			ap = new AuthorizationPrincipal();
 			{
 				ap.setEntityState(EntityState.New);
-				ap.setPrincipalId(Integer.valueOf(principalId.toString()));
+				ap.setPrincipalId(Long.valueOf(principalId.toString()));
 				ap.setPrincipalType(PrincipalType.POST);
 			}
 		}

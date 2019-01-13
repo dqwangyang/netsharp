@@ -10,6 +10,6 @@ public interface IResourceNodeService extends IPersistableService<ResourceNode> 
     ResourceNode byCode(String code);
     
 	/*导出资源相关的元数据脚本*/
-    List<String> export(Integer resourceNodeId);
+    List<String> export(Long resourceNodeId);
     
 }

@@ -32,16 +32,16 @@ public class PWorkspace extends ResourceBizEntity {
 	private String serviceController;
 
 	@Column(name = "operation_id", header = "操作Id")
-	private Integer operationId;
+	private Long operationId;
 
 	@Column(name = "cached", header = "缓存")
 	protected boolean cached = false;
 
 	@Column(name = "operation_type_id", header = "操作类型1")
-	private Integer operationTypeId;
+	private Long operationTypeId;
 
 	@Column(name = "operation_type_id2", header = "操作类型2")
-	private Integer operationTypeId2;
+	private Long operationTypeId2;
 
 	@Reference(foreignKey = "operationTypeId", header = "操作类型")
 	private OperationType operationType;
@@ -87,11 +87,11 @@ public class PWorkspace extends ResourceBizEntity {
 		this.parts = parts;
 	}
 
-	public Integer getOperationTypeId() {
+	public Long getOperationTypeId() {
 		return operationTypeId;
 	}
 
-	public void setOperationTypeId(Integer idOperationType) {
+	public void setOperationTypeId(Long idOperationType) {
 		this.operationTypeId = idOperationType;
 	}
 
@@ -103,11 +103,11 @@ public class PWorkspace extends ResourceBizEntity {
 		this.operationType = operationType;
 	}
 
-	public Integer getOperationTypeId2() {
+	public Long getOperationTypeId2() {
 		return operationTypeId2;
 	}
 
-	public void setOperationTypeId2(Integer idOperationType2) {
+	public void setOperationTypeId2(Long idOperationType2) {
 		this.operationTypeId2 = idOperationType2;
 	}
 
@@ -119,11 +119,11 @@ public class PWorkspace extends ResourceBizEntity {
 		this.operationType2 = operationType2;
 	}
 
-	public Integer getOperationId() {
+	public Long getOperationId() {
 		return operationId;
 	}
 
-	public void setOperationId(Integer operationId) {
+	public void setOperationId(Long operationId) {
 		this.operationId = operationId;
 	}
 

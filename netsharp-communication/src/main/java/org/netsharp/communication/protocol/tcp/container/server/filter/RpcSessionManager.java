@@ -7,7 +7,7 @@ import org.netsharp.session.NetsharpSession;
 
 public class RpcSessionManager implements ISessionManager {
 
-	public Integer getUserId() {
+	public Long getUserId() {
 		NetsharpSession session = this.getSession();
 		if(session==null) {
 			return null;
@@ -31,7 +31,7 @@ public class RpcSessionManager implements ISessionManager {
 		return session.getMobiles();
 	}
 
-	public Integer getDepartmentId() {
+	public Long getDepartmentId() {
 		NetsharpSession session = this.getSession();
 		if(session==null) {
 			return null;
@@ -47,7 +47,7 @@ public class RpcSessionManager implements ISessionManager {
 		return session.getDepartmentIds();
 	}
 
-	public Integer getTenancyId() {
+	public Long getTenancyId() {
 		NetsharpSession session = this.getSession();
 		if(session==null) {
 			return null;
@@ -87,7 +87,7 @@ public class RpcSessionManager implements ISessionManager {
 		return session.getDepartmentName();
 	}
 	
-	public Integer getPostId() {
+	public Long getPostId() {
 		NetsharpSession session = this.getSession();
 		if(session==null) {
 			return null;

@@ -64,7 +64,7 @@ public class CachePluginWorkspaceTest extends WorkspaceCreationBase{
 			item.setIcon("fa fa-trash-o");
 			item.setName("清空缓存");
 			item.setCommand("{controller}.flushDB();");
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setSeq(1);
 			toolbar.getItems().add(item);
 		}
@@ -90,7 +90,7 @@ public class CachePluginWorkspaceTest extends WorkspaceCreationBase{
 			item.setIcon("fa fa-close");
 			item.setName("关闭");
 			item.setCommand("{controller}.close();");
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setSeq(3);
 			toolbar.getItems().add(item);
 		}

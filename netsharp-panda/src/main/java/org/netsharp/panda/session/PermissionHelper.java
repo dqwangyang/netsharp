@@ -17,7 +17,7 @@ import org.netsharp.util.StringManager;
 //不要把Session管理的功能加到这个类中
 public class PermissionHelper {
 
-	public static boolean isPermission(ResourceNode node, Integer operationId, OperationType ot1, OperationType ot2) {
+	public static boolean isPermission(ResourceNode node, Long operationId, OperationType ot1, OperationType ot2) {
 
 		if (!PandaConfiguration.getInstance().getIsPermission()) {
 			return true;

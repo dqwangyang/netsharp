@@ -76,7 +76,7 @@ public abstract class WorkspaceCreationBase {
 	/**
 	 * @Fields listPartType : 部件类型
 	 */
-	protected Integer listPartType = PartType.DATAGRID_PART.getId();
+	protected Long listPartType = PartType.DATAGRID_PART.getId();
 	/**
 	 * @Fields formIsCache : 表单是否缓存
 	 */
@@ -164,9 +164,9 @@ public abstract class WorkspaceCreationBase {
 
 	protected IOperationTypeService operationTypeService = ServiceFactory.create(IOperationTypeService.class);
 
-	protected Integer workspaceOperationType1Id = getWorkspaceOperationTypeId();
+	protected Long workspaceOperationType1Id = getWorkspaceOperationTypeId();
 
-	private Integer getWorkspaceOperationTypeId() {
+	private Long getWorkspaceOperationTypeId() {
 
 		OperationType opt = operationTypeService.byCode(OperationTypes.view);
 		if (opt != null) {
@@ -342,7 +342,7 @@ public abstract class WorkspaceCreationBase {
 	 * @return: PDatagridColumn
 	 * @throws
 	 */
-	protected PDatagridColumn addColumn(PDatagrid datagrid, String propertyName, String header, ControlTypes controlType, int width, Boolean isFrozen, Integer referenceId, String groupName,
+	protected PDatagridColumn addColumn(PDatagrid datagrid, String propertyName, String header, ControlTypes controlType, int width, Boolean isFrozen, Long referenceId, String groupName,
 			OrderbyMode orderbyMode) {
 
 		PDatagridColumn column = new PDatagridColumn();
@@ -413,7 +413,7 @@ public abstract class WorkspaceCreationBase {
 	 * @return: PDatagridColumn
 	 * @throws
 	 */
-	protected PDatagridColumn addRefrenceColumn(PDatagrid datagrid, String propertyName, String header, Class<?> refrenceClazz, int width, Boolean isFrozen, Integer referenceId, String groupName,
+	protected PDatagridColumn addRefrenceColumn(PDatagrid datagrid, String propertyName, String header, Class<?> refrenceClazz, int width, Boolean isFrozen, Long referenceId, String groupName,
 			OrderbyMode orderbyMode) {
 
 		PDatagridColumn column = new PDatagridColumn();

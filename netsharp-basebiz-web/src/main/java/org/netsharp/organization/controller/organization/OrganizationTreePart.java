@@ -129,7 +129,7 @@ public class OrganizationTreePart extends TreePart {
 		return ret;
 	}
 
-	public boolean changeParent(Integer nodeId, Integer newParentId) {
+	public boolean changeParent(Long nodeId, Long newParentId) {
 		orgService.changeParent(nodeId, newParentId);
 		pathCode();
 		return true;

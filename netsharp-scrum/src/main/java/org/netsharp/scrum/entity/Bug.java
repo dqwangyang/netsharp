@@ -19,28 +19,24 @@ import org.netsharp.scrum.dic.Urgency;
 @Table(name="scrum_bug",header="研发缺陷")
 public class Bug extends BizEntity {
 	
-	
-	/**   
-	 * @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么)   
-	 */   
 	private static final long serialVersionUID = -784762849274727069L;
 	@Column(name="testor_id")
-	private Integer testorId;
+	private Long testorId;
 	@Reference(foreignKey="testorId")
 	private Employee testor;//测试人员
 	@Column(name="developer_id")
-	private Integer developerId;
+	private Long developerId;
 	@Reference(foreignKey="developerId")
 	private Employee developer;//测试人员
 	
 	@Column(name="putor_id")
-	private Integer putorId;
+	private Long putorId;
 	
 	@Reference(foreignKey="putorId")
 	private Employee putor;//提出人
 	
 	@Column(name="project_id")
-	private Integer projectId;
+	private Long projectId;
 	
 	@Reference(foreignKey="projectId")
 	private Project project;
@@ -106,10 +102,10 @@ public class Bug extends BizEntity {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Integer getPutorId() {
+	public Long getPutorId() {
 		return putorId;
 	}
-	public void setPutorId(Integer putorId) {
+	public void setPutorId(Long putorId) {
 		this.putorId = putorId;
 	}
 	public Employee getPutor() {
@@ -155,10 +151,10 @@ public class Bug extends BizEntity {
 	public void setActualHours(Double actualHours) {
 		this.actualHours = actualHours;
 	}
-	public Integer getTestorId() {
+	public Long getTestorId() {
 		return testorId;
 	}
-	public void setTestorId(Integer testorId) {
+	public void setTestorId(Long testorId) {
 		this.testorId = testorId;
 	}
 	public Employee getTestor() {
@@ -174,10 +170,10 @@ public class Bug extends BizEntity {
 			this.testorId=this.testor.getId();
 		}
 	}
-	public Integer getDeveloperId() {
+	public Long getDeveloperId() {
 		return developerId;
 	}
-	public void setDeveloperId(Integer developerId) {
+	public void setDeveloperId(Long developerId) {
 		this.developerId = developerId;
 	}
 	public Employee getDeveloper() {
@@ -200,10 +196,10 @@ public class Bug extends BizEntity {
 	public void setFilePath(String filePath) {
 		this.filePath = filePath;
 	}
-	public Integer getProjectId() {
+	public Long getProjectId() {
 		return projectId;
 	}
-	public void setProjectId(Integer projectId) {
+	public void setProjectId(Long projectId) {
 		this.projectId = projectId;
 	}
 	public Project getProject() {

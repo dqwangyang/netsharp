@@ -18,7 +18,7 @@ public abstract class ResourceCreationBase {
 	protected String parentNodeCode ;
 	protected String pluginName;
 	protected int seq = 0;
-	protected Integer parentId=null;
+	protected Long parentId=null;
 	protected Class<?> entityClass;
 
 	@Test
@@ -79,7 +79,7 @@ public abstract class ResourceCreationBase {
 		return node;
 	}
 
-	protected ResourceNode createResourceNodeVoucher(String entityId, String nodeName, String nodeCode, String service, Integer parentId) {
+	protected ResourceNode createResourceNodeVoucher(String entityId, String nodeName, String nodeCode, String service, Long parentId) {
 		
 		ResourceNode node = new ResourceNode();
 		{
@@ -95,7 +95,7 @@ public abstract class ResourceCreationBase {
 		return resourceNodeService.save(node);
 	}
 	
-	protected ResourceNode createResourceNodeCategory(String nodeName, String nodeCode,Integer parentId) {
+	protected ResourceNode createResourceNodeCategory(String nodeName, String nodeCode,Long parentId) {
 		
 		ResourceNode node = new ResourceNode();
 		{

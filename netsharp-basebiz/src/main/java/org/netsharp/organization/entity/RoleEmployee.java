@@ -18,14 +18,14 @@ public class RoleEmployee extends Entity{
     private Role role;
     
     @Column(name="role_id",header="角色")
-    private Integer roleId;
+    private Long roleId;
 
     @JsonIgnore
     @Reference(foreignKey="employeeId")
     private Employee employee;
     
     @Column(name="employee_id",header="员工Id")
-    private Integer employeeId;
+    private Long employeeId;
 
 	public Role getRole() {
 		return role;
@@ -35,11 +35,11 @@ public class RoleEmployee extends Entity{
 		this.role = role;
 	}
 
-	public Integer getRoleId() {
+	public Long getRoleId() {
 		return roleId;
 	}
 
-	public void setRoleId(Integer roleId) {
+	public void setRoleId(Long roleId) {
 		this.roleId = roleId;
 	}
 
@@ -51,11 +51,11 @@ public class RoleEmployee extends Entity{
 		this.employee = employee;
 	}
 
-	public Integer getEmployeeId() {
+	public Long getEmployeeId() {
 		return employeeId;
 	}
 
-	public void setEmployeeId(Integer employeeId) {
+	public void setEmployeeId(Long employeeId) {
 		this.employeeId = employeeId;
 	}
 }

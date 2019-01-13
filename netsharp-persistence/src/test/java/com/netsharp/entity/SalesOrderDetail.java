@@ -21,8 +21,8 @@ public class SalesOrderDetail extends Persistable {
     private BigDecimal amount;
     private Date createTime;
     private Date updateTime;
-    private Integer orderId;
-    private Integer inventoryId;
+    private Long orderId;
+    private Long inventoryId;
     @Reference(foreignKey="inventoryId")
     private Inventory inventory;
     
@@ -63,10 +63,10 @@ public class SalesOrderDetail extends Persistable {
 	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
 	}
-	public Integer getIdOrder() {
+	public Long getIdOrder() {
 		return orderId;
 	}
-	public void setIdOrder(Integer idOrder) {
+	public void setIdOrder(Long idOrder) {
 		this.orderId = idOrder;
 	}
 
@@ -76,16 +76,16 @@ public class SalesOrderDetail extends Persistable {
 	public void setInventory(Inventory inventory) {
 		this.inventory = inventory;
 		if(this.inventory==null){
-			this.setInventoryId(-1);
+			this.setInventoryId(-1L);
 		}
 		else{
 			this.setInventoryId(inventory.getId());
 		}
 	}
-	public Integer getInventoryId() {
+	public Long getInventoryId() {
 		return inventoryId;
 	}
-	public void setInventoryId(Integer inventoryId) {
+	public void setInventoryId(Long inventoryId) {
 		this.inventoryId = inventoryId;
 	}
 }

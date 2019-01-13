@@ -19,8 +19,8 @@ public class SubscribeEvent extends EventRequest {
         ticket = value;
     }
 
-    public final int getSceneId() {
-        int    sceneId  = 0;
+    public final Long getSceneId() {
+        Long    sceneId  = 0L;
         String eventKey = this.getEventKey();
         try {
 
@@ -40,7 +40,7 @@ public class SubscribeEvent extends EventRequest {
             if (!StringManager.isNullOrEmpty(scenceString)) {
                 Pattern pattern = Pattern.compile("^[-\\+]?[\\d]*$");
                 if(pattern.matcher(scenceString).matches()){
-                    sceneId = Integer.valueOf(scenceString);
+                    sceneId = Long.valueOf(scenceString);
                 }
             }
         } catch (Exception ex) {

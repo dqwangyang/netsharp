@@ -29,7 +29,7 @@ public class SupportService extends BizService<Support> implements ISupportServi
 		EntityState state = entity.getEntityState();
 		if (state != EntityState.Deleted) {
 			// 带入处理人部门
-			Integer departmentId = SessionManager.getDepartmentId();
+			Long departmentId = SessionManager.getDepartmentId();
 			entity.setOrganizationId(departmentId);
 		}
 		super.save(entity);

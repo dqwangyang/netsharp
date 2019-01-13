@@ -102,7 +102,7 @@ public class WorkbenchTest {
 //			item.setCode("workbenchuser");
 //			item.setName("详情");
 //			item.setCommand(null);
-//			item.setOperationTypeId(-1);
+//			item.setOperationTypeId(-1L);
 //
 //			toolbar.getItems().add(item);
 //		}
@@ -115,7 +115,7 @@ public class WorkbenchTest {
 			item.setIcon("icon-user");
 			item.setName("个人信息");
 			item.setCommand(null);
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 
 			toolbar.getItems().add(item);
 		}
@@ -127,7 +127,7 @@ public class WorkbenchTest {
 			item.setIcon("icon-lock_edit");
 			item.setName("修改密码");
 			item.setCommand(null);
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 
 			toolbar.getItems().add(item);
 		}
@@ -160,7 +160,7 @@ public class WorkbenchTest {
 			item.setCode("fullscreen");
 			item.setName("全屏");
 			item.setCommand(null);
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 
 			toolbar.getItems().add(item);
 		}
@@ -171,7 +171,7 @@ public class WorkbenchTest {
 			item.setCode("exit");
 			item.setName("退出");
 			item.setCommand(null);
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 
 			toolbar.getItems().add(item);
 		}
@@ -182,7 +182,7 @@ public class WorkbenchTest {
 			item.setCode("help");
 			item.setName("帮助");
 			item.setCommand(null);
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 
 			toolbar.getItems().add(item);
 		}

@@ -235,7 +235,7 @@ public class RoleAuthorizationListPart extends TreegridPart {
 			ap = new AuthorizationPrincipal();
 			{
 				ap.setEntityState(EntityState.New);
-				ap.setPrincipalId(Integer.valueOf(principalId.toString()));
+				ap.setPrincipalId(Long.valueOf(principalId.toString()));
 				ap.setPrincipalType(PrincipalType.POST);
 			}
 		}

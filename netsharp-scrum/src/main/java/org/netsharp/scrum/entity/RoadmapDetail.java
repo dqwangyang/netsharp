@@ -16,28 +16,28 @@ public class RoadmapDetail extends Entity {
 	private static final long serialVersionUID = 7249021290872244777L;
 
 	@Column(name="roadmap_id",header="计划路线图")
-	private Integer roadmapId;
+	private Long roadmapId;
 	
 	@JsonBackReference
 	@Reference(foreignKey="roadmapId")
 	private Roadmap roadmap;
 	
-	private Integer seq;
+	private Long seq;
 	private String name;
 	@Column(name="memoto",size=1000,header="备注")
 	private String memoto;
 	private RoadmapStatus status = RoadmapStatus.longPlaning;
 	private String date;
-	public Integer getRoadmapId() {
+	public Long getRoadmapId() {
 		return roadmapId;
 	}
-	public void setRoadmapId(Integer roadmapId) {
+	public void setRoadmapId(Long roadmapId) {
 		this.roadmapId = roadmapId;
 	}
-	public Integer getSeq() {
+	public Long getSeq() {
 		return seq;
 	}
-	public void setSeq(Integer seq) {
+	public void setSeq(Long seq) {
 		this.seq = seq;
 	}
 	public String getName() {

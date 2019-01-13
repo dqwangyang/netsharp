@@ -29,7 +29,7 @@ public class PersistTest{
 		Inventory inventory1=new Inventory();
 		Inventory inventory2=new Inventory();
 		
-		customer.setId(1);
+		customer.setId(1L);
 		customer.setCode("001");
 		customer.setName("李莉");
 		customer.setDistrictName("华东地区");
@@ -67,7 +67,7 @@ public class PersistTest{
 		
 		//
 		SalesOrder order=new SalesOrder();
-		order.setId(-1);
+		order.setId(-1L);
 		order.setCode("001");
 		order.setCreateTime(new Date());
 		order.setAmount(BigDecimal.valueOf(34.56));

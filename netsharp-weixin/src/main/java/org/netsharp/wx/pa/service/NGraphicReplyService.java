@@ -20,7 +20,7 @@ public class NGraphicReplyService extends PersistableService<NGraphicReply> impl
     }
 
     @Override
-    public List<NGraphicReply> getReplies(Integer publicAccountId) {
+    public List<NGraphicReply> getReplies(Long publicAccountId) {
         Oql oql = new Oql();
         oql.setType(NGraphicReply.class);
         oql.setSelects("NGraphicReply.*,NGraphicReply.Articles.*");

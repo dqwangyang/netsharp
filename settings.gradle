@@ -20,3 +20,5 @@ include 'netsharp-weixin-ui'
 include 'netsharp-rest'
 include 'netsharp-elephant'
 include 'netsharp-donkey'
+include 'kaibo-poetry'
+

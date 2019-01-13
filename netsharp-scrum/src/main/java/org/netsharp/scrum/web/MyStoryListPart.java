@@ -13,7 +13,7 @@ public class MyStoryListPart extends ListPart {
 		String filter = oql.getFilter();
 		String defaultFilter = "1=2";
 		
-		Integer userId = SessionManager.getUserId();
+		Long userId = SessionManager.getUserId();
 		if (StringManager.isNullOrEmpty(filter)) {
 			defaultFilter = "iteration.isCurrent=1 or (Project.ownerId=" + userId+" and Project.idCreator="+userId+")";
 		} else {

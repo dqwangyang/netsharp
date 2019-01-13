@@ -8,10 +8,10 @@ import org.netsharp.wx.sdk.ep.Request;
 
 public class DepartmentUpdateRequest extends Request<DepartmentUpdateResponse> {
 
-	private Integer id;
+	private Long id;
 	private String name;
-	private Integer parentid;
-	private Integer order;
+	private Long parentid;
+	private Long order;
 
 	public DepartmentUpdateRequest() {
 		super();
@@ -41,11 +41,11 @@ public class DepartmentUpdateRequest extends Request<DepartmentUpdateResponse> {
 		return "https://qyapi.weixin.qq.com/cgi-bin/department/update?access_token=" + this.getToken().getAccess_token();
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -57,19 +57,19 @@ public class DepartmentUpdateRequest extends Request<DepartmentUpdateResponse> {
 		this.name = name;
 	}
 
-	public Integer getParentid() {
+	public Long getParentid() {
 		return parentid;
 	}
 
-	public void setParentid(Integer parentid) {
+	public void setParentid(Long parentid) {
 		this.parentid = parentid;
 	}
 
-	public Integer getOrder() {
+	public Long getOrder() {
 		return order;
 	}
 
-	public void setOrder(Integer order) {
+	public void setOrder(Long order) {
 		this.order = order;
 	}
 }

@@ -34,9 +34,9 @@ public class DatatypeManager
         {
             return DataTypes.Boolean;
         }
-        else if (type == int.class || type == Integer.class)
+        else if (type == int.class || type == Long.class)
         {
-            return DataTypes.Integer;
+            return DataTypes.Long;
         }
         else if (type == short.class || type == Short.class)
         {
@@ -72,7 +72,7 @@ public class DatatypeManager
         }
         else if (type.isEnum())
         {
-            return DataTypes.Integer;
+            return DataTypes.Long;
         }
         else
         {
@@ -88,7 +88,7 @@ public class DatatypeManager
 
         //
 		dataType = new DataType();table.add(dataType);
-		DataTypes.Integer = dataType;
+		DataTypes.Long = dataType;
 		dataType.setPrecisionDb((short)(short)0);
 		dataType.setPrecisionDisplay((short)0);
 		dataType.setPrecision(false);
@@ -105,11 +105,11 @@ public class DatatypeManager
 		dataType.setDb2("");
 		dataType.setIcon("Icons.16x16.DataSource.Number.png");
 		dataType.setSplitter(true);
-		dataType.setCode("Integer");
+		dataType.setCode("Long");
 		dataType.setName("整数(32)");
-		dataType.setJava("java.lang.Integer");
+		dataType.setJava("java.lang.Long");
 		dataType.setJdbcType(0);
-		dataType.setId(1);
+		dataType.setId(1L);
 		dataTypeIds.put(dataType.getId(), dataType);
 		
 		dataType = new DataType();table.add(dataType);
@@ -134,7 +134,7 @@ public class DatatypeManager
 		dataType.setName("短整数(16)");
 		dataType.setJava("java.lang.Short");
 		dataType.setJdbcType(0);
-		dataType.setId(2);
+		dataType.setId(2L);
 		dataTypeIds.put(dataType.getId(), dataType);
 		
 		dataType = new DataType();table.add(dataType);
@@ -159,7 +159,7 @@ public class DatatypeManager
 		dataType.setName("长整数(64)");
 		dataType.setJava("java.lang.Long");
 		dataType.setJdbcType(0);
-		dataType.setId(3);
+		dataType.setId(3L);
 		dataTypeIds.put(dataType.getId(), dataType);
 		
 		dataType = new DataType();table.add(dataType);
@@ -184,7 +184,7 @@ public class DatatypeManager
 		dataType.setName("定长文本");
 		dataType.setJava("java.lang.String");
 		dataType.setJdbcType(0);
-		dataType.setId(4);
+		dataType.setId(4L);
 		dataTypeIds.put(dataType.getId(), dataType);
 		
 		dataType = new DataType();table.add(dataType);
@@ -209,7 +209,7 @@ public class DatatypeManager
 		dataType.setName("二进制");
 		dataType.setJava("java.lang.Byte");
 		dataType.setJdbcType(0);
-		dataType.setId(5);
+		dataType.setId(5L);
 		dataTypeIds.put(dataType.getId(), dataType);
 		
 		dataType = new DataType();table.add(dataType);
@@ -234,7 +234,7 @@ public class DatatypeManager
 		dataType.setName("时间戳");
 		dataType.setJava("java.lang.Byte");
 		dataType.setJdbcType(0);
-		dataType.setId(6);
+		dataType.setId(6L);
 		dataTypeIds.put(dataType.getId(), dataType);
 		
 		dataType = new DataType();table.add(dataType);
@@ -259,7 +259,7 @@ public class DatatypeManager
 		dataType.setName("时间");
 		dataType.setJava("java.util.Date");
 		dataType.setJdbcType(0);
-		dataType.setId(7);
+		dataType.setId(7L);
 		dataTypeIds.put(dataType.getId(), dataType);
 		
 		dataType = new DataType();table.add(dataType);
@@ -284,7 +284,7 @@ public class DatatypeManager
 		dataType.setName("非中文字符");
 		dataType.setJava("java.lang.String");
 		dataType.setJdbcType(0);
-		dataType.setId(8);
+		dataType.setId(8L);
 		dataTypeIds.put(dataType.getId(), dataType);
 		
 		dataType = new DataType();table.add(dataType);
@@ -309,7 +309,7 @@ public class DatatypeManager
 		dataType.setName("GUID");
 		dataType.setJava("java.util.UUID");
 		dataType.setJdbcType(0);
-		dataType.setId(9);
+		dataType.setId(9L);
 		dataTypeIds.put(dataType.getId(), dataType);
 		
 		dataType = new DataType();table.add(dataType);
@@ -334,7 +334,7 @@ public class DatatypeManager
 		dataType.setName("字节");
 		dataType.setJava("java.lang.Byte");
 		dataType.setJdbcType(0);
-		dataType.setId(10);
+		dataType.setId(10L);
 		dataTypeIds.put(dataType.getId(), dataType);
 		
 		dataType = new DataType();table.add(dataType);
@@ -359,7 +359,7 @@ public class DatatypeManager
 		dataType.setName("浮点小数");
 		dataType.setJava("java.lang.Float");
 		dataType.setJdbcType(0);
-		dataType.setId(11);
+		dataType.setId(11L);
 		dataTypeIds.put(dataType.getId(), dataType);
 		
 		dataType = new DataType();table.add(dataType);
@@ -384,7 +384,7 @@ public class DatatypeManager
 		dataType.setName("浮点小数");
 		dataType.setJava("java.lang.Double");
 		dataType.setJdbcType(0);
-		dataType.setId(11);
+		dataType.setId(11L);
 		dataTypeIds.put(dataType.getId(), dataType);
 		
 		dataType = new DataType();table.add(dataType);
@@ -409,7 +409,7 @@ public class DatatypeManager
 		dataType.setName("日期+时间");
 		dataType.setJava("java.util.Date");
 		dataType.setJdbcType(0);
-		dataType.setId(12);
+		dataType.setId(12L);
 		dataTypeIds.put(dataType.getId(), dataType);
 		
 		dataType = new DataType();table.add(dataType);
@@ -434,7 +434,7 @@ public class DatatypeManager
 		dataType.setName("是否");
 		dataType.setJava("java.lang.Boolean");
 		dataType.setJdbcType(0);
-		dataType.setId(13);
+		dataType.setId(13L);
 		dataTypeIds.put(dataType.getId(), dataType);
 		
 		dataType = new DataType();table.add(dataType);
@@ -459,7 +459,7 @@ public class DatatypeManager
 		dataType.setName("枚举");
 		dataType.setJava("org.netsharp.entity.EnumItem");
 		dataType.setJdbcType(0);
-		dataType.setId(14);
+		dataType.setId(14L);
 		dataTypeIds.put(dataType.getId(), dataType);
 		
 		dataType = new DataType();table.add(dataType);
@@ -484,7 +484,7 @@ public class DatatypeManager
 		dataType.setName("长文本");
 		dataType.setJava("java.lang.String");
 		dataType.setJdbcType(0);
-		dataType.setId(15);
+		dataType.setId(15L);
 		dataTypeIds.put(dataType.getId(), dataType);
 		
 		dataType = new DataType();table.add(dataType);
@@ -509,7 +509,7 @@ public class DatatypeManager
 		dataType.setName("日期");
 		dataType.setJava("java.util.Date");
 		dataType.setJdbcType(0);
-		dataType.setId(16);
+		dataType.setId(16L);
 		dataTypeIds.put(dataType.getId(), dataType);
 		
 		dataType = new DataType();table.add(dataType);
@@ -534,7 +534,7 @@ public class DatatypeManager
 		dataType.setName("文本");
 		dataType.setJava("java.lang.String");
 		dataType.setJdbcType(0);
-		dataType.setId(17);
+		dataType.setId(17L);
 		dataTypeIds.put(dataType.getId(), dataType);
 		
 		dataType = new DataType();table.add(dataType);
@@ -559,7 +559,7 @@ public class DatatypeManager
 		dataType.setName("数值");
 		dataType.setJava("java.math.BigDecimal");
 		dataType.setJdbcType(0);
-		dataType.setId(18);
+		dataType.setId(18L);
 		dataTypeIds.put(dataType.getId(), dataType);
 		
 		dataType = new DataType();table.add(dataType);
@@ -584,7 +584,7 @@ public class DatatypeManager
 		dataType.setName("金额");
 		dataType.setJava("java.math.BigDecimal");
 		dataType.setJdbcType(0);
-		dataType.setId(19);
+		dataType.setId(19L);
 		dataTypeIds.put(dataType.getId(), dataType);
 		
 		dataType = new DataType();table.add(dataType);
@@ -609,7 +609,7 @@ public class DatatypeManager
 		dataType.setName("数量");
 		dataType.setJava("java.math.BigDecimal");
 		dataType.setJdbcType(0);
-		dataType.setId(20);
+		dataType.setId(20L);
 		dataTypeIds.put(dataType.getId(), dataType);
 		
 		dataType = new DataType();table.add(dataType);
@@ -634,7 +634,7 @@ public class DatatypeManager
 		dataType.setName("单价");
 		dataType.setJava("java.math.BigDecimal");
 		dataType.setJdbcType(0);
-		dataType.setId(21);
+		dataType.setId(21L);
 		dataTypeIds.put(dataType.getId(), dataType);
 		
 		dataType = new DataType();table.add(dataType);
@@ -659,7 +659,7 @@ public class DatatypeManager
 		dataType.setName("换算率");
 		dataType.setJava("java.math.BigDecimal");
 		dataType.setJdbcType(0);
-		dataType.setId(22);
+		dataType.setId(22L);
 		dataTypeIds.put(dataType.getId(), dataType);
 		
 		dataType = new DataType();table.add(dataType);
@@ -684,7 +684,7 @@ public class DatatypeManager
 		dataType.setName("发票单价");
 		dataType.setJava("java.math.BigDecimal");
 		dataType.setJdbcType(0);
-		dataType.setId(23);
+		dataType.setId(23L);
 		dataTypeIds.put(dataType.getId(), dataType);
 		
 		dataType = new DataType();table.add(dataType);
@@ -709,7 +709,7 @@ public class DatatypeManager
 		dataType.setName("百分比");
 		dataType.setJava("java.math.BigDecimal");
 		dataType.setJdbcType(0);
-		dataType.setId(24);
+		dataType.setId(24L);
 		dataTypeIds.put(dataType.getId(), dataType);
 		
 		dataType = new DataType();
@@ -735,7 +735,7 @@ public class DatatypeManager
 		dataType.setName("汇率");
 		dataType.setJava("java.math.BigDecimal");
 		dataType.setJdbcType(0);
-		dataType.setId(25);
+		dataType.setId(25L);
 		dataTypeIds.put(dataType.getId(), dataType);
 
     }
@@ -750,5 +750,5 @@ public class DatatypeManager
     	return table;
     }
 
-    private static HashMap<Integer, DataType> dataTypeIds = new HashMap<Integer, DataType>();
+    private static HashMap<Long, DataType> dataTypeIds = new HashMap<Long, DataType>();
 }

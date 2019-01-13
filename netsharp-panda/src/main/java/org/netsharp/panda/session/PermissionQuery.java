@@ -69,8 +69,8 @@ public class PermissionQuery {
 		IOrganizationService organizationService = ServiceFactory.create(IOrganizationService.class);
 		List<Organization> orgs = organizationService.queryList(oql);
 
-		List<Integer> orgIds = new ArrayList<Integer>();
-		List<Integer> posIds = new ArrayList<Integer>();
+		List<Long> orgIds = new ArrayList<Long>();
+		List<Long> posIds = new ArrayList<Long>();
 		for (Organization org : orgs) {
 			orgIds.add(org.getId());
 			if (org.getPositionId() != null) {
@@ -112,7 +112,7 @@ public class PermissionQuery {
 		}
 		IRoleEmployeeService roleEmployeeService = ServiceFactory.create(IRoleEmployeeService.class);
 		List<RoleEmployee> roles = roleEmployeeService.queryList(oql);
-		List<Integer> roleIds = new ArrayList<Integer>();
+		List<Long> roleIds = new ArrayList<Long>();
 		for (RoleEmployee re : roles) {
 			roleIds.add(re.getRoleId());
 		}
@@ -133,7 +133,7 @@ public class PermissionQuery {
 		List<Operation> operations = new ArrayList<Operation>();
 		Map<String, List<String>> fieldGeteways = new HashMap<String, List<String>>();
 
-		Set<Integer> operationId = new HashSet<Integer>();
+		Set<Long> operationId = new HashSet<Long>();
 
 		for (AuthorizationPrincipal ap : aps) {
 			for (PrincipalOperation po : ap.getPrincipalOperations()) {

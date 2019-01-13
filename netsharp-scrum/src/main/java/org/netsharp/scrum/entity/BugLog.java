@@ -16,7 +16,7 @@ public class BugLog extends Entity{
 	private String content;
 	
 	@Column(name="bug_id",header="缺陷Id")
-	private Integer bugId;
+	private Long bugId;
 	
 	@JsonBackReference
 	@Reference(foreignKey="bugId")
@@ -30,11 +30,11 @@ public class BugLog extends Entity{
 		this.content = content;
 	}
 
-	public Integer getBugId() {
+	public Long getBugId() {
 		return bugId;
 	}
 
-	public void setBugId(Integer bugId) {
+	public void setBugId(Long bugId) {
 		this.bugId = bugId;
 	}
 

@@ -40,7 +40,7 @@ public class WeixinSubscribeResponse implements IWeixinResponsor {
         SubscribeEvent eventRequest = (SubscribeEvent) request;
         pac = PublicAccountManager.getInstance().get(originalId);
 
-        int sceneId =  eventRequest.getSceneId();//xufangbo new version test
+        Long sceneId =  eventRequest.getSceneId();//xufangbo new version test
 
         // 记录用户最近一次关注所扫码的场景ID
         String event = eventRequest.getEvent();

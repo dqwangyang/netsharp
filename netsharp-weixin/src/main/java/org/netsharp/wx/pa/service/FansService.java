@@ -40,28 +40,28 @@ public class FansService extends PersistableService<Fans> implements IFansServic
 	}
 
 	@Override
-	public Fans getInviterByUser(Integer userId) {
+	public Fans getInviterByUser(Long userId) {
 		Fans fans = getFansByUserId(userId);
 		if (fans == null) {
 			return null;
 		}
 		String code = fans.getInviteCode();
 		if (code != null) {
-			Integer inviterFid = Integer.parseInt(code);
+			Long inviterFid = Long.parseLong(code);
 			return byId(inviterFid);
 		}
 		return null;
 	}
 
 	@Override
-	public Fans getInviter(Integer fansId) {
+	public Fans getInviter(Long fansId) {
 		Fans fans = byId(fansId);
 		if (fans == null) {
 			return null;
 		}
 		String code = fans.getInviteCode();
 		if (code != null) {
-			Integer inviterFid = Integer.parseInt(code);
+			Long inviterFid = Long.parseLong(code);
 			return byId(inviterFid);
 		}
 		return null;
@@ -78,7 +78,7 @@ public class FansService extends PersistableService<Fans> implements IFansServic
 	 * @return
 	 * @
 	 */
-	public Fans subscribe(String openId, PublicAccount pa, int sceneId, boolean isSubscribeEvent)  {
+	public Fans subscribe(String openId, PublicAccount pa, Long sceneId, boolean isSubscribeEvent)  {
 		sceneId = sceneId < 0 ? 0 : sceneId;
 		Fans fans = getFans(openId, pa.getId());
 		// 是否是新的粉丝用户
@@ -104,7 +104,7 @@ public class FansService extends PersistableService<Fans> implements IFansServic
 	 * @param isNewFans
 	 *            true表示新粉丝，false表示假粉丝
 	 */
-	private void setFansSubscribeInfo(Fans fans, int sceneId, boolean isSubscribeEvent, boolean isNewFans) {
+	private void setFansSubscribeInfo(Fans fans, Long sceneId, boolean isSubscribeEvent, boolean isNewFans) {
 		Date now = new Date();
 
 		// 是否是已关注的用户
@@ -157,7 +157,7 @@ public class FansService extends PersistableService<Fans> implements IFansServic
 		return fans;
 	}
 
-	private Fans getFans(String openid, Integer pid) {
+	private Fans getFans(String openid, Long pid) {
 		Fans fans = this.byOpenId(openid);
 		if (fans == null) {
 			fans = new Fans();
@@ -257,18 +257,18 @@ public class FansService extends PersistableService<Fans> implements IFansServic
 		return fans;
 	}
 
-	public Integer getUserIdByFansId(Integer fid) {
+	public Long getUserIdByFansId(Long fid) {
 		if (fid == null || fid < 1) {
 			return null;
 		}
 		String cmdText = "select user_id from " + MtableManager.getMtable(type).getTableName() + " where id = " + fid;
-		return (Integer) this.pm.executeScalar(cmdText, null);
+		return (Long) this.pm.executeScalar(cmdText, null);
 	}
 
 	private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
 	@Override
-	public List<Fans> getFansOfToday(Integer fromFansId) {
+	public List<Fans> getFansOfToday(Long fromFansId) {
 		String today = simpleDateFormat.format(new Date());
 
 		String beginTime = today + " 00:00:00";
@@ -278,7 +278,7 @@ public class FansService extends PersistableService<Fans> implements IFansServic
 	}
 
 	@Override
-	public List<Fans> getFansByDate(String fromDate, String toDate, Integer fromFansId) {
+	public List<Fans> getFansByDate(String fromDate, String toDate, Long fromFansId) {
 		Oql oql = new Oql();
 
 		oql.setType(Fans.class);
@@ -305,7 +305,7 @@ public class FansService extends PersistableService<Fans> implements IFansServic
 	}
 
 	@Override
-	public List<Fans> getSubscriberOfToday(Integer fromFansId) {
+	public List<Fans> getSubscriberOfToday(Long fromFansId) {
 		String today = simpleDateFormat.format(new Date());
 
 		String beginTime = today + " 00:00:00";
@@ -315,7 +315,7 @@ public class FansService extends PersistableService<Fans> implements IFansServic
 	}
 
 	@Override
-	public List<Fans> getSubscriberOfToday(String fromDate, String toDate, Integer fromFansId) {
+	public List<Fans> getSubscriberOfToday(String fromDate, String toDate, Long fromFansId) {
 		Oql oql = new Oql();
 
 		oql.setType(Fans.class);
@@ -342,17 +342,17 @@ public class FansService extends PersistableService<Fans> implements IFansServic
 	}
 
 	@Override
-	public Integer updateFans(Fans fans) {
+	public Long updateFans(Fans fans) {
 		if (fans == null || fans.getId() <= 0) {
-			return 0;
+			return 0L;
 		}
 		fans.toPersist();
 		boolean rs = this.pm.save(fans);
-		return rs ? 1 : 0;
+		return rs ? 1L : 0L;
 	}
 
 	@Override
-	public Fans getFansByUserId(Integer userId) {
+	public Fans getFansByUserId(Long userId) {
 		Oql oql = new Oql();
 
 		oql.setType(Fans.class);
@@ -366,11 +366,11 @@ public class FansService extends PersistableService<Fans> implements IFansServic
 	}
 
 	@Override
-	public void bindUserToFans(Integer userId, Integer fansId) {
+	public void bindUserToFans(Long userId, Long fansId) {
 		Fans fans = byId(fansId);
 
 		if (fans != null) {
-			Integer __userId = fans.getUserId() == null ? 0 : fans.getUserId();
+			Long __userId = fans.getUserId() == null ? 0L : fans.getUserId();
 			/*
 			 * 处理两种情况 ： 1. 粉丝没有绑定用户：执行绑定； 2. 粉丝之前绑定的用户与当前登录的用户不是同一个用户：切换绑定用户
 			 */

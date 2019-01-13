@@ -204,7 +204,7 @@ public class ToolbarTest {
 			item.setName("删除");
 			item.setClassName("normal");
 			item.setCommand("{controller}.remove()");
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setSeq(4);
 			toolbar.getItems().add(item);
 			item.setOperationType(otDelete);
@@ -275,7 +275,7 @@ public class ToolbarTest {
 			item.setIcon("fa fa-trash-o");
 			item.setName("删除");
 			item.setCommand(null);
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setSeq(4);
 			toolbar.getItems().add(item);
 
@@ -290,7 +290,7 @@ public class ToolbarTest {
 			item.setIcon("fa fa-download");
 			item.setName("导出");
 			item.setCommand(null);
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setSeq(5);
 			toolbar.getItems().add(item);
 
@@ -307,7 +307,7 @@ public class ToolbarTest {
 			item.setIcon("fa fa-file-excel-o");
 			item.setName("下载模版");
 			item.setCommand(null);
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setSeq(6);
 			toolbar.getItems().add(item);
 
@@ -324,7 +324,7 @@ public class ToolbarTest {
 			item.setIcon("fa fa-upload");
 			item.setName("导入");
 			item.setCommand(null);
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setSeq(7);
 			toolbar.getItems().add(item);
 
@@ -341,7 +341,7 @@ public class ToolbarTest {
 			item.setIcon("fa fa-link");
 			item.setName("附件");
 			item.setCommand(null);
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setSeq(99);
 			toolbar.getItems().add(item);
 
@@ -433,7 +433,7 @@ public class ToolbarTest {
 			item.setIcon("fa fa-fast-backward");
 			item.setName("首张");
 			item.setCommand(null);
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setDisabled(true);
 			item.setSeq(100);
 
@@ -448,7 +448,7 @@ public class ToolbarTest {
 			item.setIcon("fa fa-backward");
 			item.setName("上张");
 			item.setCommand(null);
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setDisabled(true);
 			item.setSeq(200);
 
@@ -463,7 +463,7 @@ public class ToolbarTest {
 			item.setIcon("fa fa-forward");
 			item.setName("下张");
 			item.setCommand(null);
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setDisabled(true);
 			item.setSeq(300);
 
@@ -478,7 +478,7 @@ public class ToolbarTest {
 			item.setIcon("fa fa-fast-forward");
 			item.setName("末张");
 			item.setCommand(null);
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setDisabled(true);
 			item.setSeq(400);
 
@@ -493,7 +493,7 @@ public class ToolbarTest {
 			item.setIcon("fa fa-file-excel-o");
 			item.setName("导出");
 			item.setCommand(null);
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 			item.setDisabled(true);
 			item.setSeq(500);
 
@@ -511,7 +511,7 @@ public class ToolbarTest {
 		// item.setIcon("fa fa-cog");
 		// item.setName("设置");
 		// item.setCommand(null);
-		// item.setOperationTypeId(-1);
+		// item.setOperationTypeId(-1L);
 		// // item.setDisabled(true);
 		// item.setSeq(9000);
 		//
@@ -592,7 +592,7 @@ public class ToolbarTest {
 		// item.setIcon("icon-remove");
 		// item.setName("删除");
 		// item.setCommand(null);
-		// item.setOperationTypeId(-1);
+		// item.setOperationTypeId(-1L);
 		//
 		// toolbar.getItems().add(item);
 		//
@@ -608,7 +608,7 @@ public class ToolbarTest {
 			item.setName("附件");
 			item.setCommand(null);
 			item.setSeq(800);
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 
 			toolbar.getItems().add(item);
 
@@ -765,7 +765,7 @@ public class ToolbarTest {
 		// item.setIcon("icon-tree");
 		// item.setName("分类路径");
 		// item.setCommand(null);
-		// item.setOperationTypeId(-1);
+		// item.setOperationTypeId(-1L);
 		// toolbar.getItems().add(item);
 		// item.setOperationType(otUpdate);
 		// }
@@ -811,7 +811,7 @@ public class ToolbarTest {
 			item.setIcon("fa fa-check");
 			item.setName("选择");
 			item.setCommand("{controller}.select();");
-			item.setOperationTypeId(-1);
+			item.setOperationTypeId(-1L);
 
 			toolbar.getItems().add(item);
 		}

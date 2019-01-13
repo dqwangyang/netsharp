@@ -4,8 +4,8 @@ import java.util.Date;
 
 public interface IEntity extends IPersistable {
 	
-	public Integer getId();
-	public void setId(Integer id);
+	public Long getId();
+	public void setId(Long id);
 	
 	public Date getCreateTime();
 	public void setCreateTime(Date createTime);
@@ -19,11 +19,11 @@ public interface IEntity extends IPersistable {
 	public String getUpdator() ;
 	public void setUpdator(String updator);
 	
-	public Integer getCreatorId() ;
-	public void setCreatorId(Integer idCreator);
+	public Long getCreatorId() ;
+	public void setCreatorId(Long idCreator);
 	
-	public Integer getUpdatorId();
-	public void setUpdatorId(Integer idUpdator) ;
+	public Long getUpdatorId();
+	public void setUpdatorId(Long idUpdator) ;
 	
 //	public Date getTs();
 //	public void setTs(Date ts);

@@ -20,12 +20,12 @@ public class UseCase extends BizEntity {
 	private static final long serialVersionUID = 3021873048137307596L;
 	
 	@Column(name = "owner_id")
-	private Integer ownerId;
+	private Long ownerId;
 	@Reference(foreignKey = "ownerId")
 	private Employee owner;// 项目负责人
 
 	@Column(name = "project_id")
-	private Integer projectId;
+	private Long projectId;
 
 	@Reference(foreignKey = "projectId")
 	private Project project;
@@ -33,7 +33,7 @@ public class UseCase extends BizEntity {
 	private CaseStatus status = CaseStatus.hibernate;
 
 	@Column(name = "organization_id")
-	private Integer organizationId;
+	private Long organizationId;
 
 	@Reference(foreignKey = "organizationId")
 	private Organization organization;
@@ -44,11 +44,11 @@ public class UseCase extends BizEntity {
 	@Subs(subType = UseCaseDetail.class, foreignKey = "caseId")
 	private List<UseCaseDetail> details;
 
-	public Integer getOwnerId() {
+	public Long getOwnerId() {
 		return ownerId;
 	}
 
-	public void setOwnerId(Integer ownerId) {
+	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
 	}
 
@@ -65,11 +65,11 @@ public class UseCase extends BizEntity {
 		}
 	}
 
-	public Integer getProjectId() {
+	public Long getProjectId() {
 		return projectId;
 	}
 
-	public void setProjectId(Integer projectId) {
+	public void setProjectId(Long projectId) {
 		this.projectId = projectId;
 	}
 
@@ -89,11 +89,11 @@ public class UseCase extends BizEntity {
 		this.status = status;
 	}
 
-	public Integer getOrganizationId() {
+	public Long getOrganizationId() {
 		return organizationId;
 	}
 
-	public void setOrganizationId(Integer organizationId) {
+	public void setOrganizationId(Long organizationId) {
 		this.organizationId = organizationId;
 	}
 

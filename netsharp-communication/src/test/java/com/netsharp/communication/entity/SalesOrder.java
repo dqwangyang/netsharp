@@ -23,7 +23,7 @@ public class SalesOrder extends BizEntity {
     
     @Column(name="saved_amount")
     private BigDecimal savedAmount;
-    private Integer customerId;
+    private Long customerId;
     @Reference(foreignKey="customerId")
     private Customer customer;
     
@@ -57,7 +57,7 @@ public class SalesOrder extends BizEntity {
 		this.customer = customer;
 		
 		if(this.customer==null){
-			this.setCustomerId(0);
+			this.setCustomerId(0L);
 		}
 		else{
 			this.setCustomerId(customer.getId());
@@ -72,11 +72,11 @@ public class SalesOrder extends BizEntity {
 		this.savedAmount = savedAmount;
 	}
 
-	public Integer getCustomerId() {
+	public Long getCustomerId() {
 		return customerId;
 	}
 
-	public void setCustomerId(Integer customerId) {
+	public void setCustomerId(Long customerId) {
 		this.customerId = customerId;
 	}
 

@@ -12,7 +12,7 @@ public class SubscribeUnhint implements IWeixinSubscriber {
         return true;
     }
 
-    public ResponseMessage reply(EventRequest request,Fans fans,PublicAccount publicAccount,int sceneId){
+    public ResponseMessage reply(EventRequest request,Fans fans,PublicAccount publicAccount,Long sceneId){
         TextResponse message = new TextResponse();
         message.setToUserName(request.getFromUserName());
         message.setFromUserName( request.getToUserName());

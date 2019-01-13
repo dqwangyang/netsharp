@@ -25,7 +25,7 @@ public class Operation extends ResourceBizEntity implements Serializable{
     private OperationType operationType;
     
     @Column(name="operation_type_id",header="操作类型")
-    private Integer operationTypeId;
+    private Long operationTypeId;
 
 	@Column(name="seq",header="顺序")
     private Integer seq;
@@ -42,10 +42,10 @@ public class Operation extends ResourceBizEntity implements Serializable{
         }
         return this.fieldGeteways;
     }
-    public Integer getOperationTypeId(){
+    public Long getOperationTypeId(){
         return this.operationTypeId;
     }
-    public Operation setOperationTypeId(Integer operationTypeId){
+    public Operation setOperationTypeId(Long operationTypeId){
         this.operationTypeId=operationTypeId;
         return this;
     }
