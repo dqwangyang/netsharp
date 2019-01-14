@@ -16,7 +16,7 @@ public abstract class Entity extends Persistable implements IEntity {
 	private static final long serialVersionUID = -3763283870698919626L;
 
 	@Id
-	@Auto
+//	@Auto
 	@Column(name = "id", header = "主键")
 	private Long id;
 

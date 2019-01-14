@@ -67,7 +67,7 @@ public class DetailPart extends DatagridPartBase {
 	 */
 	protected void createDetailFrom() {
 
-		Integer formId = this.context.getFormId();
+		Long formId = this.context.getFormId();
 		if (formId != null) {
 
 //			Dialog dialog = new Dialog();

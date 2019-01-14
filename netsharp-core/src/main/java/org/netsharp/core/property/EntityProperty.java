@@ -54,8 +54,9 @@ public class EntityProperty implements IProperty {
 		try {
 			field.set(owner, value);
 		} catch (Exception e) {
-			throw new NetsharpException("",e);
-//			logger.error( "数据库字段读取到实体字段("+owner.getClass().getName() + "." + field.getName()+")错误："+StringManager.NewLine+e );
+			String message = "数据库字段读取到实体字段("+owner.getClass().getName() + "." + field.getName()+")错误："+e.getMessage();
+			throw new NetsharpException(message,e);
+//			
 		}
 	}
 

@@ -5,15 +5,15 @@ import org.netsharp.panda.entity.PPart;
 
 public abstract class RequestBase {
 
-	private Integer vid;
+	private Long vid;
 	private String service;
 	private PPart ppart;
 	
-	public Integer getvid() {
+	public Long getvid() {
 		return vid;
 	}
 
-	public void setvid(Integer vid) {
+	public void setvid(Long vid) {
 		this.vid = vid;
 	}
 	

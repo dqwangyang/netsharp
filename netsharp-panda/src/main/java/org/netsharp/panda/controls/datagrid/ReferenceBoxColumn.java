@@ -81,7 +81,7 @@ public class ReferenceBoxColumn extends DataGridEditColumn {
 		StringBuilder builder = new StringBuilder();
 		builder.append("columns: [[").append(StringManager.NewLine);
 		if (prefernece.getDataGrid() == null) {
-			Integer datagridId = this.getPrefernece().getDatagridId();
+			Long datagridId = this.getPrefernece().getDatagridId();
 			if (datagridId == null || datagridId <= 0) {
 				throw new NetsharpException("参照" + this.prefernece.getName() + "必须配置网格");
 			} else {

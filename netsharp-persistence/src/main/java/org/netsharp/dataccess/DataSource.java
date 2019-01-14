@@ -35,7 +35,7 @@ public class DataSource {
 
 			return con;
 		} catch (SQLException e) {
-			throw new DataAccessException("连接数据库失败！", e);
+			throw new DataAccessException("连接数据库失败！"+e.getMessage(), e);
 		}
 	}
 }

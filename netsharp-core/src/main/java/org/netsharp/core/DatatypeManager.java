@@ -34,9 +34,9 @@ public class DatatypeManager
         {
             return DataTypes.Boolean;
         }
-        else if (type == int.class || type == Long.class)
+        else if (type == int.class || type == Integer.class)
         {
-            return DataTypes.Long;
+            return DataTypes.Integer;
         }
         else if (type == short.class || type == Short.class)
         {
@@ -72,7 +72,7 @@ public class DatatypeManager
         }
         else if (type.isEnum())
         {
-            return DataTypes.Long;
+            return DataTypes.Integer;
         }
         else
         {
@@ -88,8 +88,8 @@ public class DatatypeManager
 
         //
 		dataType = new DataType();table.add(dataType);
-		DataTypes.Long = dataType;
-		dataType.setPrecisionDb((short)(short)0);
+		DataTypes.Integer = dataType;
+		dataType.setPrecisionDb((short)0);
 		dataType.setPrecisionDisplay((short)0);
 		dataType.setPrecision(false);
 		dataType.setSizeDb((short)0);
@@ -105,9 +105,9 @@ public class DatatypeManager
 		dataType.setDb2("");
 		dataType.setIcon("Icons.16x16.DataSource.Number.png");
 		dataType.setSplitter(true);
-		dataType.setCode("Long");
+		dataType.setCode("Integer");
 		dataType.setName("整数(32)");
-		dataType.setJava("java.lang.Long");
+		dataType.setJava("java.lang.Integer");
 		dataType.setJdbcType(0);
 		dataType.setId(1L);
 		dataTypeIds.put(dataType.getId(), dataType);

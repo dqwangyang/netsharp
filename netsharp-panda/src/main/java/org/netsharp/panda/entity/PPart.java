@@ -80,7 +80,7 @@ public class PPart extends ResourceBizEntity{
 	private PForm form;
 	
 	@Column(name="form_id",header="表单Id")
-	private Integer formId;
+	private Long formId;
 	
 	@Reference(foreignKey="partTypeId",header="部件类型")
 	private PPartType partType;
@@ -224,11 +224,11 @@ public class PPart extends ResourceBizEntity{
 		this.form = form;
 	}
 
-	public Integer getFormId() {
+	public Long getFormId() {
 		return formId;
 	}
 
-	public void setFormId(Integer formId) {
+	public void setFormId(Long formId) {
 		this.formId = formId;
 	}
 

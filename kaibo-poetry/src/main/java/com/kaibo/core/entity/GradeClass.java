@@ -15,6 +15,7 @@ public class GradeClass extends BizEntity {
 	
 	@Column(name="grade_id",header="年级")
 	private Long gradeId;
+	
 	@Reference(foreignKey="gradeId",header="年级")
 	private GradeClass grade;
 	public String getFullName() {
@@ -40,7 +41,4 @@ public class GradeClass extends BizEntity {
 			this.gradeId = this.grade.getId();
 		}
 	}
-	
-	
-
 }

@@ -9,10 +9,6 @@ import org.netsharp.resourcenode.entity.ResourceBizEntity;
 @Table(name="ui_pa_reference",header="参照信息")
 public class PReference extends ResourceBizEntity{
 
-
-	/**   
-	 * @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么)   
-	 */   
 	private static final long serialVersionUID = 2767666604833441209L;
 
 	@Column(name = "filter",header="过滤条件",size=1000)
@@ -49,7 +45,7 @@ public class PReference extends ResourceBizEntity{
     protected String orderby;
     
 	@Column(name = "new_voucher_id",header="点击新增时弹出的部件工作区")
-    protected Integer newVoucherId;
+    protected Long newVoucherId;
     
 	@Column(name = "filter_script",header="过滤脚本")
     protected String filterScript;
@@ -64,7 +60,7 @@ public class PReference extends ResourceBizEntity{
     protected PDatagrid dataGrid;
     
     @Column(name="datagrid_id",header="表格方案Id")
-    protected Integer datagridId;
+    protected Long datagridId;
     
     @Column(name="panel_width",header="下拉面板宽度")
     protected Integer panelWidth;
@@ -116,10 +112,10 @@ public class PReference extends ResourceBizEntity{
         this.orderby=orderby;
         return this;
     }
-    public Integer getNewVoucherId(){
+    public Long getNewVoucherId(){
         return this.newVoucherId;
     }
-    public PReference setNewVoucherId(Integer newVoucherId){
+    public PReference setNewVoucherId(Long newVoucherId){
         this.newVoucherId=newVoucherId;
         return this;
     }
@@ -131,10 +127,10 @@ public class PReference extends ResourceBizEntity{
         return this;
     }
 
-    public Integer getDatagridId(){
+    public Long getDatagridId(){
         return this.datagridId;
     }
-    public PReference setDatagridId(Integer datagridId){
+    public PReference setDatagridId(Long datagridId){
         this.datagridId=datagridId;
         return this;
     }

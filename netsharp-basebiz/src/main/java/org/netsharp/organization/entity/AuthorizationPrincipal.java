@@ -12,10 +12,6 @@ import org.netsharp.organization.dic.PrincipalType;
 @Table(name = "sys_permission_authorization_principal", header = "授权主体")
 public class AuthorizationPrincipal extends Entity {
 
-
-	/**   
-	 * @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么)   
-	 */   
 	private static final long serialVersionUID = -5499224707229093628L;
 
 	@Column(name="principal_type",header="主体类型")

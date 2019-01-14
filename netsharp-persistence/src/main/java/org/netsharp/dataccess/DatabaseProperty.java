@@ -8,7 +8,7 @@ import org.netsharp.dic.DatabaseType;
 @Configuration(file = "conf/database.properties")
 public class DatabaseProperty extends ApplicationConfiguration {
 
-	@ConfigItem(key="jdbc.driverClass",defaultValue="com.mysql.jdbc.Driver")
+	@ConfigItem(key="jdbc.driverClass",defaultValue="com.mysql.cj.jdbc.Driver")
 	private String driverClass;
 	@ConfigItem(key="jdbc.jdbcUrl",defaultValue="")
 	private String jdbcUrl;

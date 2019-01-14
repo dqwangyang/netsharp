@@ -15,15 +15,14 @@ import org.netsharp.core.Oql;
 import org.netsharp.core.QueryParameters;
 import org.netsharp.organization.base.IEmployeeService;
 import org.netsharp.organization.base.IOrganizationService;
-import org.netsharp.organization.entity.AuthorizationConfiguration;
 import org.netsharp.organization.entity.Employee;
 import org.netsharp.organization.entity.Organization;
 import org.netsharp.organization.entity.OrganizationEmployee;
+import org.netsharp.organization.service.action.login.PasswordHelper;
 import org.netsharp.persistence.IPersister;
 import org.netsharp.persistence.PersisterFactory;
 import org.netsharp.service.PersistableService;
 import org.netsharp.util.DateManage;
-import org.netsharp.util.EncrypUtil;
 import org.netsharp.util.sqlbuilder.UpdateBuilder;
 
 @Service
@@ -265,11 +264,11 @@ public class EmployeeService extends PersistableService<Employee> implements IEm
 		if (employee != null) {
 			
 			String cmdText = "UPDATE sys_permission_employee SET pwd=?,update_time=NOW() WHERE id=?";
-			String pwd = EncrypUtil.md5(AuthorizationConfiguration.getInstance().getDefaultPassword() + "user!@#123").substring(8,24);
+			String pwd = PasswordHelper.md5(null);
 			QueryParameters qps = new QueryParameters();
 			{
 				qps.add("@pwd",pwd, Types.VARCHAR);
-				qps.add("@id", id, Types.INTEGER);
+				qps.add("@id", id, Types.BIGINT);
 			}
 			this.pm.executeNonQuery(cmdText, qps);
 		}

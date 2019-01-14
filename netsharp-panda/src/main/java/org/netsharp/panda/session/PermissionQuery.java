@@ -151,7 +151,6 @@ public class PermissionQuery {
 					List<String> fields = fieldGeteways.get(entityId);
 					if (fields == null) {
 						fields = new ArrayList<String>();
-
 						fieldGeteways.put(entityId, fields);
 					}
 

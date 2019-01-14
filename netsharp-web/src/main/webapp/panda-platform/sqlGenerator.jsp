@@ -31,7 +31,7 @@
 	}else if(type.equals("resourcenode")){
 		
 		String id = (String)request.getParameter("id");
-		Integer resourceNodeId = Integer.valueOf(id);
+		Long resourceNodeId = Long.valueOf(id);
 		IResourceNodeService service = ServiceFactory.create(IResourceNodeService.class);
 		List<String> sqls = service.export(resourceNodeId);
 		sql = StringManager.join("<br/>", sqls);

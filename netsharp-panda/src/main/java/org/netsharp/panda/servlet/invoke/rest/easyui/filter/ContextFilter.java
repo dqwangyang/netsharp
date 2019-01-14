@@ -110,7 +110,7 @@ public class ContextFilter implements IPandaFilter {
 
 		RequestEasyui request = new RequestEasyui();
 		{
-			request.setvid(Integer.parseInt(vid));
+			request.setvid(Long.valueOf(vid));
 			request.setMethod(methodName);
 			request.setService(serviceController);
 			request.setPpart(ppart);

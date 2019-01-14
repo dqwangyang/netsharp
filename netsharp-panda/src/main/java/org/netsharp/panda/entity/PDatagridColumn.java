@@ -16,7 +16,7 @@ public class PDatagridColumn extends PInputField {
 	private static final long serialVersionUID = -340036564414964055L;
 
 	@Column(name = "datagrid_id",header="表格方案Id")
-	private Integer datagridId;
+	private Long datagridId;
 
 	@JsonBackReference
 	@Reference(foreignKey = "datagridId")
@@ -106,11 +106,11 @@ public class PDatagridColumn extends PInputField {
 		return this;
 	}
 
-	public Integer getDatagridId() {
+	public Long getDatagridId() {
 		return datagridId;
 	}
 
-	public void setDatagridId(Integer datagridId) {
+	public void setDatagridId(Long datagridId) {
 		this.datagridId = datagridId;
 	}
 

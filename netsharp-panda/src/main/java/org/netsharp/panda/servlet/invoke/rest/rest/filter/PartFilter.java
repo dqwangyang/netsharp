@@ -19,7 +19,7 @@ public class PartFilter implements IPandaFilter {
 		Object serviceObject = ctx.getServiceObject();
 		
 		IPPartService service = ServiceFactory.create(IPPartService.class);
-		Integer vid = request.getvid();
+		Long vid = request.getvid();
 		if(vid !=null && vid>0) {
 			PPart ppart = service.byId(vid);
 			request.setPpart(ppart); 

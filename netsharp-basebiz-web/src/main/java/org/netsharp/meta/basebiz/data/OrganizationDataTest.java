@@ -20,7 +20,6 @@ public class OrganizationDataTest {
 		if(count>0) {
 			return;
 		}
-		
 
 		Organization o = new Organization();
 		{
@@ -28,7 +27,6 @@ public class OrganizationDataTest {
 			o.setName("xxx集团");
 			o.setOrganizationType(OrganizationType.SYSTEM);
 		}
-		
 		service.save(o);
 
 		Organization post = new Organization();

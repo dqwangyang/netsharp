@@ -18,7 +18,7 @@ public class PQueryItem extends UiField{
 	private boolean customized = false;
 	
 	@Column(name="permission",header="权限")
-    private Integer permission;
+    private Long permission;
     
 	@Column(name="value1",header="值1")
     private String value1;
@@ -73,14 +73,14 @@ public class PQueryItem extends UiField{
     private PQueryProject queryProject;
     
     @Column(name="query_project_id",header="查询方案")
-    private Integer queryProjectId;
+    private Long queryProjectId;
 
 
-	public Integer getPermission() {
+	public Long getPermission() {
 		return permission;
 	}
 
-	public void setPermission(Integer permission) {
+	public void setPermission(Long permission) {
 		this.permission = permission;
 	}
 
@@ -172,11 +172,11 @@ public class PQueryItem extends UiField{
 		this.queryProject = queryProject;
 	}
 
-	public Integer getQueryProjectId() {
+	public Long getQueryProjectId() {
 		return queryProjectId;
 	}
 
-	public void setQueryProjectId(Integer queryProjectId) {
+	public void setQueryProjectId(Long queryProjectId) {
 		this.queryProjectId = queryProjectId;
 	}
 

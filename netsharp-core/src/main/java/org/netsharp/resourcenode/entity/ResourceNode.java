@@ -24,13 +24,13 @@ public class ResourceNode extends CatEntity implements Serializable{
     private String service;
     
     @Column(name="plugin_id",header="插件")
-    private Integer pluginId;
+    private Long pluginId;
     
     @CompositeOne(foreignKey="pluginId")
     private Plugin plugin;
     
     @Column(name="seq",header="排序")
-    private int seq = 0;
+    private Integer seq = 0;
     
 	public ResourceType getResourceType() {
 		return resourceType;
@@ -57,16 +57,16 @@ public class ResourceNode extends CatEntity implements Serializable{
 	public void setService(String service) {
 		this.service = service;
 	}
-	public Integer getPluginId() {
+	public Long getPluginId() {
 		return pluginId;
 	}
-	public void setPluginId(Integer pluginId) {
+	public void setPluginId(Long pluginId) {
 		this.pluginId = pluginId;
 	}
-	public int getSeq() {
+	public Integer getSeq() {
 		return seq;
 	}
-	public void setSeq(int seq) {
+	public void setSeq(Integer seq) {
 		this.seq = seq;
 	}
 }
