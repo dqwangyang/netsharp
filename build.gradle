@@ -25,12 +25,10 @@ configure(subprojects.findAll { it.name !='xxx' }) {
     
 	repositories {
 		mavenLocal()
-		
 		 maven {  
 		     name "maven-public"  
 		     url "$rep_public"
 		 }  
-		 
 		mavenCentral()
 	}
 

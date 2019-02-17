@@ -17,7 +17,7 @@ include 'weixin-sdk-tp'
 include 'netsharp-test'
 include 'netsharp-web'
 include 'netsharp-weixin-ui'
-include 'netsharp-rest'
+//include 'netsharp-rest'
 include 'netsharp-elephant'
 include 'netsharp-donkey'
 
