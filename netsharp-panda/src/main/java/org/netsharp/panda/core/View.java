@@ -23,7 +23,6 @@ public class View extends Div {
 	protected void initToolbar() {
 
 		if (StringManager.isNullOrEmpty(context.getToolbar())) {
-
 			return;
 		}
 
@@ -41,7 +40,6 @@ public class View extends Div {
 	    	Pathable pathable = pst.byPath(context.getToolbar(), PToolbar.class.getName());
 	    	
 	    	if(pathable != null){
-
 	    		this.addJscript("            " + this.getJsInstance() + ".context.toolbarId =\""+pathable.getId()+"\";", JscriptType.Initialize);
 	    	}
 			this.addJscript("            " + this.getJsInstance() + ".context.toolbar = new org.netsharp.controls.Toolbar();", JscriptType.Initialize);

@@ -35,13 +35,8 @@ public class ReflectManager {
 
 			type = type.getSuperclass();
 		}
-
-		Field[] fis = new Field[fields.size()];
-
-		for (int i = 0; i < fields.size(); i++) {
-			fis[i] = fields.get(i);
-		}
-		return fis;
+		
+		return fields.toArray(new Field[fields.size()]);
 	}
 
 	public static Field getField(Class<?> type, String name) {

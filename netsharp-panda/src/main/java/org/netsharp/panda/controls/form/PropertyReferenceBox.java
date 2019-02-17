@@ -36,9 +36,12 @@ public class PropertyReferenceBox implements IPropertyControl {
 		{
 			PReference pReference = formField.getReference();
 			if(pReference == null){
-				
 				IPReferenceService referenceService = ServiceFactory.create(IPReferenceService.class);
 				pReference = referenceService.byCode(formField.getReferenceCode());
+				if(pReference==null) {
+					String message = "UI字段"+meta.getCode()+"."+formField.getPropertyName()+"没有配置参照";
+					throw new PandaException(message);
+				}
 			}
 			
 			referenceBox.collected = true;

@@ -75,7 +75,7 @@ import org.netsharp.meta.basebiz.ref.organization.OrganizationReferenceTest;
 		RoleWorkbenchWorkspaceTest.class,
 		
 		OrganizationDataTest.class,
-		EmployeeDataTest.class,
+//		EmployeeDataTest.class,
 		
 		NavigationTest.class
 		})

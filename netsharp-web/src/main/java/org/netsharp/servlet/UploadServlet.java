@@ -34,14 +34,10 @@ import org.netsharp.util.StringManager;
 @WebServlet(name = "UploadServlet", urlPatterns = { "/upload" })
 public class UploadServlet extends HttpServlet {
 
-	/**   
-	 * @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么)   
-	 */   
 	private static final long serialVersionUID = -4642377214925791948L;
 	public UploadServlet() {
         super();
     }
-
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	   
@@ -58,8 +54,7 @@ public class UploadServlet extends HttpServlet {
 
 		this.getHttpCurrent(request, response);
 		
-		if(!PandaSessionPersister.logined()){
-			
+		if(!PandaSessionPersister.logined()){			
 			result.setType(Type.error);
 			result.setMessage("未登录，上传失败！");
 		    String json = JsonManage.serialize2(result);
@@ -73,7 +68,7 @@ public class UploadServlet extends HttpServlet {
 		String fileSeparator = System.getProperties().getProperty("file.separator");//路径分隔符
 		
 	    request.setCharacterEncoding("UTF-8");//设置接收的编码格式    
-	    Date date = new Date();//获取当前时间    
+	    Date date = new Date();//获取当前时间
 	    SimpleDateFormat sdfFileName = new SimpleDateFormat("yyyyMMddHHmmss"); 
 	    SimpleDateFormat sdfFolder = new SimpleDateFormat("yyMM");    
 	    String newfileName = sdfFileName.format(date);//文件名称    
@@ -86,7 +81,6 @@ public class UploadServlet extends HttpServlet {
 	    
 	    String relativePath = "";
 	    if(StringManager.indexOf(osName, "windows", true)!=-1){
-	    	
 	    	relativePath =  getServletContext().getInitParameter("windows_upload_dir");
 	    	osPath = this.getServletConfig().getServletContext().getRealPath("/") + relativePath;
 	    }else{
@@ -96,10 +90,8 @@ public class UploadServlet extends HttpServlet {
 	    //分类文件夹
 	    String categoryFolderPath = "";
 	    if(folder==null){
-	    	
 	    	categoryFolderPath = "";
 	    }else{
-	    	
 	    	categoryFolderPath = folder + fileSeparator;
 	    }
 
@@ -108,10 +100,9 @@ public class UploadServlet extends HttpServlet {
 	    File file = new File(savePath);    
 	    if (!file.isDirectory()) {    
 	        file.mkdirs();
-	    }    
+	    }
 	
 	    try {
-
 			DiskFileItemFactory fac = new DiskFileItemFactory();
 			ServletFileUpload upload = new ServletFileUpload(fac);
 	        upload.setHeaderEncoding("UTF-8");
@@ -119,14 +110,11 @@ public class UploadServlet extends HttpServlet {
 	        @SuppressWarnings("unchecked")
 			Iterator<FileItem> it = files.iterator();    
 	        while (it.hasNext()) {
-
 	            Object obit = it.next();  
-	            if(obit instanceof DiskFileItem){
-	            	
+	            if(obit instanceof DiskFileItem){	            	
 	                DiskFileItem item = (DiskFileItem) obit; //获得文件名及路径
 	                String fileName = item.getName();    
 	                if (fileName != null) {
-
 	                    firstFileName=item.getName().substring(item.getName().lastIndexOf(fileSeparator)+1);    
 	                    String formatName = firstFileName.substring(firstFileName.lastIndexOf("."));//获取文件后缀名    
 	                    fileRealPath = savePath + newfileName+ formatName;//文件存放真实地址
@@ -137,7 +125,6 @@ public class UploadServlet extends HttpServlet {
 	            }  
 	        }     
 	    } catch (org.apache.commons.fileupload.FileUploadException ex) {
-
 	        ex.printStackTrace();
 			result.setType(Type.error);
 			result.setMessage("没有上传文件");

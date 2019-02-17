@@ -39,6 +39,7 @@ public class ServletRequest implements IRequest {
 
 		this.request = request;
 		this.response = response;
+		this.session = SesssionFactory.create(request);
 
 		if (initialize) {
 			this.intiailize();
@@ -147,7 +148,8 @@ public class ServletRequest implements IRequest {
 	}
 
 	/**
-	 * 获取用户真实IP地址，不使用request.getRemoteAddr();的原因是有可能用户使用了代理软件方式避免真实IP地址,
+	 * 获取用户真实IP地址
+	 * 不使用request.getRemoteAddr()的原因是有可能用户使用了代理软件方式避免真实IP地址,
 	 * 参考文章： http://developer.51cto.com/art/201111/305181.htm
 	 * 
 	 * 可是，如果通过了多级反向代理的话，X-Forwarded-For的值并不止一个，而是一串IP值，究竟哪个才是真正的用户端的真实IP呢？

@@ -1,5 +1,7 @@
 package org.netsharp.panda.servlet.invoke.html;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.netsharp.core.NetsharpException;
 import org.netsharp.panda.authorization.AuthorizationException;
 import org.netsharp.panda.authorization.LoginException;
@@ -15,6 +17,8 @@ import org.netsharp.panda.servlet.invoke.PandaInvoke;
 import org.netsharp.panda.servlet.invoke.PandaInvokeType;
 
 public class PandaHtmlInvoke extends PandaInvoke {
+	
+	protected static final Log logger = LogFactory.getLog(PandaHtmlInvoke.class.getName());
 
 	public PandaHtmlInvoke() {
 
@@ -32,7 +36,6 @@ public class PandaHtmlInvoke extends PandaInvoke {
 		String url = request.getRequestURI().replace(subhost + "/panda", "");
 		String toLoginScript = "<script>window.top.location.href='/nav/panda-bizbase/authorization/login';</script>";
 		try {
-
 			IHtmlWriter writer = HttpContext.getCurrent().getWriter();
 			HtmlPage page = HtmlPageFactory.create(url);
 			{
@@ -41,19 +44,15 @@ public class PandaHtmlInvoke extends PandaInvoke {
 				page.render(writer);
 				writer.clearWriteHtml();
 			}
-
 		} catch (LoginException ex) {
-
 			response.write(toLoginScript);
-
 		} catch (AuthorizationException ex) {
-
 			response.sendRedirect("/nav/panda-bizbase/authorization/nopermission");
 		} catch (NetsharpException e) {
-
+			logger.error(e.getMessage(),e);
 			throw e;
 		} catch (Exception e) {
-
+			logger.error(e.getMessage(),e);
 			// 临时处理刷新报错 直接跳转login 页面
             response.write(toLoginScript);
 		}

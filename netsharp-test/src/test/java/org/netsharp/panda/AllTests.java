@@ -13,6 +13,8 @@ import org.junit.runners.Suite.SuiteClasses;
 //	org.netsharp.wx.meta.AllTests.class,
     org.netsharp.cache.plugin.AllTests.class,
     org.netsharp.scrum.meta.AllTests.class,
+    com.kaibo.poetry.meta.AllTests.class,
+    
 	org.netsharp.meta.end.AllTests.class,
 	
 	})

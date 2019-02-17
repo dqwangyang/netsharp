@@ -20,8 +20,6 @@ public class RedisSession implements ISession {
 	
 	private HttpServletRequest request;
 
-	
-	
 	public RedisSession(HttpServletRequest request) {
 		this.request = request;
 	}

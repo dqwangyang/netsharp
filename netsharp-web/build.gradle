@@ -20,6 +20,7 @@ dependencies {
     compile project(':netsharp-weixin')
     compile project(':netsharp-cache-plugin')
     compile project(':netsharp-weixin-ui')
+    compile project(':kaibo-poetry')
     
     compile group: 'org.slf4j', name: 'slf4j-log4j12', version: "1.6.1"
     
