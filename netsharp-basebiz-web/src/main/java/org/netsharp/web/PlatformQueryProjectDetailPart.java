@@ -7,7 +7,7 @@ import org.netsharp.panda.entity.PQueryProject;
 public class PlatformQueryProjectDetailPart  extends PlatformToolDetailPart{
 
 	@Override
-	protected String getMetaEntity(Integer projectId) {
+	protected String getMetaEntity(Long projectId) {
 		
 		String metaEntity = "";
 		IPQueryProjectService queryService = ServiceFactory.create(IPQueryProjectService.class);

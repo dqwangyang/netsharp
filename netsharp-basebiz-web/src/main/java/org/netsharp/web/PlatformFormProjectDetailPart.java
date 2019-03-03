@@ -7,7 +7,7 @@ import org.netsharp.panda.entity.PForm;
 public class PlatformFormProjectDetailPart extends PlatformToolDetailPart{
 
 	@Override
-	protected String getMetaEntity(Integer projectId) {
+	protected String getMetaEntity(Long projectId) {
 		
 		String metaEntity = "";
 		IPFormService formService = ServiceFactory.create(IPFormService.class);

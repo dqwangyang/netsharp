@@ -153,7 +153,7 @@ public abstract class PlatformToolDetailPart extends DetailPart {
 	}
 	
 	
-	protected abstract String getMetaEntity(Integer projectId);
+	protected abstract String getMetaEntity(Long projectId);
 
 	@Override
 	protected void addJscript() {
@@ -163,7 +163,7 @@ public abstract class PlatformToolDetailPart extends DetailPart {
 		String metaEntity = "";
 		if(id != null){
 
-			Integer projectId = Integer.parseInt(id);
+			Long projectId = Long.parseLong(id);
 			metaEntity = this.getMetaEntity(projectId);
 		}
 		this.addJscript("        " + getJsInstance() + ".context.metaEntity='" + metaEntity + "';", JscriptType.Header);

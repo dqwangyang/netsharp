@@ -7,7 +7,7 @@ import org.netsharp.panda.entity.PDatagrid;
 public class PlatformGridProjectDetailPart  extends PlatformToolDetailPart{
 
 	@Override
-	protected String getMetaEntity(Integer projectId) {
+	protected String getMetaEntity(Long projectId) {
 		
 		String metaEntity = "";
 		IPDatagridService gridService = ServiceFactory.create(IPDatagridService.class);
