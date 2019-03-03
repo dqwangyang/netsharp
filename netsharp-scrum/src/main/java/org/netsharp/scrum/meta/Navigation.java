@@ -4,7 +4,6 @@ import org.junit.Before;
 import org.netsharp.meta.base.NavigationBase;
 import org.netsharp.panda.plugin.entity.PNavigation;
 import org.netsharp.scrum.entity.ActivityPlan;
-import org.netsharp.scrum.entity.UseCase;
 import org.netsharp.scrum.entity.Deploy;
 import org.netsharp.scrum.entity.Goal;
 import org.netsharp.scrum.entity.Iteration;
@@ -17,6 +16,7 @@ import org.netsharp.scrum.entity.Story;
 import org.netsharp.scrum.entity.StoryParticipant;
 import org.netsharp.scrum.entity.StoryTrace;
 import org.netsharp.scrum.entity.Support;
+import org.netsharp.scrum.entity.UseCase;
 
 public class Navigation extends NavigationBase {
 
@@ -48,16 +48,16 @@ public class Navigation extends NavigationBase {
 			createPTreeNode(tree, "my", null, "viewpoint-my", "我的观点", "/scrum/my/viewpoint/list", 7);
 		}
 		
-		createPTreeNode(tree, null, "", "department", "部门工作", "", 2);
-		{
-			createPTreeNode(tree, "department", null, "department-scrum-current", "当前迭代", "/scrum/department/current/list", 1);
-			createPTreeNode(tree, "department", null, "department-scrum-last", "上个迭代", "/scrum/department/last/list", 2);
-			createPTreeNode(tree, "department", null, "department-scrum-unfinished", "未完成任务", "/scrum/department/unfinished/list", 3);
-			createPTreeNode(tree, "department", null, "department-scrum-finished", "已完成任务", "/scrum/department/finished/list", 4);
-			createPTreeNode(tree, "department", null, "department-support-unfinished", "未完成支持", "/scrum/department/support/unfinished/list", 5);
-			createPTreeNode(tree, "department", null, "department-support-all", "全部支持", "/scrum/department/support/finished/list", 6);
-			createPTreeNode(tree, "department", null, "department-trace", "跟进列表", "/scrum/department/trace/list", 7);
-		}
+//		createPTreeNode(tree, null, "", "department", "部门工作", "", 2);
+//		{
+//			createPTreeNode(tree, "department", null, "department-scrum-current", "当前迭代", "/scrum/department/current/list", 1);
+//			createPTreeNode(tree, "department", null, "department-scrum-last", "上个迭代", "/scrum/department/last/list", 2);
+//			createPTreeNode(tree, "department", null, "department-scrum-unfinished", "未完成任务", "/scrum/department/unfinished/list", 3);
+//			createPTreeNode(tree, "department", null, "department-scrum-finished", "已完成任务", "/scrum/department/finished/list", 4);
+//			createPTreeNode(tree, "department", null, "department-support-unfinished", "未完成支持", "/scrum/department/support/unfinished/list", 5);
+//			createPTreeNode(tree, "department", null, "department-support-all", "全部支持", "/scrum/department/support/finished/list", 6);
+//			createPTreeNode(tree, "department", null, "department-trace", "跟进列表", "/scrum/department/trace/list", 7);
+//		}
 
 		createPTreeNode(tree, null, "", "iteration", "迭代管理", "", 3);
 		{

@@ -99,14 +99,14 @@ public class Resource extends ResourceCreationBase {
 		
 		this.createResourceNodeVoucher(Attachment.class.getName(), "附件", "support-Attachment", IAttachmentService.class.getName(), node1.getId());
 
-		node1 = this.createResourceNodeCategory("部门工作", "department", node.getId());
-		this.createResourceNodeVoucher(Story.class.getName(), "当前迭代", "department-scrum-current", IStoryService.class.getName(), node1.getId());
-		this.createResourceNodeVoucher(Story.class.getName(), "上个迭代", "department-scrum-last", IStoryService.class.getName(), node1.getId());
-		this.createResourceNodeVoucher(Story.class.getName(), "未完成任务", "department-scrum-unfinished", IStoryService.class.getName(), node1.getId());
-		this.createResourceNodeVoucher(Story.class.getName(), "已完成任务", "department-scrum-finished", IStoryService.class.getName(), node1.getId());
-		this.createResourceNodeVoucher(Support.class.getName(), "未完成支持", "department-support-unfinished", ISupportService.class.getName(), node1.getId());
-		this.createResourceNodeVoucher(Support.class.getName(), "全部支持", "department-support-all", ISupportService.class.getName(), node1.getId());
-		this.createResourceNodeVoucher(StoryTrace.class.getName(), "跟进列表", "department-trace", IStoryTraceService.class.getName(), node1.getId());
+//		node1 = this.createResourceNodeCategory("部门工作", "department", node.getId());
+//		this.createResourceNodeVoucher(Story.class.getName(), "当前迭代", "department-scrum-current", IStoryService.class.getName(), node1.getId());
+//		this.createResourceNodeVoucher(Story.class.getName(), "上个迭代", "department-scrum-last", IStoryService.class.getName(), node1.getId());
+//		this.createResourceNodeVoucher(Story.class.getName(), "未完成任务", "department-scrum-unfinished", IStoryService.class.getName(), node1.getId());
+//		this.createResourceNodeVoucher(Story.class.getName(), "已完成任务", "department-scrum-finished", IStoryService.class.getName(), node1.getId());
+//		this.createResourceNodeVoucher(Support.class.getName(), "未完成支持", "department-support-unfinished", ISupportService.class.getName(), node1.getId());
+//		this.createResourceNodeVoucher(Support.class.getName(), "全部支持", "department-support-all", ISupportService.class.getName(), node1.getId());
+//		this.createResourceNodeVoucher(StoryTrace.class.getName(), "跟进列表", "department-trace", IStoryTraceService.class.getName(), node1.getId());
 
 		node1 = this.createResourceNodeCategory("迭代项目", "prj-iteration", node.getId());
 		this.createResourceNodeVoucher(Story.class.getName(), "当前迭代", "currentIterationProject", IStoryService.class.getName(), node1.getId());

@@ -62,6 +62,7 @@ public class StoryWorkspaceTest extends WorkspaceCreationBase {
 
 		addColumn(datagrid, "id", "操作", ControlTypes.OPERATION_COLUMN, 100, true);
 		addColumn(datagrid, "code", "编码", ControlTypes.TEXT_BOX, 150, true);
+		addColumn(datagrid, "owner.name", "负责人", ControlTypes.TEXT_BOX, 100);
 		addColumn(datagrid, "status", "状态", ControlTypes.ENUM_BOX, 80);
 		addColumn(datagrid, "name", "名称", ControlTypes.TEXT_BOX, 300, true);
 		addColumn(datagrid, "iteration.name", "迭代", ControlTypes.TEXT_BOX, 100);
@@ -74,8 +75,7 @@ public class StoryWorkspaceTest extends WorkspaceCreationBase {
 			column.setOrderbyMode(OrderbyMode.DESC);
 		}
 		addColumn(datagrid, "project.deploy.name", "上线计划", ControlTypes.TEXT_BOX, 150);
-		addColumn(datagrid, "project.deploy.deployTime", "上线日期", ControlTypes.TEXT_BOX, 150);
-		addColumn(datagrid, "owner.name", "负责人", ControlTypes.TEXT_BOX, 100);
+		addColumn(datagrid, "project.deploy.deployTime", "上线日期", ControlTypes.TEXT_BOX, 150);		
 		addColumn(datagrid, "organization.name", "部门", ControlTypes.TEXT_BOX, 100);
 		addColumn(datagrid, "participantStr", "参与者", ControlTypes.TEXT_BOX, 200);
 		addColumn(datagrid, "bizUser.name", "客户", ControlTypes.TEXT_BOX, 100);

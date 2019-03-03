@@ -5,13 +5,6 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 import org.netsharp.scrum.meta.bug.BugWorkspaceTest;
 import org.netsharp.scrum.meta.bug.UnfinishedBugWorkspaceTest;
-import org.netsharp.scrum.meta.department.DepartmentStoryCurrentTest;
-import org.netsharp.scrum.meta.department.DepartmentStoryFinishedTest;
-import org.netsharp.scrum.meta.department.DepartmentStoryLastTest;
-import org.netsharp.scrum.meta.department.DepartmentStoryUnfinishedTest;
-import org.netsharp.scrum.meta.department.DepartmentSupportAllTest;
-import org.netsharp.scrum.meta.department.DepartmentSupportUnfinishedTest;
-import org.netsharp.scrum.meta.department.DepartmentTraceTest;
 import org.netsharp.scrum.meta.iteration.IterationCurrentStoryWorkspaceTest;
 import org.netsharp.scrum.meta.iteration.IterationLastStoryWorkspaceTest;
 import org.netsharp.scrum.meta.iteration.IterationNextStoryWorkspaceTest;
@@ -64,14 +57,14 @@ import org.netsharp.scrum.report.IteratorStatisticsWorkspaceTest;
 	DeployReferneceTest.class,
 	RoadmapReferneceTest.class,
 	
-	//部门相关
-	DepartmentStoryCurrentTest.class,
-	DepartmentStoryFinishedTest.class,
-	DepartmentStoryLastTest.class,
-	DepartmentStoryUnfinishedTest.class,
-	DepartmentSupportAllTest.class,
-	DepartmentSupportUnfinishedTest.class,
-	DepartmentTraceTest.class,
+//	//部门相关
+//	DepartmentStoryCurrentTest.class,
+//	DepartmentStoryFinishedTest.class,
+//	DepartmentStoryLastTest.class,
+//	DepartmentStoryUnfinishedTest.class,
+//	DepartmentSupportAllTest.class,
+//	DepartmentSupportUnfinishedTest.class,
+//	DepartmentTraceTest.class,
 	
 	
 	GoalWorkspaceTest.class,

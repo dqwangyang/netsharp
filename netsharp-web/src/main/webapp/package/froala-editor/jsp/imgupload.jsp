@@ -7,5 +7,17 @@
 
 <%
 
-
+/* 	CommonsMultipartFile orginalFile = (CommonsMultipartFile) request.getFile("file");
+	Map<String, String> map = new HashMap<>();
+	String path = "/upload/froala_editor";	
+	String url = "";
+	String fileType=FileUtil.getFileNameFullExtension(orginalFile.getOriginalFilename());
+	try {
+		url = FileUtil.uploadFileAllType(orginalFile, path,fileType);	
+		
+		map.put("link", url);
+	} catch (Exception e) {
+				
+	}
+	return map; */
 %>
