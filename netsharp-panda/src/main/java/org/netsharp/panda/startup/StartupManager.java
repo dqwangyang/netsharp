@@ -8,6 +8,7 @@ import org.apache.commons.logging.LogFactory;
 import org.netsharp.cache.service.CacheStartup;
 import org.netsharp.panda.session.startup.PandaSessionStartup;
 import org.netsharp.startup.IStartup;
+import org.netsharp.util.ReflectManager;
 import org.netsharp.util.StopWatch;
 
 public class StartupManager {
@@ -18,7 +19,7 @@ public class StartupManager {
 	public StartupManager() {
 		
 //		startups.add(new LogStartup());
-//		startups.add(new StartupWeixin());
+		startups.add((IStartup)ReflectManager.newInstance("org.netsharp.wx.pa.startup.StartupWeixin"));
 		startups.add(new CacheStartup());
 //		startups.add(new JobStartup());
 		startups.add(new PandaSessionStartup());
