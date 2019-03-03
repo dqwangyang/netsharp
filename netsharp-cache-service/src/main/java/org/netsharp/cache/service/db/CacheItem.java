@@ -21,7 +21,7 @@ public class CacheItem extends Persistable {
 	// 暂时只有微信的token需要缓存，使用varchar，根据需要可以改造成Text或者Blocb类型
 	private byte[] value;// 缓存值
 	
-	private Integer type;//overtime
+	private String type;//overtime
 	
 	private Integer timout=5000;//秒
 	
@@ -44,10 +44,10 @@ public class CacheItem extends Persistable {
 	public void setValue(byte[] value) {
 		this.value = value;
 	}
-	public Integer getType() {
+	public String getType() {
 		return type;
 	}
-	public void setType(Integer type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 	public Integer getTimout() {

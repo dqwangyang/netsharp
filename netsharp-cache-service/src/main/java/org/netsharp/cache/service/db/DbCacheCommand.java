@@ -9,11 +9,11 @@ import org.netsharp.communication.ServiceFactory;
 /*数据库缓存实现*/
 public class DbCacheCommand implements ICacheCommand {
 	
-	private Integer type;
+	private String type;
 	
     private static ICacheItemService service = ServiceFactory.create(ICacheItemService.class);
     
-    public DbCacheCommand(Integer type) {
+    public DbCacheCommand(String type) {
     	this.type = type;
     }
     
