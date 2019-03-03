@@ -1,6 +1,5 @@
 .gradle/*
 /build/
-/gradle.properties
 /netsharp-web/.project
 /netsharp-web/.settings
 /netsharp-web/bin

@@ -65,7 +65,7 @@ public class WeixinCache {
             if (cacheCommand != null) {
                 return cacheCommand;
             }
-            cacheCommand = CacheCommandFactory.create(CacheType.redis,"session");
+            cacheCommand = CacheCommandFactory.create(CacheType.db,"session");
         } finally {
             lock.unlock();
         }
