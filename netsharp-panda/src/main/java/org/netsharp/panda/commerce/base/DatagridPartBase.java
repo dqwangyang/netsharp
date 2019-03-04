@@ -323,7 +323,7 @@ public class DatagridPartBase extends Part {
 		writer.write(UrlHelper.getVersionScript("/panda-res/js/panda.list.js"));
 	}
 
-	public void resizeColumn(Integer datagridId, String propertyName, int width) {
+	public void resizeColumn(Long datagridId, String propertyName, int width) {
 
 		IPDatagridColumnService service = ServiceFactory.create(IPDatagridColumnService.class);
 		Oql oql = new Oql();
@@ -333,7 +333,7 @@ public class DatagridPartBase extends Part {
 			oql.setFilter("datagridId=? AND PropertyName=?");
 
 			QueryParameters qps = new QueryParameters();
-			qps.add("@datagridId", datagridId, Types.INTEGER);
+			qps.add("@datagridId", datagridId, Types.BIGINT);
 			qps.add("@PropertyName", propertyName.replaceAll("_", "."), Types.VARCHAR);
 			oql.setParameters(qps);
 		}
