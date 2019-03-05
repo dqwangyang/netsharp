@@ -7,6 +7,7 @@ import org.netsharp.organization.dic.OperationTypes;
 import org.netsharp.panda.controls.ControlTypes;
 import org.netsharp.panda.entity.PDatagrid;
 import org.netsharp.panda.entity.PForm;
+import org.netsharp.panda.entity.PFormField;
 import org.netsharp.panda.entity.PQueryProject;
 import org.netsharp.resourcenode.entity.ResourceNode;
 import org.netsharp.wx.pa.entity.NTextReply;
@@ -57,11 +58,15 @@ public class ReplyTextWorkspaceTest extends WorkspaceCreationBase {
 			form.setColumnCount(3);
 		}
 
+        PFormField field = null;
+
 		addFormFieldRefrence(form, "publicAccount.name", "公众号", null, PublicAccount.class.getSimpleName(), true, false);
 
-		addFormField(form, "keyword", "关键字", ControlTypes.TEXT_BOX, true, false);
-		addFormField(form, "content", "回复内容", ControlTypes.TEXTAREA, true, false);
-		addFormField(form, "memoto", "备注", ControlTypes.TEXTAREA, false, false);
+        field = addFormField(form, "keyword", "关键字", ControlTypes.TEXT_BOX, true, false);
+        field = addFormField(form, "content", "回复内容", ControlTypes.TEXTAREA, true, false);
+        field.setHeight(120);
+        field = addFormField(form, "memoto", "备注", ControlTypes.TEXTAREA, false, false);
+        field.setHeight(120);
 
 		return form;
 
