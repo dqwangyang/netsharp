@@ -51,7 +51,7 @@ public class WxServlet extends HttpServlet {
 
 		response.setCharacterEncoding("utf-8");
 
-		this.createContext(request,response);
+//		this.createContext(request,response);
 
 		WeixinRequestParameters par = this.getWeixinParameter(request);
 		InputStream stream = request.getInputStream();
