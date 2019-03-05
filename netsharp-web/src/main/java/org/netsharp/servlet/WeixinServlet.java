@@ -2,7 +2,7 @@ package org.netsharp.servlet;
 
 import javax.servlet.annotation.WebServlet;
 
-import org.netsharp.wx.sdk.mp.WxServlet;
+import org.netsharp.wx.pa.WxServlet;
 
 @WebServlet(name = "weixin", urlPatterns = "/wx")
 public class WeixinServlet extends WxServlet {

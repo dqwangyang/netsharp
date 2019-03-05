@@ -1,17 +1,20 @@
-package org.netsharp.wx.sdk.mp;
+package org.netsharp.wx.pa;
 
-import java.io.IOException;
-import java.io.InputStream;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.netsharp.panda.core.HttpContext;
+import org.netsharp.panda.core.comunication.HtmlWriter;
+import org.netsharp.panda.core.comunication.ServletRequest;
+import org.netsharp.panda.core.comunication.ServletResponse;
+import org.netsharp.wx.sdk.mp.message.WeixinMessageDispatcher;
+import org.netsharp.wx.sdk.mp.sdk.WeixinRequestParameters;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.netsharp.wx.sdk.mp.message.WeixinMessageDispatcher;
-import org.netsharp.wx.sdk.mp.sdk.WeixinRequestParameters;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class WxServlet extends HttpServlet {
 
@@ -44,11 +47,11 @@ public class WxServlet extends HttpServlet {
 		logger.error("微信开发者配置验证结束");
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		response.setCharacterEncoding("utf-8");
 
-		response.getWriter().write("");
+		this.createContext(request,response);
 
 		WeixinRequestParameters par = this.getWeixinParameter(request);
 		InputStream stream = request.getInputStream();
@@ -66,6 +69,17 @@ public class WxServlet extends HttpServlet {
 			logger.error("servlet 微信post异常", ex);
 		}
 	}
+
+    private void createContext(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        HttpContext ctx = new HttpContext();
+        {
+            ctx.setRequest(new ServletRequest(request, response));
+            ctx.setResponse(new ServletResponse(response));
+            ctx.setContext(this.getServletContext());
+            ctx.setWriter(new HtmlWriter(response.getWriter()));
+        }
+        HttpContext.setCurrent(ctx);
+    }
 
 	private WeixinRequestParameters getWeixinParameter(HttpServletRequest request) {
 
