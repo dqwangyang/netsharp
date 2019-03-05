@@ -14,6 +14,7 @@ import org.netsharp.wx.sdk.mp.message.request.event.SubscribeEvent;
 
 /**
  * 微信添加关注
+ * 如果关注的是参数二维码，则通过遍历配置的IWeixinSubscriber子类进行处理
  */
 public class WeixinSubscribeResponse implements IWeixinResponsor {
 	
@@ -40,7 +41,7 @@ public class WeixinSubscribeResponse implements IWeixinResponsor {
         SubscribeEvent eventRequest = (SubscribeEvent) request;
         pac = PublicAccountManager.getInstance().get(originalId);
 
-        Long sceneId =  eventRequest.getSceneId();//xufangbo new version test
+        Long sceneId =  eventRequest.getSceneId();
 
         // 记录用户最近一次关注所扫码的场景ID
         String event = eventRequest.getEvent();
@@ -50,7 +51,7 @@ public class WeixinSubscribeResponse implements IWeixinResponsor {
         IFansService fansService = ServiceFactory.create(IFansService.class);
         Fans fans = fansService.subscribe(openId, pac.getAccount(), sceneId, isSubscribeEvent);
         for (IWeixinSubscriber subscriber : pac.getSubscriberList()) {
-            boolean ishint = subscriber.validate(eventRequest, fans, pac.getAccount());
+            boolean ishint = subscriber.validate(eventRequest, fans, pac.getAccount(),sceneId);
             if (ishint) {
                 logger.warn("微信关注事件，命中：" + eventRequest.getEventKey());
                 return subscriber.reply(eventRequest, fans, pac.getAccount(),sceneId);

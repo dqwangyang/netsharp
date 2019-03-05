@@ -36,15 +36,15 @@ public class NWeixinResponsorWorkspaceTest extends WorkspaceCreationBase {
 		// 基本信息
 		addColumn(datagrid, "publicAccount.name", "公众号", ControlTypes.TEXT_BOX, 150);
 		addColumn(datagrid, "name", "名称", ControlTypes.TEXT_BOX, 100);
-		addColumn(datagrid, "javaType", "java类型", ControlTypes.TEXT_BOX, 100);
+		addColumn(datagrid, "javaType", "java类型", ControlTypes.TEXT_BOX, 400);
 		addColumn(datagrid, "disabled", "停用", ControlTypes.TEXT_BOX, 100);
 		PDatagridColumn column = addColumn(datagrid, "seq", "排序", ControlTypes.TEXT_BOX, 100);
 		{
 			column.setOrderbyMode(OrderbyMode.ASC);
 		}
 		
-		addColumn(datagrid, "memoto", "描述", ControlTypes.TEXTAREA, 300);
-		addColumn(datagrid, "creator", "创建人", ControlTypes.TEXT_BOX, 100);
+//		addColumn(datagrid, "memoto", "描述", ControlTypes.TEXTAREA, 300);
+//		addColumn(datagrid, "creator", "创建人", ControlTypes.TEXT_BOX, 100);
 		addColumn(datagrid, "createTime", "创建时间", ControlTypes.TEXT_BOX, 120);
 		addColumn(datagrid, "updator", "最后修改人", ControlTypes.TEXT_BOX, 100);
 		addColumn(datagrid, "updateTime", "最后修改时间", ControlTypes.TEXT_BOX, 120);

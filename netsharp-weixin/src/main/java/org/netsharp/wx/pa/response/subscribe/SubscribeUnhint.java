@@ -8,7 +8,7 @@ import org.netsharp.wx.sdk.mp.message.response.TextResponse;
 
 public class SubscribeUnhint implements IWeixinSubscriber {
 
-    public boolean validate(EventRequest request,Fans fans,PublicAccount publicAccount){
+    public boolean validate(EventRequest request,Fans fans,PublicAccount publicAccount,Long sceneId){
         return true;
     }
 

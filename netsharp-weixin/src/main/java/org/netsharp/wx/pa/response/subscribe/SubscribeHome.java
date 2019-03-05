@@ -18,8 +18,8 @@ public class SubscribeHome implements IWeixinSubscriber {
     NReply reply = null;
 
     @Override
-    public boolean validate(EventRequest request, Fans fans, PublicAccount publicAccount) {
-        //
+    public boolean validate(EventRequest request, Fans fans, PublicAccount publicAccount,Long sceneId) {
+
         String subscribeCode = publicAccount.getSubscribeCode();
         logger.warn("公众号关注回复关键字："+subscribeCode);
         if (StringHelper.isNullOrEmpty(subscribeCode)) {
@@ -33,8 +33,6 @@ public class SubscribeHome implements IWeixinSubscriber {
         }else{
         	logger.warn("匹配图文："+reply.getKeyword()+","+reply.getClass().getName());
         }
-        
-        
 
         return reply != null;
     }
@@ -44,5 +42,6 @@ public class SubscribeHome implements IWeixinSubscriber {
 
         WeixinReplyResponse response = new WeixinReplyResponse();
         return response.response(reply, request);
+
     }
 }
