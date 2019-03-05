@@ -21,6 +21,7 @@ import org.netsharp.wx.pa.dic.FansStatus;
 import org.netsharp.wx.pa.dic.PublicAccountType;
 import org.netsharp.wx.pa.entity.Fans;
 import org.netsharp.wx.pa.entity.PublicAccount;
+import org.netsharp.wx.pa.entity.WeixinLog;
 import org.netsharp.wx.sdk.mp.api.accesstoken.AccessToken;
 import org.netsharp.wx.sdk.mp.api.accesstoken.AccessTokenManage;
 import org.netsharp.wx.sdk.mp.api.oauth.OAuthRequest;
@@ -256,6 +257,22 @@ public class FansService extends PersistableService<Fans> implements IFansServic
 
 		return fans;
 	}
+
+    @Override
+    public Fans save(Fans entity) {
+
+        if (entity.getCreatorId() == null || entity.getCreatorId().intValue() <= 0) {
+            entity.setCreatorId(1L);
+            entity.setCreator("微信");
+        }
+
+        if (entity.getUpdatorId() == null || entity.getUpdatorId().intValue() <= 0) {
+            entity.setUpdatorId(1L);
+            entity.setUpdator("微信");
+        }
+
+        return  super.save(entity);
+    }
 
 	public Long getUserIdByFansId(Long fid) {
 		if (fid == null || fid < 1) {
