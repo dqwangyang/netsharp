@@ -16,6 +16,7 @@ public interface IPersister<T extends IPersistable> {
 
 	//新增实体,不支持关联持久化,不考虑实体状体
 	boolean persistNew(T entity);
+    boolean persistNew(T entity, boolean isImport);
 	//修改实体,不支持关联持久化,不考虑实体状体
 	boolean persist(T entity);
 	//保存实体,支持关联持久化,考虑实体状体

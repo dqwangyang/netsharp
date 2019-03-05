@@ -12,5 +12,14 @@ public class WeixinLogService extends PersistableService<WeixinLog> implements I
 		super();
 		this.type=WeixinLog.class;
 	}
-	
+
+	@Override
+    public WeixinLog save(WeixinLog entity) {
+
+        this.pm.persistNew(entity,false);
+
+        return entity;
+    }
+
+
 }

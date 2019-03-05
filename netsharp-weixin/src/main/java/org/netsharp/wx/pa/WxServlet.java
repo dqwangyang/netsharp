@@ -51,8 +51,6 @@ public class WxServlet extends HttpServlet {
 
 		response.setCharacterEncoding("utf-8");
 
-//		this.createContext(request,response);
-
 		WeixinRequestParameters par = this.getWeixinParameter(request);
 		InputStream stream = request.getInputStream();
 //		String xml = FileManager.read(stream);
@@ -69,17 +67,6 @@ public class WxServlet extends HttpServlet {
 			logger.error("servlet 微信post异常", ex);
 		}
 	}
-
-    private void createContext(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        HttpContext ctx = new HttpContext();
-        {
-            ctx.setRequest(new ServletRequest(request, response));
-            ctx.setResponse(new ServletResponse(response));
-            ctx.setContext(this.getServletContext());
-            ctx.setWriter(new HtmlWriter(response.getWriter()));
-        }
-        HttpContext.setCurrent(ctx);
-    }
 
 	private WeixinRequestParameters getWeixinParameter(HttpServletRequest request) {
 
